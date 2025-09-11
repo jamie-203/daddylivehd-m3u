@@ -4,6 +4,8 @@ Link: https://raw.githubusercontent.com/pigzillaaa/daddylive/refs/heads/main/dad
 ## DaddyLive Events:
 Link: https://raw.githubusercontent.com/pigzillaaa/daddylive/refs/heads/main/daddylive-events.m3u8
 
+## Merged
+Link: https://raw.githubusercontent.com/DisabledAbel/daddylive/refs/heads/main/daddylive-merged.m3u8
 ---
 
 #### Status

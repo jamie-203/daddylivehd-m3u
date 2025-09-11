@@ -12,3 +12,4 @@ Link: https://raw.githubusercontent.com/pigzillaaa/daddylive/refs/heads/main/dad
 
 ##
 Join our discord: https://discord.gg/7EQYgsrsBe
+root takeover 

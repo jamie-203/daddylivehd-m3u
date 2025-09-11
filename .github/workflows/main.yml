@@ -6,25 +6,66 @@ on:
       - main
 
 jobs:
-  merge:
+  merge_playlists:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repo
+      uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
-      - name: Run merge script
-        run: python .github/scripts/merge_playlists.py
+    - name: Merge channels and events into one playlist
+      run: |
+        python3 - << 'PYCODE'
+        import os
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daddylive-merged.m3u8
-          git commit -m "Auto-merge playlists"
-          git push
+        def read_file(file_path):
+            with open(file_path, 'r', encoding='utf-8') as f:
+                return f.read().strip().splitlines()
+
+        def merge(lines1, lines2):
+            # filter out duplicate headers
+            merged = ['#EXTM3U']
+            merged += [l for l in lines1 if not l.startswith('#EXTM3U')]
+            merged += [l for l in lines2 if not l.startswith('#EXTM3U')]
+            return merged
+
+        channels_file = 'daddylive-channels.m3u8'
+        events_file = 'daddylive-events.m3u8'
+        merged_file = 'daddylive-merged.m3u8'
+
+        if not os.path.exists(channels_file) or not os.path.exists(events_file):
+            print("Error: one or both source playlist files not found")
+            exit(1)
+
+        lines1 = read_file(channels_file)
+        lines2 = read_file(events_file)
+        merged_lines = merge(lines1, lines2)
+
+        # Read old merged if exists, to compare
+        if os.path.exists(merged_file):
+            with open(merged_file, 'r', encoding='utf-8') as f:
+                old = f.read().splitlines()
+        else:
+            old = []
+
+        if merged_lines != old:
+            with open(merged_file, 'w', encoding='utf-8') as f:
+                f.write('\n'.join(merged_lines) + '\n')
+            print("Merged playlist updated.")
+        else:
+            print("Merged playlist up to date; nothing to commit.")
+      shell: bash
+
+    - name: Commit and push merged playlist
+      if: steps.merge_playlists.outputs.merged_changed == 'true'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add daddylive-merged.m3u8
+        git commit -m "Auto: merged playlists"
+        git push

@@ -1,0 +1,75 @@
+n:
+  schedule:
+    # Runs every 2 hours
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update_m3u:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+    
+    - name: Download M3U files from upstream
+      run: |
+        # Create temp directory
+        mkdir -p temp_upstream
+        cd temp_upstream
+        
+        # Download specific M3U files (adjust URLs as needed)
+        wget -q https://raw.githubusercontent.com/pigzillaaa/daddylive/main/daddylive.m3u || echo "File not found: daddylive.m3u"
+        wget -q https://raw.githubusercontent.com/pigzillaaa/daddylive/main/playlist.m3u || echo "File not found: playlist.m3u"
+        
+        # List downloaded files
+        ls -la
+    
+    - name: Check for changes and update
+      run: |
+        changes_made=false
+        
+        # Compare and update each M3U file if different
+        for file in temp_upstream/*.m3u; do
+          if [ -f "$file" ]; then
+            filename=$(basename "$file")
+            if [ ! -f "$filename" ] || ! cmp -s "$file" "$filename"; then
+              cp "$file" "$filename"
+              echo "Updated: $filename"
+              changes_made=true
+            else
+              echo "No changes: $filename"
+            fi
+          fi
+        done
+        
+        # Clean up temp directory
+        rm -rf temp_upstream
+        
+        # Set output for next step
+        echo "CHANGES_MADE=$changes_made" >> $GITHUB_ENV
+    
+    - name: Commit and push changes
+      if: env.CHANGES_MADE == 'true'
+      run: |
+        git add *.m3u
+        git commit -m "Auto-update M3U files from upstream - $(date)"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Create summary
+      run: |
+        if [ "$CHANGES_MADE" == "true" ]; then
+          echo "â M3U files updated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "ð Changes committed and pushed" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "â¹ï¸ No changes detected in M3U files" >> $GITHUB_STEP_SUMMARY
+        fi

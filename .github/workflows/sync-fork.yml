@@ -1,28 +1,41 @@
-name: Sync Fork
+# Example workflow with authentication fix
+name: Update M3U
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # every 6 hours
-  workflow_dispatch: # allow manual run
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:  # Allow manual triggers
 
 jobs:
-  sync:
+  update:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Required for pushing changes
+      
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-
-      - name: Add upstream
-        run: |
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git
-          git fetch upstream
-          git checkout main
-          git merge upstream/main --allow-unrelated-histories || true
-
-      - name: Push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git push origin main
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+    - name: Set up authentication
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        
+    # Your existing workflow steps here
+    - name: Update M3U files
+      run: |
+        # Your update script/commands
+        echo "Running update commands..."
+        
+    - name: Commit and push changes
+      run: |
+        git add .
+        git diff --staged --quiet || git commit -m "Update M3U files - $(date)"
+        git push origin main

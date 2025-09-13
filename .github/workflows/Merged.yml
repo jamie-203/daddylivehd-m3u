@@ -1,48 +1,41 @@
-name: Merge Playlists
+name: Sync & Update Playlists
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "0 */3 * * *"   # runs every 3 hours
+    - cron: "0 */3 * * *" # every 3 hours
+  workflow_dispatch: # manual trigger
 
 jobs:
-  merge:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Checkout fork
+        uses: actions/checkout@v3
         with:
-          python-version: "3.x"
+          persist-credentials: false
 
-      - name: Run merge script
+      - name: Add upstream
         run: |
-          python3 - << 'PYCODE'
-          def merge_playlists(channels_file, events_file, output_file):
-              with open(channels_file, "r", encoding="utf-8") as f1:
-                  channels = f1.read().strip()
-              with open(events_file, "r", encoding="utf-8") as f2:
-                  events = f2.read().strip()
-              merged = "#EXTM3U\n"
-              merged += "\n".join([l for l in channels.splitlines() if not l.startswith("#EXTM3U")])
-              merged += "\n"
-              merged += "\n".join([l for l in events.splitlines() if not l.startswith("#EXTM3U")])
-              with open(output_file, "w", encoding="utf-8") as f_out:
-                  f_out.write(merged)
-              print(f"Merged playlist saved as {output_file}")
+          git remote add upstream https://github.com/pigzillaaa/daddylive.git
+          git fetch upstream
+          git checkout main
+          git merge upstream/main --allow-unrelated-histories || true
 
-          merge_playlists("daddylive-channels.m3u8","daddylive-events.m3u8","daddylive-merged.m3u8")
-          PYCODE
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-      - name: Commit and push changes
+      - name: Install dependencies
+        run: npm install node-fetch@2
+
+      - name: Generate playlists
+        run: node generate-playlist.js
+
+      - name: Commit & Push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daddylive-merged.m3u8
-          git commit -m "Auto-merge playlists" || echo "No changes to commit"
-          git push
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.m3u
+          git commit -m "Auto-sync & update playlists" || echo "No changes to commit"
+          git push origin main

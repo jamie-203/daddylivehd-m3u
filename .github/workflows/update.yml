@@ -49,3 +49,13 @@ jobs:
             git commit -m "Auto-sync & update playlists"
             git push origin main
           fi
+- name: Add M3U files
+  run: |
+    # Check if any .m3u files exist
+    if ls *.m3u 1> /dev/null 2>&1; then
+      git add *.m3u
+      git commit -m "Update M3U playlists"
+      git push
+    else
+      echo "No M3U files to add. Skipping commit."
+    fi

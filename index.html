@@ -1,66 +1,63 @@
-name: Update Playlists
-
-on:
-  schedule:
-    - cron: "*/30 * * * *" # runs every 30 minutes
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Generate playlists
-        run: |
-          echo "#EXTM3U" > daddylive-merged.m3u8
-          echo "# Auto-generated playlist" >> daddylive-merged.m3u8
-
-          # Example placeholder streams
-          echo "#EXTINF:-1 tvg-id=\"test\" group-title=\"Sports\",Test Channel 1" >> daddylive-merged.m3u8
-          echo "http://example.com/stream1.m3u8" >> daddylive-merged.m3u8
-
-          echo "#EXTINF:-1 tvg-id=\"test2\" group-title=\"Sports\",Test Channel 2" >> daddylive-merged.m3u8
-          echo "http://example.com/stream2.m3u8" >> daddylive-merged.m3u8
-
-          # Create index.html for GitHub Pages
-          cat > index.html <<EOF
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="utf-8">
-            <title>DaddyLive Playlist</title>
-          </head>
-          <body>
-            <h1>DaddyLive Playlist</h1>
-            <p><a href="daddylive-merged.m3u8">Download Playlist (M3U8)</a></p>
-          </body>
-          </html>
-          EOF
-
-          # Disable Jekyll so raw .m3u8 is served
-          touch .nojekyll
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add daddylive-merged.m3u8 index.html .nojekyll || true
-          if git commit -m "Auto-update playlist"; then
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
-          else
-            echo "No changes to commit"
-          fi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daddylive Playlists</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      color: #1db954;
+      border: 2px solid #1db954;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #1db954;
+      color: #000000;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 Daddylive Auto-Updating Playlists</h1>
+  <p>Select a playlist to open in VLC, Kodi, or IPTV apps:</p>
+  
+  <div class="container">
+    <a href="daddylive.m3u" class="btn">All Sports</a>
+    <a href="nba.m3u" class="btn">NBA</a>
+    <a href="wnba.m3u" class="btn">WNBA</a>
+    <a href="nfl.m3u" class="btn">NFL</a>
+    <a href="mlb.m3u" class="btn">MLB</a>
+    <a href="nhl.m3u" class="btn">NHL</a>
+    <a href="cfl.m3u" class="btn">CFL</a>
+    <a href="college.m3u" class="btn">College Sports</a>
+    <a href="ufc.m3u" class="btn">UFC</a>
+    <a href="boxing.m3u" class="btn">Boxing</a>
+    <a href="wrestling.m3u" class="btn">Wrestling</a>
+    <a href="tvshows.m3u" class="btn">TV Shows</a>
+    <a href="other.m3u" class="btn">Other</a>
+  </div>
+</body>
+</html>

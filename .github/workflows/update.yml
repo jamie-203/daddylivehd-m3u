@@ -9,29 +9,35 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout repo
       - name: Checkout fork
         uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Add upstream
+      # 2. Add upstream and merge changes
+      - name: Sync fork with upstream
         run: |
           git remote add upstream https://github.com/pigzillaaa/daddylive.git
           git fetch upstream
           git checkout main
           git merge upstream/main --allow-unrelated-histories || true
 
+      # 3. Setup Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # 4. Install dependencies
       - name: Install dependencies
         run: npm install node-fetch@2
 
+      # 5. Run playlist generator
       - name: Generate playlists
         run: node generate-playlist.js
 
+      # 6. Commit & push if playlists changed
       - name: Commit & Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"

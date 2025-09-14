@@ -39,3 +39,6 @@ jobs:
         git add .
         git diff --staged --quiet || git commit -m "Update M3U files - $(date)"
         git push origin main
+
+- name: Fork Sync
+  uses: tgymnich/fork-sync@v2.0.10

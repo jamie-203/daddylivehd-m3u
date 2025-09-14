@@ -9,7 +9,6 @@ main_path = Path("playlist.m3u")
 backup_path = Path("backup.m3u")
 out_path = main_path
 
-def parse_entries(lines):
     entries = []
     i = 0
     n = len(lines)

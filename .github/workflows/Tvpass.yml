@@ -1,3 +1,23 @@
+name: Tvpass Playlist Merge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  merge_playlists:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
       - name: Merge playlists (add per-channel backups)
         run: |
           set -e
@@ -9,6 +29,7 @@ main_path = Path("playlist.m3u")
 backup_path = Path("backup.m3u")
 out_path = main_path
 
+def parse_entries(lines):
     entries = []
     i = 0
     n = len(lines)
@@ -18,7 +39,6 @@ out_path = main_path
             extinf = line
             j = i + 1
             url = ""
-            # skip blank/comment lines
             while j < n and (lines[j].strip() == "" or lines[j].startswith("#")):
                 j += 1
             if j < n:
@@ -73,3 +93,11 @@ for extinf, url in main_entries:
 out_path.write_text("\n".join(out_lines) + ("\n" if out_lines else ""), encoding="utf-8")
 print("✅ Merged per-channel backups. Wrote", str(out_path))
 PY
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u
+          git diff --cached --quiet || git commit -m "Update merged playlist"
+          git push

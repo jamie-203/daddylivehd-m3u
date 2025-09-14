@@ -1,0 +1,32 @@
+name: Sync Fork with Upstream
+
+on:
+  schedule:
+    # run every 3 hours
+    - cron: "0 */3 * * *"
+  workflow_dispatch: # allow manual runs too
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Add upstream remote
+      run: |
+        git remote add upstream https://github.com/DisabledAbel/daddylivehd-m3u.git
+        git fetch upstream
+
+    - name: Merge upstream changes
+      run: |
+        git checkout main
+        git merge upstream/main --no-edit || echo "No changes to merge"
+
+    - name: Push changes
+      run: |
+        git push origin main

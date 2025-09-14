@@ -1,39 +1,3 @@
-name: Sync & Update Playlists
-
-# Allow this workflow to push changes back
-permissions:
-  contents: write
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */3 * * *' # every 3 hours
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout fork (full history so merges work)
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-
-      - name: Add upstream and merge (safe)
-        run: |
-          set -e
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git || true
-          git fetch upstream --no-tags --prune
-          # Try merging typical default branch names without failing the job
-          git merge --no-edit upstream/main || git merge --no-edit upstream/master || echo "No upstream branch main/master to merge or merge produced conflicts (continuing)."
-
-      - name: Download backup playlist
-        run: |
-          set -e
-          curl -fsSL "https://tvpass.org/playlist/m3u" -o backup.m3u || { echo "Failed to download backup.m3u"; exit 0; }
-          echo "✅ Downloaded backup.m3u"
-
       - name: Merge playlists (add per-channel backups)
         run: |
           set -e
@@ -46,11 +10,6 @@ backup_path = Path("backup.m3u")
 out_path = main_path
 
 def parse_entries(lines):
-    """
-    Returns list of (extinf_line, url_line) in order.
-    extinf_line includes full #EXTINF line.
-    url_line is the next non-empty, non-comment line after extinf (if present).
-    """
     entries = []
     i = 0
     n = len(lines)
@@ -58,9 +17,9 @@ def parse_entries(lines):
         line = lines[i].rstrip("\n")
         if line.startswith("#EXTINF"):
             extinf = line
-            # find next non-empty line that is not a comment
             j = i + 1
             url = ""
+            # skip blank/comment lines
             while j < n and (lines[j].strip() == "" or lines[j].startswith("#")):
                 j += 1
             if j < n:
@@ -74,12 +33,10 @@ def parse_entries(lines):
     return entries
 
 def extract_name(extinf_line):
-    # Get the display name after the last comma
     if ',' in extinf_line:
         return extinf_line.split(',', 1)[1].strip().lower()
     return extinf_line.strip().lower()
 
-# Load main playlist; if missing, nothing to merge into
 if not main_path.exists():
     print("No playlist.m3u found in repo. Nothing to merge into.")
     sys.exit(0)
@@ -87,18 +44,15 @@ if not main_path.exists():
 main_lines = main_path.read_text(encoding="utf-8").splitlines()
 backup_lines = backup_path.read_text(encoding="utf-8").splitlines() if backup_path.exists() else []
 
-# Preserve header lines (e.g. #EXTM3U) and any initial non-EXTINF lines until first EXTINF
 header_lines = []
 idx = 0
 while idx < len(main_lines) and not main_lines[idx].startswith("#EXTINF"):
     header_lines.append(main_lines[idx])
     idx += 1
 
-# Parse entries
 main_entries = parse_entries(main_lines)
 backup_entries = parse_entries(backup_lines)
 
-# Build backup dict: name -> url (first occurrence)
 backup_map = {}
 for extinf, url in backup_entries:
     name = extract_name(extinf)
@@ -106,44 +60,17 @@ for extinf, url in backup_entries:
         if name not in backup_map:
             backup_map[name] = url
 
-# Construct merged output
 out_lines = []
 out_lines.extend(header_lines)
 for extinf, url in main_entries:
     out_lines.append(extinf)
     if url:
         out_lines.append(url)
-    # append backup if exists and not identical
     name = extract_name(extinf)
     b_url = backup_map.get(name)
     if b_url and b_url.strip() and b_url.strip() != (url or "").strip():
         out_lines.append(b_url)
-# write result
+
 out_path.write_text("\n".join(out_lines) + ("\n" if out_lines else ""), encoding="utf-8")
 print("✅ Merged per-channel backups. Wrote", str(out_path))
 PY
-
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit updated playlists if they exist
-        run: |
-          set -e
-          # find any m3u files changed
-          if ls *.m3u 1> /dev/null 2>&1; then
-            git add '*.m3u' || true
-
-            # Commit only if there are staged changes
-            if ! git diff --cached --quiet; then
-              BRANCH="${GITHUB_REF#refs/heads/}"
-              # If we couldn't determine branch, default to main
-              if [ -z "$BRANCH" ]; then BRANCH="main"; fi
-              git commit -m "Update playlists (per-channel backups added)"
-              git push origin "HEAD:$BRANCH" || { echo "git push failed (branch protection or permissions?). Creating a branch and PR instead."; git push origin HEAD || true; }
-            else
-              echo "No changes to commit."
-            fi
-          else
-            echo "No .m3u files found, skipping commit."

@@ -8,64 +8,88 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Add upstream and merge
         run: |
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git
-          git fetch upstream
+          git remote add upstream https://github.com/pigzillaaa/daddylive.git || true
+          git fetch upstream || true
           git merge upstream/main --allow-unrelated-histories || true
 
       - name: Merge playlists and create per-channel backups
         run: |
-          set -e
-          python3 <<'PY'
-import sys
-from pathlib import Path
+          set -euo pipefail
 
-main_path = Path("playlist.m3u")
+          main_path="playlist.m3u"
+          rm -f "$main_path"
+          touch "$main_path"
 
-# Collect all .m3u files except the merged one
-m3u_files = [p for p in Path(".").glob("*.m3u") if p.name != "playlist.m3u"]
+          # collect .m3u files except the main one
+          shopt -s nullglob
+          files=( *.m3u )
+          shopt -u nullglob
 
-lines = []
-for f in m3u_files:
-    with f.open() as fh:
-        lines.extend(fh.readlines())
+          # remove playlist.m3u from list if present
+          newfiles=()
+          for f in "${files[@]:-}"; do
+            if [ "$f" != "$main_path" ]; then
+              newfiles+=( "$f" )
+            fi
+          done
 
-# Always rewrite playlist.m3u
-with main_path.open("w") as out:
-    if lines:
-        out.writelines(lines)
-    else:
-        out.write("#EXTM3U\n")
+          # merge into playlist.m3u (or write header if none)
+          if [ ${#newfiles[@]} -gt 0 ]; then
+            for f in "${newfiles[@]}"; do
+              cat "$f" >> "$main_path"
+            done
+          else
+            printf '%s\n' "#EXTM3U" > "$main_path"
+          fi
 
-# Build per-channel backup files
-if lines:
-    channel_map = {}
-    for line in lines:
-        if line.startswith("#EXTINF"):
-            name = line.split(",")[-1].strip()
-            channel_map[name] = []
-        if channel_map:
-            channel_map[name].append(line)
+          # create channels/ directory
+          mkdir -p channels
 
-    backup_dir = Path("channels")
-    backup_dir.mkdir(exist_ok=True)
-    for name, content in channel_map.items():
-        safe_name = "".join(c if c.isalnum() else "_" for c in name)
-        with (backup_dir / f"{safe_name}.m3u").open("w") as ch_file:
-            ch_file.writelines(content)
-PY
+          # parse per-channel: group each #EXTINF and following lines into a file
+          # This assumes each channel block starts with a line beginning with "#EXTINF"
+          awk -v outdir=channels '
+            /^#EXTINF/ {
+              if (block != "") {
+                fname = outdir "/" safe
+                print block > fname
+                close(fname)
+              }
+              block = $0 "\n"
+              # get channel name (after last comma)
+              n = split($0, arr, ",")
+              name = arr[n]
+              gsub(/[^A-Za-z0-9]/, "_", name)
+              safe = name
+              next
+            }
+            {
+              if (block == "") next
+              block = block $0 "\n"
+            }
+            END {
+              if (block != "") {
+                fname = outdir "/" safe
+                print block > fname
+                close(fname)
+              }
+            }
+          ' "${newfiles[@]:-}"
 
       - name: Commit updated playlists
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add playlist.m3u channels/*.m3u || true
+          # Add files if they exist; ignore if not (so step doesn't fail)
+          git add playlist.m3u || true
+          git add channels/*.m3u || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

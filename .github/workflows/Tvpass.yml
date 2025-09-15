@@ -23,7 +23,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          main_path="playlist.m3u"
           rm -f "$main_path"
           touch "$main_path"
 

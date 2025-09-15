@@ -36,4 +36,4 @@ jobs:
             fi
           else
             echo "No .m3u files found, skipping commit."
-          fi
+          i

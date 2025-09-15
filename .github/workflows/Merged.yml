@@ -2,36 +2,53 @@ name: Sync & Update Playlists
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'README.md'
   schedule:
-    - cron: "0 */3 * * *"  # every 3 hours
+    - cron: "0 */3 * * *"
 
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Add upstream and merge
         run: |
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git
-          git fetch upstream
+          git remote add upstream https://github.com/pigzillaaa/daddylive.git || true
+          git fetch upstream || true
           git merge upstream/main --allow-unrelated-histories || true
 
-      - name: Commit updated playlists
+      - name: Merge playlists (main + events) and create per-channel backups
         run: |
-          # Set local Git identity for this repo
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
 
-          if ls *.m3u 1> /dev/null 2>&1; then
-            git add *.m3u
-            if git diff --cached --quiet; then
-              echo "No changes to commit."
-            else
-              git commit -m "Update playlists"
-              git push
+          main_path="playlist.m3u"
+          events_path="events.m3u"
+
+          rm -f "$main_path" "$events_path"
+          touch "$main_path" "$events_path"
+
+          shopt -s nullglob
+          files=( *.m3u )
+          shopt -u nullglob
+
+          newfiles=()
+          for f in "${files[@]:-}"; do
+            if [ "$f" != "$main_path" ] && [ "$f" != "$events_path" ]; then
+              newfiles+=( "$f" )
             fi
+          done
+
+          if [ ${#newfiles[@]} -gt 0 ]; then
+            for f in "${newfiles[@]}"; do
+              if [[ "$f" == *events* ]]; then
+                cat "$f" >> "$events_path"
+              else
+                cat "$f" >> "$main_path"
+              fi
+            done
           else
-            echo "No .m3u files found, skipping commit."
-          fi

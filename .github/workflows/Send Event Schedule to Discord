@@ -1,0 +1,45 @@
+name: Send Event Schedule to Discord
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"   # every 3 hours
+  workflow_dispatch:
+
+jobs:
+  send-schedule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate schedule
+        run: |
+          # Example schedule (replace with real fetch/parse)
+          echo "Match A vs B - 7PM" > schedule.txt
+          echo "Match C vs D - 9PM" >> schedule.txt
+          echo "Match E vs F - 11PM" >> schedule.txt
+
+      - name: Send to Discord (Embed)
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          SCHEDULE=$(cat schedule.txt | sed ':a;N;$!ba;s/\n/\\n/g')
+
+          PAYLOAD=$(jq -n \
+            --arg title "📺 DaddyLive Schedule Update" \
+            --arg desc "$SCHEDULE" \
+            '{
+              "embeds": [
+                {
+                  "title": $title,
+                  "description": $desc,
+                  "color": 5814783
+                }
+              ]
+            }')
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK"

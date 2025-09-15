@@ -22,9 +22,8 @@ jobs:
         run: |
           set -e
           python3 <<'PY'
-import sys
-from pathlib import Path
 
+          
 main_path = Path("playlist.m3u")
 backup_path = Path("backup.m3u")
 out_path = main_path

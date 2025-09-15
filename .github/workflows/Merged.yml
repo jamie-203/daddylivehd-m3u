@@ -3,37 +3,35 @@ name: Sync & Update Playlists
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */3 * * *' # every 3 hours
+    - cron: "0 */3 * * *"  # every 3 hours
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout fork
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Add upstream
+      - name: Add upstream and merge
         run: |
           git remote add upstream https://github.com/pigzillaaa/daddylive.git
           git fetch upstream
-          git merge upstream/main --allow-unrelated-histories -m "Merge upstream playlists"
+          git merge upstream/main --allow-unrelated-histories || true
 
       - name: Commit updated playlists
         run: |
-          # Configure git user
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Set local Git identity for this repo
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Only commit if there are changes
-          if git ls-files '*.m3u' | grep .; then
-            git add '*.m3u'
-            if ! git diff --cached --quiet; then
+          if ls *.m3u 1> /dev/null 2>&1; then
+            git add *.m3u
+            if git diff --cached --quiet; then
+              echo "No changes to commit."
+            else
               git commit -m "Update playlists"
               git push
-            else
-              echo "No changes to commit."
             fi
           else
             echo "No .m3u files found, skipping commit."
-          i
+          fi

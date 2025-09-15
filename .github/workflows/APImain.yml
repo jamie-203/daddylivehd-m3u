@@ -10,39 +10,80 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Fetch Daddylive schedule
-        run: |
-          # Replace with the real API endpoint you’re calling
-          curl -s "https://daddyliveapi.example/schedule.json" -o schedule.json
-          cat schedule.json
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Send schedule to Discord
+      - name: Fetch Daddylive schedule (retries + diagnostics)
+        run: |
+          set -euxo pipefail
+          URL="https://daddyliveapi.example/schedule.json"  # <<-- REPLACE this with your real API URL
+          echo "Fetching schedule from: $URL"
+          rc=0
+          for i in 1 2 3; do
+            echo "Attempt $i..."
+            curl -fsS "$URL" -o schedule.json && rc=0 && break || rc=$?
+            echo "curl failed with exit code $rc"
+            # curl exit code 6 means "Couldn't resolve host"
+            if [ "$rc" -eq 6 ]; then
+              echo "curl exit code 6: Could not resolve host. Check the URL or DNS/network settings."
+            fi
+            sleep 5
+          done
+          if [ ! -s schedule.json ]; then
+            echo "ERROR: schedule.json missing or empty after fetch (curl rc=$rc)."
+            ls -l || true
+            exit $rc
+          fi
+          echo "Downloaded schedule.json (first 200 lines):"
+          head -n 200 schedule.json
+      - name: Validate JSON
+        run: |
+          set -euxo pipefail
+          if ! jq empty schedule.json; then
+            echo "schedule.json is not valid JSON. Aborting."
+            exit 1
+          fi
+          echo "JSON valid."
+
+      - name: Build Discord payload from schedule.json
+        id: build_payload
+        run: |
+          set -euxo pipefail
+          TITLE=$(jq -r 'keys[0]' schedule.json)
+          echo "Title: $TITLE"
+          # Build payload using jq directly (safer than shell substitution)
+          jq -c --arg title "📺 DaddyLive Schedule – $TITLE" '
+            { embeds: [
+              {
+                title: $title,
+                color: 5814783,
+                fields: ( 
+                  (.[keys[0]]["TV Shows"] // []) |
+                  map({
+                    name: (.time + " – " + .event),
+                    value: ( "Channel: " + ( .channels[0].channel_name // "N/A") + ( if (.channels2 and (.channels2|length)>0) then " (also: " + (.channels2|map(.channel_name)|join(", ")) + ")" else "" end) ),
+                    inline: false
+                  })
+                )
+              }
+            ] }' schedule.json > payload.json
+          echo "Payload preview:"
+          jq '.' payload.json | sed -n '1,200p'
+
+      - name: Send to Discord webhook
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          TITLE=$(jq -r 'keys[0]' schedule.json)
-
-          PAYLOAD=$(jq -n \
-            --arg title "📺 DaddyLive Schedule – $TITLE" \
-            --argjson events "$(jq -c '.[]["TV Shows"]' schedule.json)" \
-            '{
-              "embeds": [
-                {
-                  "title": $title,
-                  "color": 5814783,
-                  "fields": (
-                    $events | map({
-                      "name": (.time + " – " + .event),
-                      "value": ("Channel: " + (.channels[0].channel_name // "N/A")),
-                      "inline": false
-                    })
-                  )
-                }
-              ]
-            }')
-
-          echo "$PAYLOAD" | jq .   # debug
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d "$PAYLOAD" \
-               "$DISCORD_WEBHOOK"
+          set -euxo pipefail
+          : "${DISCORD_WEBHOOK:?DISCORD_WEBHOOK secret is not set! Add it under repo Settings → Secrets → Actions}"
+          # Post payload and print HTTP status and any response
+          HTTP_OUTPUT=$(mktemp)
+          curl -sS -H "Content-Type: application/json" -X POST -d @payload.json "$DISCORD_WEBHOOK" -w "\nHTTP_CODE:%{http_code}\n" -o "$HTTP_OUTPUT" || rc=$?
+          # print response body (non-sensitive) and HTTP code
+          cat "$HTTP_OUTPUT" || true
+          # get printed http code line last
+          tail -n 1 "$HTTP_OUTPUT" || true
+          if [ -n "${rc:-}" ] && [ "$rc" -ne 0 ]; then
+            echo "curl returned non-zero exit code $rc when posting to Discord."
+            exit $rc
+          fi

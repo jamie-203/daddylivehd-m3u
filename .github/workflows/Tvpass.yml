@@ -1,102 +1,75 @@
-name: Tvpass Playlist Merge
+name: Sync & Update Playlists
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"  # every 3 hours
 
 jobs:
-  merge_playlists:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+      - name: Add upstream and merge
+        run: |
+          git remote add upstream https://github.com/pigzillaaa/daddylive.git
+          git fetch upstream
+          git merge upstream/main --allow-unrelated-histories || true
 
-      - name: Merge playlists (add per-channel backups)
+      - name: Merge playlists and create per-channel backups
         run: |
           set -e
           python3 <<'PY'
+import sys
+from pathlib import Path
 
-          
 main_path = Path("playlist.m3u")
-backup_path = Path("backup.m3u")
-out_path = main_path
 
-def parse_entries(lines):
-    entries = []
-    i = 0
-    n = len(lines)
-    while i < n:
-        line = lines[i].rstrip("\n")
+# Collect all .m3u files except the merged one
+m3u_files = [p for p in Path(".").glob("*.m3u") if p.name != "playlist.m3u"]
+
+lines = []
+for f in m3u_files:
+    with f.open() as fh:
+        lines.extend(fh.readlines())
+
+# Always rewrite playlist.m3u
+with main_path.open("w") as out:
+    if lines:
+        out.writelines(lines)
+    else:
+        out.write("#EXTM3U\n")
+
+# Build per-channel backup files
+if lines:
+    channel_map = {}
+    for line in lines:
         if line.startswith("#EXTINF"):
-            extinf = line
-            j = i + 1
-            url = ""
-            while j < n and (lines[j].strip() == "" or lines[j].startswith("#")):
-                j += 1
-            if j < n:
-                url = lines[j].strip()
-                i = j + 1
-            else:
-                i = j
-            entries.append((extinf, url))
-        else:
-            i += 1
-    return entries
+            name = line.split(",")[-1].strip()
+            channel_map[name] = []
+        if channel_map:
+            channel_map[name].append(line)
 
-def extract_name(extinf_line):
-    if ',' in extinf_line:
-        return extinf_line.split(',', 1)[1].strip().lower()
-    return extinf_line.strip().lower()
-
-if not main_path.exists():
-    print("No playlist.m3u found in repo. Nothing to merge into.")
-    sys.exit(0)
-
-main_lines = main_path.read_text(encoding="utf-8").splitlines()
-backup_lines = backup_path.read_text(encoding="utf-8").splitlines() if backup_path.exists() else []
-
-header_lines = []
-idx = 0
-while idx < len(main_lines) and not main_lines[idx].startswith("#EXTINF"):
-    header_lines.append(main_lines[idx])
-    idx += 1
-
-main_entries = parse_entries(main_lines)
-backup_entries = parse_entries(backup_lines)
-
-backup_map = {}
-for extinf, url in backup_entries:
-    name = extract_name(extinf)
-    if name and url:
-        if name not in backup_map:
-            backup_map[name] = url
-
-out_lines = []
-out_lines.extend(header_lines)
-for extinf, url in main_entries:
-    out_lines.append(extinf)
-    if url:
-        out_lines.append(url)
-    name = extract_name(extinf)
-    b_url = backup_map.get(name)
-    if b_url and b_url.strip() and b_url.strip() != (url or "").strip():
-        out_lines.append(b_url)
-
-out_path.write_text("\n".join(out_lines) + ("\n" if out_lines else ""), encoding="utf-8")
-print("✅ Merged per-channel backups. Wrote", str(out_path))
+    backup_dir = Path("channels")
+    backup_dir.mkdir(exist_ok=True)
+    for name, content in channel_map.items():
+        safe_name = "".join(c if c.isalnum() else "_" for c in name)
+        with (backup_dir / f"{safe_name}.m3u").open("w") as ch_file:
+            ch_file.writelines(content)
 PY
 
-      - name: Commit and push changes
+      - name: Commit updated playlists
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add playlist.m3u
-          git diff --cached --quiet || git commit -m "Update merged playlist"
-          git push
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add playlist.m3u channels/*.m3u || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update playlists & backups"
+            git push
+          fi

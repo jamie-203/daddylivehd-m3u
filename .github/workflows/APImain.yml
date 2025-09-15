@@ -1,0 +1,48 @@
+name: Send DaddyLive Schedule to Discord
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"   # every 3 hours
+  workflow_dispatch:
+
+jobs:
+  send-schedule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch Daddylive schedule
+        run: |
+          # Replace with the real API endpoint you’re calling
+          curl -s "https://daddyliveapi.example/schedule.json" -o schedule.json
+          cat schedule.json
+
+      - name: Send schedule to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          TITLE=$(jq -r 'keys[0]' schedule.json)
+
+          PAYLOAD=$(jq -n \
+            --arg title "📺 DaddyLive Schedule – $TITLE" \
+            --argjson events "$(jq -c '.[]["TV Shows"]' schedule.json)" \
+            '{
+              "embeds": [
+                {
+                  "title": $title,
+                  "color": 5814783,
+                  "fields": (
+                    $events | map({
+                      "name": (.time + " – " + .event),
+                      "value": ("Channel: " + (.channels[0].channel_name // "N/A")),
+                      "inline": false
+                    })
+                  )
+                }
+              ]
+            }')
+
+          echo "$PAYLOAD" | jq .   # debug
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK"

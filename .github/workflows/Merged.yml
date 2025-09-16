@@ -1,55 +1,53 @@
+name: Merge Playlists
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  update-m3u:
+  merge:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repo
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      # 2. Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # 3. Ensure directories exist
-      - name: Ensure directories
+      - name: Merge playlists
         run: |
-          mkdir -p output backups  # 'output' for main playlist, 'backups' for per-channel backups
+          set -euo pipefail
+          echo "#EXTM3U" > daddylive-merged.m3u8
+          for f in *.m3u *.m3u8; do
+            if [ "$f" != "daddylive-merged.m3u8" ]; then
+              tail -n +2 "$f" >> daddylive-merged.m3u8 || true
+            fi
+          done
 
-      # 4. Run the M3U update script with backup logic
-      - name: Run M3U Update Script
+      - name: Fix M3U formatting
         run: |
-          SCRIPT_PATH=".github/scripts/update_m3u.py"  # Replace with your actual script path
-          if [ -f "$SCRIPT_PATH" ]; then
-            python3 "$SCRIPT_PATH"
-          else
-            echo "$SCRIPT_PATH not found!"
-            exit 1
-          fi
+          python3 <<'PY'
+import re, pathlib
+path = pathlib.Path("daddylive-merged.m3u8")
+lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
+fixed = ["#EXTM3U"]
+for i, line in enumerate(lines):
+    if line.startswith("#EXTINF:"):
+        fixed.append(line)
+        if i + 1 < len(lines) and lines[i+1].startswith("http"):
+            fixed.append(lines[i+1])
+path.write_text("\n".join(fixed) + "\n", encoding="utf-8")
+PY
 
-          # Example backup logic (if your script doesn't already do it)
-          if [ -f "playlist.m3u" ]; then
-            cp playlist.m3u backups/playlist_backup_$(date +%Y%m%d%H%M%S).m3u
-            echo "Backup created in backups/ folder"
-          fi
-
-      # 5. Commit main playlist and backups
-      - name: Commit and push updated M3U
+      - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add playlist.m3u backups/*.m3u || echo "No M3U files to add"
-
-          git diff --cached --quiet || git commit -m "Update playlist.m3u and backups after merge"
+          git add daddylive-merged.m3u8
+          git diff --cached --quiet || git commit -m "Update merged M3U"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

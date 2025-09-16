@@ -1,6 +1,6 @@
 name: Update M3U after Merge
 
-# Trigger after any push to main (this includes PR merges)
+# Trigger on any push to main (includes merged PRs)
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repo
+      # 1. Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,18 +21,32 @@ jobs:
         with:
           python-version: '3.x'
 
-      # 3. Run your playlist update script
+      # 3. Ensure directories exist (if your script writes to a folder)
+      - name: Ensure output directories exist
+        run: |
+          mkdir -p output
+
+      # 4. Run the M3U update script safely
       - name: Run M3U Update Script
         run: |
-          python3 update_m3u.py
+          if [ -f "update_m3u.py" ]; then
+            python3 update_m3u.py
+          else
+            echo "update_m3u.py not found!"
+            exit 1
+          fi
 
-      # 4. Commit changes back to repo
+      # 5. Commit updated M3U back to repo safely
       - name: Commit and push updated M3U
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add playlist.m3u
-          git commit -m "Update playlist.m3u after merge" || echo "No changes to commit"
+          
+          # Add your M3U file (adjust path if it’s inside a folder)
+          git add playlist.m3u output/playlist.m3u || echo "No M3U files to add"
+          
+          # Commit changes only if there are any
+          git diff --cached --quiet || git commit -m "Update playlist.m3u after merge"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

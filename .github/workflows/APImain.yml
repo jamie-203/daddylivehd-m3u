@@ -15,7 +15,7 @@ jobs:
       - name: Fetch schedule from Vercel proxy
         run: |
           echo "🔎 Fetching schedule from Vercel proxy..."
-          curl -v --fail https://daddylive-proxy.vercel.app/api/schedule -o schedule.json || {
+          curl -v --fail https://daddylivehd-m3u-11x3.vercel.app/ -o schedule.json || {
             echo "❌ Failed to fetch schedule from Vercel"
             # Optional: post a warning to Discord
             curl -H "Content-Type: application/json" \

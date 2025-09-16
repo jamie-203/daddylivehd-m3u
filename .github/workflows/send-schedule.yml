@@ -3,7 +3,6 @@ name: Send DaddyLive Schedule to Discord
 on:
   schedule:
     - cron: "0 * * * *" # runs every hour, adjust as needed
-jobs:
   send-schedule:
     runs-on: ubuntu-latest
     steps:

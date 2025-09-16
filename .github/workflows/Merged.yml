@@ -6,48 +6,43 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   merge:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          persist-credentials: true
 
       - name: Merge playlists
         run: |
           set -euo pipefail
-          echo "#EXTM3U" > daddylive-merged.m3u8
+          # Create merged file with a single header
+          printf '%s\n' '#EXTM3U' > daddylive-merged.m3u8
+          # Append all playlist body content (skip their header if present)
           for f in *.m3u *.m3u8; do
-            if [ "$f" != "daddylive-merged.m3u8" ]; then
-              tail -n +2 "$f" >> daddylive-merged.m3u8 || true
-            fi
+            [ -f "$f" ] || continue
+            [ "$f" = "daddylive-merged.m3u8" ] && continue
+            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> daddylive-merged.m3u8 || true
           done
 
-      - name: Fix M3U formatting
+      - name: Fix M3U formatting (keep only EXTINF + next URL, remove blanks)
         run: |
-          python3 <<'PY'
-import re, pathlib
-path = pathlib.Path("daddylive-merged.m3u8")
-lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
-fixed = ["#EXTM3U"]
-for i, line in enumerate(lines):
-    if line.startswith("#EXTINF:"):
-        fixed.append(line)
-        if i + 1 < len(lines) and lines[i+1].startswith("http"):
-            fixed.append(lines[i+1])
-path.write_text("\n".join(fixed) + "\n", encoding="utf-8")
-PY
+          awk 'BEGIN{print "#EXTM3U"} /^#EXTINF:/{ext=$0; getline; url=$0; if(url ~ /^https?:/){print ext; print url}}' daddylive-merged.m3u8 > daddylive-merged.tmp && mv daddylive-merged.tmp daddylive-merged.m3u8
 
-      - name: Commit and push if changed
+      - name: Show merged head (for debugging)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          echo "=== merged file head ==="
+          head -n 40 daddylive-merged.m3u8 || true
+
+      - name: Commit & push (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add daddylive-merged.m3u8
-          git diff --cached --quiet || git commit -m "Update merged M3U"
-          git push
+          git diff --cached --quiet || (git commit -m "Auto-update merged M3U" && git push)

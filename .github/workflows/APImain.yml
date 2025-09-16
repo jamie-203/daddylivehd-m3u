@@ -12,13 +12,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch schedule (with debug)
+      - name: Fetch schedule (pretend to be Chrome)
         run: |
           echo "🔎 Fetching schedule from DaddyLive..."
-          curl -v --fail https://daddylivestream.com/schedule/schedule-generated.php -o schedule.json || {
-            echo "❌ Failed to fetch schedule (network or server error)"
-            exit 6
-          }
+          curl -v --fail \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36" \
+            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
+            -H "Accept-Language: en-US,en;q=0.9" \
+            https://daddylivestream.com/schedule/schedule-generated.php -o schedule.json || {
+              echo "❌ Failed to fetch schedule (network or server error)"
+              exit 6
+            }
           echo "✅ Schedule fetched successfully"
           echo "📄 First 20 lines of schedule.json:"
           head -n 20 schedule.json || echo "⚠️ Could not preview schedule.json"

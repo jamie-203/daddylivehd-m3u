@@ -1,102 +1,38 @@
-name: Sync & Update Playlists
+name: Update M3U after Merge
+
+# Trigger after any push to main (this includes PR merges)
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - 'README.md'
-  schedule:
-    - cron: "0 */3 * * *"
+    branches:
+      - main
 
 jobs:
-  update:
+  update-m3u:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      # 1. Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Add upstream and merge
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # 3. Run your playlist update script
+      - name: Run M3U Update Script
         run: |
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git || true
-          git fetch upstream || true
-          git merge upstream/main --allow-unrelated-histories || true
+          python3 update_m3u.py
 
-      - name: Merge playlists and create per-channel backups
+      # 4. Commit changes back to repo
+      - name: Commit and push updated M3U
         run: |
-          set -euo pipefail
-
-          main_path="playlist.m3u"
-          events_path="events.m3u"
-
-          # Reset playlists
-          rm -f "$main_path" "$events_path"
-          touch "$main_path" "$events_path"
-
-          # Collect all .m3u files except the merged ones
-          shopt -s nullglob
-          files=( *.m3u )
-          shopt -u nullglob
-
-          newfiles=()
-          for f in "${files[@]:-}"; do
-            if [ "$f" != "$main_path" ] && [ "$f" != "$events_path" ]; then
-              newfiles+=( "$f" )
-            fi
-          done
-
-          # Merge into playlists
-          if [ ${#newfiles[@]} -gt 0 ]; then
-            for f in "${newfiles[@]}"; do
-              if [[ "$f" == *events* ]]; then
-                cat "$f" >> "$events_path"
-              else
-                cat "$f" >> "$main_path"
-              fi
-            done
-          else
-            printf '%s\n' "#EXTM3U" > "$main_path"
-            printf '%s\n' "#EXTM3U" > "$events_path"
-          fi
-
-          # Create per-channel backups from playlist.m3u
-          mkdir -p channels
-          awk -v outdir=channels '
-            /^#EXTINF/ {
-              if (block != "") {
-                fname = outdir "/" safe
-                print block > fname
-                close(fname)
-              }
-              block = $0 "\n"
-              n = split($0, arr, ",")
-              name = arr[n]
-              gsub(/[^A-Za-z0-9]/, "_", name)
-              safe = name
-              next
-            }
-            {
-              if (block == "") next
-              block = block $0 "\n"
-            }
-            END {
-              if (block != "") {
-                fname = outdir "/" safe
-                print block > fname
-                close(fname)
-              }
-            }
-          ' "$main_path"
-
-      - name: Commit updated playlists
-        run: |
-          git config --local user.name "Coderabbit"
-          git config --local user.email "coderabbit@users.noreply.github.com"
-
-          git add playlist.m3u events.m3u channels/*.m3u || true
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Update playlists & events & backups"
-            git push
-
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u
+          git commit -m "Update playlist.m3u after merge" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

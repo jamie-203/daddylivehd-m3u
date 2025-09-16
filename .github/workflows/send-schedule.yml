@@ -1,0 +1,44 @@
+name: Send DaddyLive Schedule to Discord
+
+on:
+  schedule:
+    - cron: "0 * * * *" # runs every hour, adjust as needed
+  workflow_dispatch:
+
+jobs:
+  send-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch schedule from Vercel proxy
+        run: |
+          echo "🔎 Fetching schedule from Vercel proxy..."
+          curl -v --fail https://daddylive-proxy.vercel.app/api/schedule -o schedule.json || {
+            echo "❌ Failed to fetch schedule from Vercel"
+            exit 6
+          }
+          echo "✅ Schedule fetched successfully"
+          echo "📄 First 20 lines of schedule.json:"
+          head -n 20 schedule.json || echo "⚠️ Could not preview schedule.json"
+
+      - name: Validate JSON
+        run: |
+          echo "🔎 Validating JSON..."
+          cat schedule.json | python3 -m json.tool > /dev/null || {
+            echo "❌ Invalid JSON received"
+            exit 7
+          }
+          echo "✅ JSON is valid"
+
+      - name: Send to Discord
+        run: |
+          echo "🔎 Sending schedule to Discord..."
+          curl -v -H "Content-Type: application/json" \
+               -d @schedule.json \
+               "${{ secrets.DISCORD_WEBHOOK }}" || {
+            echo "❌ Failed to send message to Discord (webhook issue)"
+            exit 8
+          }
+          echo "✅ Message sent to Discord"

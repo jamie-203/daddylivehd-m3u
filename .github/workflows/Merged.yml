@@ -1,5 +1,4 @@
 name: Sync & Update Playlists
-
 on:
   workflow_dispatch:
   push:

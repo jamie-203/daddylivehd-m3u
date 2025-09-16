@@ -1,6 +1,5 @@
-name: Update M3U after Merge
+name: Update M3U with Channel Backups
 
-# Trigger on any push to main (includes merged PRs)
 on:
   push:
     branches:
@@ -11,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repository
+      # 1. Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,32 +20,37 @@ jobs:
         with:
           python-version: '3.x'
 
-      # 3. Ensure directories exist (if your script writes to a folder)
-      - name: Ensure output directories exist
+      # 3. Ensure directories exist
+      - name: Ensure directories
         run: |
-          mkdir -p output
+          mkdir -p output backups  # 'output' for main playlist, 'backups' for per-channel backups
 
-      # 4. Run the M3U update script safely
+      # 4. Run the M3U update script with backup logic
       - name: Run M3U Update Script
         run: |
-          if [ -f "update_m3u.py" ]; then
-            python3 update_m3u.py
+          SCRIPT_PATH=".github/scripts/update_m3u.py"  # Replace with your actual script path
+          if [ -f "$SCRIPT_PATH" ]; then
+            python3 "$SCRIPT_PATH"
           else
-            echo "update_m3u.py not found!"
+            echo "$SCRIPT_PATH not found!"
             exit 1
           fi
 
-      # 5. Commit updated M3U back to repo safely
+          # Example backup logic (if your script doesn't already do it)
+          if [ -f "playlist.m3u" ]; then
+            cp playlist.m3u backups/playlist_backup_$(date +%Y%m%d%H%M%S).m3u
+            echo "Backup created in backups/ folder"
+          fi
+
+      # 5. Commit main playlist and backups
       - name: Commit and push updated M3U
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Add your M3U file (adjust path if it’s inside a folder)
-          git add playlist.m3u output/playlist.m3u || echo "No M3U files to add"
-          
-          # Commit changes only if there are any
-          git diff --cached --quiet || git commit -m "Update playlist.m3u after merge"
+
+          git add playlist.m3u backups/*.m3u || echo "No M3U files to add"
+
+          git diff --cached --quiet || git commit -m "Update playlist.m3u and backups after merge"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,7 +2,7 @@ name: Send DaddyLive Schedule to Discord
 
 on:
   schedule:
-    - cron: "0 * * * *" # every hour, adjust if needed
+    - cron: "0 * * * *" # runs every hour, adjust as needed
   workflow_dispatch:
 
 jobs:
@@ -12,17 +12,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch schedule (pretend to be Chrome)
+      - name: Fetch schedule from Vercel proxy
         run: |
-          echo "🔎 Fetching schedule from DaddyLive..."
-          curl -v --fail \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
-            -H "Accept-Language: en-US,en;q=0.9" \
-            https://daddylivestream.com/schedule/schedule-generated.php -o schedule.json || {
-              echo "❌ Failed to fetch schedule (network or server error)"
-              exit 6
-            }
+          echo "🔎 Fetching schedule from Vercel proxy..."
+          curl -v --fail https://daddylive-proxy.vercel.app/api/schedule -o schedule.json || {
+            echo "❌ Failed to fetch schedule from Vercel"
+            # Optional: post a warning to Discord
+            curl -H "Content-Type: application/json" \
+                 -d '{"content":"⚠️ Failed to fetch schedule from Vercel"}' \
+                 "${{ secrets.DISCORD_WEBHOOK }}" || echo "⚠️ Could not send error to Discord"
+            exit 6
+          }
           echo "✅ Schedule fetched successfully"
           echo "📄 First 20 lines of schedule.json:"
           head -n 20 schedule.json || echo "⚠️ Could not preview schedule.json"
@@ -32,11 +32,14 @@ jobs:
           echo "🔎 Validating JSON..."
           cat schedule.json | python3 -m json.tool > /dev/null || {
             echo "❌ Invalid JSON received"
+            curl -H "Content-Type: application/json" \
+                 -d '{"content":"⚠️ Invalid JSON received from schedule"}' \
+                 "${{ secrets.DISCORD_WEBHOOK }}" || echo "⚠️ Could not send error to Discord"
             exit 7
           }
           echo "✅ JSON is valid"
 
-      - name: Send to Discord (with debug)
+      - name: Send to Discord
         run: |
           echo "🔎 Sending schedule to Discord..."
           curl -v -H "Content-Type: application/json" \

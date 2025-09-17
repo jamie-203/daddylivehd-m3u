@@ -1,0 +1,54 @@
+name: Coderabbit M3U Auto-Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # 3. Ensure directories exist
+      - name: Prepare directories
+        run: |
+          mkdir -p output backups
+
+      # 4. Run M3U update script
+      - name: Run M3U Update Script
+        run: |
+          SCRIPT_PATH=".github/scripts/update_m3u.py"  # adjust to actual script path
+          if [ -f "$SCRIPT_PATH" ]; then
+            python3 "$SCRIPT_PATH"
+          else
+            echo "$SCRIPT_PATH not found!"
+            exit 1
+          fi
+
+          # Backup the generated playlist
+          if [ -f "playlist.m3u" ]; then
+            cp playlist.m3u backups/playlist_backup_$(date +%Y%m%d%H%M%S).m3u
+            echo "Backup created in backups/"
+          fi
+
+      # 5. Commit & push changes to PR branch
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add playlist.m3u backups/*.m3u || echo "No files to add"
+          git diff --cached --quiet || git commit -m "Coderabbit: auto-update M3U + backups"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,4 @@
-name: Merge Playlists
+name: Merge Playlists (parallel validation, reduced workers)
 
 on:
   push:
@@ -19,51 +19,143 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Merge playlists
+      - name: Merge playlists into .m3u
         run: |
           set -euo pipefail
-          # Create merged file with a single header
-          printf '%s\n' '#EXTM3U' > daddylive-merged.m3u8
-          # Append all playlist body content (skip their header if present)
-          for f in *.m3u *.m3u8; do
+          OUT="daddylive-merged.m3u"
+          printf '%s\n' '#EXTM3U' > "$OUT"
+
+          # Preferred files first (channel & events)
+          for f in channel.m3u events.m3u; do
             [ -f "$f" ] || continue
-            [ "$f" = "daddylive-merged.m3u8" ] && continue
-            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> daddylive-merged.m3u8 || true
+            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
           done
 
-      - name: Fix M3U formatting (keep only EXTINF + next URL, remove blanks)
-        run: |
-          awk 'BEGIN{print "#EXTM3U"} /^#EXTINF:/{ext=$0; getline; url=$0; if(url ~ /^https?:/){print ext; print url}}' daddylive-merged.m3u8 > daddylive-merged.tmp && mv daddylive-merged.tmp daddylive-merged.m3u8
+          # Then append any other playlists (exclude the merged output)
+          for f in *.m3u *.m3u8; do
+            [ -f "$f" ] || continue
+            [ "$f" = "$OUT" ] && continue
+            [ "$f" = "channel.m3u" ] && continue
+            [ "$f" = "events.m3u" ] && continue
+            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
+          done
 
-      - name: Show merged head (for debugging)
+      - name: Clean formatting & remove group-title="Live"
         run: |
-          echo "=== merged file head ==="
-          head -n 40 daddylive-merged.m3u8 || true
+          awk 'BEGIN{print "#EXTM3U"} /^#EXTINF:/{ext=$0; getline; url=$0; if (ext ~ /group-title="Live"/) next; if(url ~ /^https?:/){print ext; print url}}' daddylive-merged.m3u > daddylive-merged.unvalidated.m3u
+          echo "Unvalidated playlist lines:" && wc -l daddylive-merged.unvalidated.m3u || true
 
-      - name: Commit & push (if changed)
+      - name: Create parallel validator script
+        run: |
+          cat > validate_parallel.py <<'PY'
+#!/usr/bin/env python3
+import sys
+import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def read_pairs(path):
+    lines = []
+    with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+        for l in f:
+            lines.append(l.rstrip('\n'))
+    # skip header if present
+    if lines and lines[0].strip().upper() == '#EXTM3U':
+        lines = lines[1:]
+    pairs = []
+    i = 0
+    while i < len(lines):
+        ext = lines[i].strip()
+        if i+1 < len(lines):
+            url = lines[i+1].strip()
+        else:
+            url = ''
+        pairs.append((ext, url))
+        i += 2
+    return pairs
+
+def check_url(url, timeout_head=6, timeout_get=8):
+    # Try HEAD first, then GET fallback if HEAD unsupported
+    try:
+        # HEAD
+        p = subprocess.run(['curl','-sSfI','-m',str(timeout_head), url],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if p.returncode == 0:
+            return True
+        # GET fallback
+        p = subprocess.run(['curl','-sSf','-m',str(timeout_get), url],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return p.returncode == 0
+    except Exception:
+        return False
+
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: validate_parallel.py <input_unvalidated.m3u> <output_validated.m3u> [workers]", file=sys.stderr)
+        sys.exit(2)
+    infile = sys.argv[1]
+    outfile = sys.argv[2]
+    workers = int(sys.argv[3]) if len(sys.argv) > 3 else 16
+
+    pairs = read_pairs(infile)
+    total = len(pairs)
+    print(f"Found {total} entries to validate. Using {workers} workers.")
+
+    results = [False] * total
+
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        future_to_index = { ex.submit(check_url, pairs[i][1]): i for i in range(total) }
+        for fut in as_completed(future_to_index):
+            idx = future_to_index[fut]
+            try:
+                ok = fut.result()
+            except Exception:
+                ok = False
+            results[idx] = ok
+
+    kept = 0
+    with open(outfile, 'w', encoding='utf-8') as out, open('daddylive-dead-links.log', 'w', encoding='utf-8') as dead:
+        out.write('#EXTM3U\n')
+        for (ext, url), ok in zip(pairs, results):
+            if ok:
+                out.write(f"{ext}\n{url}\n")
+                kept += 1
+            else:
+                dead.write(f"{url}\n")
+
+    print(f"Validation complete. kept={kept} skipped={total-kept}")
+    if kept == 0:
+        print("WARNING: no working streams found. The unvalidated playlist remains for debugging.", file=sys.stderr)
+        sys.exit(1)
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
+PY
+          chmod +x validate_parallel.py
+
+      - name: Run parallel validation (8 workers)
+        run: |
+          # params: input unvalidated file -> output validated file -> worker count
+          python3 validate_parallel.py daddylive-merged.unvalidated.m3u daddylive-merged.m3u 8 || true
+          echo "Validator exit code captured; check daddylive-dead-links.log if present"
+
+      - name: If validator produced nothing, restore unvalidated (safety)
+        run: |
+          if [ ! -s daddylive-merged.m3u ]; then
+            echo "No validated output produced; restoring unvalidated playlist for debugging."
+            mv daddylive-merged.unvalidated.m3u daddylive-merged.m3u
+          fi
+
+      - name: Show merged head (debug)
+        run: |
+          echo "=== daddylive-merged.m3u head ==="
+          head -n 80 daddylive-merged.m3u || true
+          echo "=== Dead links (tail) ==="
+          tail -n 40 daddylive-dead-links.log || true
+
+      - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daddylive-merged.m3u8
-          git diff --cached --quiet || (git commit -m "Auto-update merged M3U" && git push)
-
-            - name: Cache
-  uses: actions/cache@v4.2.4
-  with:
-    # A list of files, directories, and wildcard patterns to cache and restore
-    path: 
-    # An explicit key for restoring and saving the cache
-    key: 
-    # An ordered multiline string listing the prefix-matched keys, that are used for restoring stale cache if no cache hit occurred for key. Note `cache-hit` returns false in this case.
-    restore-keys: # optional
-    # The chunk size used to split up large files during upload, in bytes
-    upload-chunk-size: # optional
-    # An optional boolean when enabled, allows windows runners to save or restore caches that can be restored or saved respectively on other platforms
-    enableCrossOsArchive: # optional, default is false
-    # Fail the workflow if cache entry is not found
-    fail-on-cache-miss: # optional, default is false
-    # Check if a cache entry exists for the given input(s) (key, restore-keys) without downloading the cache
-    lookup-only: # optional, default is false
-    # Run the post step to save the cache even if another step before fails
-    save-always: # optional, default is false
-          
+          git add daddylive-merged.m3u daddylive-dead-links.log || true
+          git diff --cached --quiet || (git commit -m "Auto-update merged M3U (cleaned, validated parallel, Live removed, workers=8)" && git push)

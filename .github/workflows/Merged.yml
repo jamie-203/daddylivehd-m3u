@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 * * * *"   # every hour
 
+permissions:
+  contents: write
+
 jobs:
   merge:
     runs-on: ubuntu-latest
@@ -12,17 +15,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          persist-credentials: true
 
-      - name: Install deps
-        run: pip install requests
+      - name: Merge playlists
+        run: |
+          set -euo pipefail
+          OUT="daddylive-merged.m3u"
+          printf '%s\n' '#EXTM3U' > "$OUT"
+          # preferred sources first
+          for f in channel.m3u events.m3u; do
+            [ -f "$f" ] || continue
+            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
+          done
+          # then any other playlists
+          for f in *.m3u *.m3u8; do
+            [ -f "$f" ] || continue
+            [ "$f" = "$OUT" ] && continue
+            [ "$f" = "channel.m3u" ] && continue
+            [ "$f" = "events.m3u" ] && continue
+            awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
+          done
 
-      # --- OpenRouter key check (safe) ---
-      - name: Test OpenRouter key (quick curl HEAD)
+      - name: Clean & remove group-title="Live"
+        run: |
+          awk 'BEGIN{print "#EXTM3U"} /^#EXTINF:/{ext=$0; getline; url=$0; if (ext ~ /group-title="Live"/) next; if(url ~ /^https?:/){print ext; print url}}' daddylive-merged.m3u > daddylive-merged.tmp && mv daddylive-merged.tmp daddylive-merged.m3u
+
+      - name: Test OpenRouter key (HEAD)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
@@ -33,45 +52,24 @@ jobs:
             exit 1
           fi
 
-      - name: Functional OpenRouter test (Python, safe output)
+      - name: Functional OpenRouter test (curl POST)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          python3 - <<'PY'
-import os, sys, requests
-key = os.environ.get("OPENROUTER_API_KEY")
-if not key:
-    print("No key in env"); sys.exit(2)
-
-headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
-body = {"model": "gpt-4o-mini", "messages": [{"role":"user","content":"Say 'hello' in one sentence."}]}
-
-try:
-    r = requests.post("https://api.openrouter.ai/v1/chat/completions", json=body, headers=headers, timeout=15)
-    if r.ok:
-        print("API OK — response snippet:")
-        print(r.text[:300].replace("\\n"," "))
-    else:
-        print(f"API returned status {r.status_code}")
-        sys.exit(1)
-except Exception as e:
-    print("Request error:", e)
-    sys.exit(1)
-PY
-
-      # --- Your playlist merging logic ---
-      - name: Merge playlists
-        run: |
-          set -e
-          echo "#EXTM3U" > daddylive-merged.m3u8
-          cat playlist1.m3u playlist2.m3u >> daddylive-merged.m3u8
-          # remove duplicate EXTM3U headers
-          sed -i '2,${/^#EXTM3U$/d}' daddylive-merged.m3u8
+          set -euo pipefail
+          PAYLOAD='{"model":"gpt-4o-mini","messages":[{"role":"user","content":"Say hello in one sentence."}]}'
+          RESP=$(curl -s -H "Authorization: Bearer $OPENROUTER_API_KEY" -H "Content-Type: application/json" -d "$PAYLOAD" https://api.openrouter.ai/v1/chat/completions || true)
+          if [ -z "$RESP" ]; then
+            echo "No response from API"
+            exit 1
+          fi
+          echo "API OK — response snippet:"
+          printf '%s' "$RESP" | head -c 400
+          echo
 
       - name: Commit merged file
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add daddylive-merged.m3u8
-          git commit -m "Update merged playlist" || echo "No changes"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add daddylive-merged.m3u
+          git diff --cached --quiet || (git commit -m "Auto-update merged M3U" && git push)

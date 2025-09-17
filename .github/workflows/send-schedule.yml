@@ -1,4 +1,5 @@
-2name: Send Schedule
+name: Send Schedule
+
 
 on:
   schedule:

@@ -20,12 +20,14 @@ jobs:
 
       - name: Merge playlists
         run: |
+          echo "🔄 Starting playlist merge..."
           set -euo pipefail
           OUT="daddylive-merged.m3u"
           printf '%s\n' '#EXTM3U' > "$OUT"
           # preferred sources first
           for f in channel.m3u events.m3u; do
             [ -f "$f" ] || continue
+            echo "➕ Adding $f"
             awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
           done
           # then any other playlists
@@ -34,43 +36,57 @@ jobs:
             [ "$f" = "$OUT" ] && continue
             [ "$f" = "channel.m3u" ] && continue
             [ "$f" = "events.m3u" ] && continue
+            echo "➕ Adding $f"
             awk 'NR==1 && /^#EXTM3U/ { next } { print }' "$f" >> "$OUT" || true
           done
+          echo "✅ Merge complete"
 
       - name: Clean & remove group-title="Live"
         run: |
+          echo "🧹 Cleaning merged playlist..."
           awk 'BEGIN{print "#EXTM3U"} /^#EXTINF:/{ext=$0; getline; url=$0; if (ext ~ /group-title="Live"/) next; if(url ~ /^https?:/){print ext; print url}}' daddylive-merged.m3u > daddylive-merged.tmp && mv daddylive-merged.tmp daddylive-merged.m3u
+          echo "✅ Cleanup complete"
 
       - name: Test OpenRouter key (HEAD)
-        if: ${{ secrets.OPENROUTER_API_KEY != '' }}
+        if: env.OPENROUTER_API_KEY != ''
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
+          echo "🔑 Testing OpenRouter API key (HEAD)..."
           if curl -sSf -I -H "Authorization: Bearer $OPENROUTER_API_KEY" "https://api.openrouter.ai/v1/models" >/dev/null 2>&1; then
-            echo "Key OK"
+            echo "✅ Key OK"
           else
-            echo "Key failed (but not fatal since secret is optional)"
+            echo "⚠️ Key failed (but not fatal since secret is optional)"
           fi
 
       - name: Functional OpenRouter test (curl POST)
-        if: ${{ secrets.OPENROUTER_API_KEY != '' }}
+        if: env.OPENROUTER_API_KEY != ''
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
+          echo "🤖 Running functional OpenRouter test..."
           set -euo pipefail
           PAYLOAD='{"model":"gpt-4o-mini","messages":[{"role":"user","content":"Say hello in one sentence."}]}'
           RESP=$(curl -s -H "Authorization: Bearer $OPENROUTER_API_KEY" -H "Content-Type: application/json" -d "$PAYLOAD" https://api.openrouter.ai/v1/chat/completions || true)
           if [ -z "$RESP" ]; then
-            echo "No response from API (but not fatal since secret is optional)"
+            echo "⚠️ No response from API — continuing anyway."
           else
-            echo "API OK — response snippet:"
+            echo "✅ API responded — snippet below:"
             printf '%s' "$RESP" | head -c 400
             echo
           fi
 
       - name: Commit merged file
         run: |
+          echo "💾 Committing merged playlist..."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add daddylive-merged.m3u
           git diff --cached --quiet || (git commit -m "Auto-update merged M3U" && git push)
+          echo "✅ Commit step done"
+
+      - name: Final summary
+        run: |
+          echo ""
+          echo "🎉 Workflow completed successfully!"
+          echo "📂 Generated file: daddylive-merged.m3u"

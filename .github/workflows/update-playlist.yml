@@ -2,31 +2,36 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: "0 */3 * * *" # every 3 hours
+    - cron: "*/30 * * * *"   # every 30 mins
   workflow_dispatch:
+
+permissions:
+  contents: write   # allow pushing back to repo
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          ref: main    # ensure we’re on the right branch
+          fetch-depth: 0
 
-      - name: Install dependencies
-        run: npm install node-fetch@2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Run generator
-        run: node generate-playlist.js
-
-      - name: Commit & Push
+      - name: Update playlist
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add daddylive.m3u
-          git commit -m "Auto-update playlist"
-          git push
+          set -e
+          python3 scripts/update_playlist.py   # replace with your real script
+
+      - name: Commit & Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Auto-update playlist [skip ci]" || echo "No changes to commit"
+          git push origin main

@@ -2,7 +2,7 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,9 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f package.json ]; then
-            npm install
-          fi
+          npm install node-fetch@3
 
       - name: Generate playlist
         run: |

@@ -22,17 +22,45 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Fetch DaddyLive schedule
+      - name: Fetch DaddyLive schedule with retries
         run: |
-          curl -sL "https://daddylivestream.com/schedule/schedule-generated.php" -o schedule.json
-          if [ ! -s schedule.json ]; then
-            echo "❌ ERROR: Failed to download schedule.json (file is empty)."
+          MAX_RETRIES=25
+          COUNT=0
+          STATUS=0
+          while [ $COUNT -lt $MAX_RETRIES ]; do
+            STATUS=$(curl -s -o schedule.json -w "%{http_code}" "https://daddylivestream.com/schedule/schedule-generated.php")
+            if [ "$STATUS" -eq 200 ] && [ -s schedule.json ]; then
+              echo "✅ schedule.json fetched successfully on attempt $((COUNT+1))"
+              break
+            fi
+            COUNT=$((COUNT+1))
+            echo "⚠️ Attempt $COUNT failed (HTTP $STATUS). Retrying in 5 seconds..."
+            sleep 5
+          done
+
+          if [ "$STATUS" -ne 200 ] || [ ! -s schedule.json ]; then
+            echo "❌ Failed to fetch schedule after $MAX_RETRIES attempts."
+
+            # Send red error embed to Discord
+            curl -H "Content-Type: application/json" \
+                 -X POST \
+                 -d "{
+                       \"username\": \"DaddyLive Schedule\",
+                       \"embeds\": [
+                         {
+                           \"title\": \"⚠️ ERROR: Schedule Fetch Failed\",
+                           \"description\": \"Failed to fetch DaddyLive schedule after $MAX_RETRIES attempts. Last HTTP status $STATUS.\",
+                           \"color\": 16711680
+                         }
+                       ]
+                     }" \
+                 "${{ secrets.DISCORD_WEBHOOK }}"
+
             exit 1
           fi
 
       - name: Build Discord embed payload
         run: |
-          # Build fields for each day
           FIELDS=$(jq -c '
             to_entries |
             map({
@@ -46,13 +74,12 @@ jobs:
             })
           ' schedule.json)
 
-          # Wrap fields in embeds JSON
-          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"Upcoming Events\", \"color\": 5814783, \"fields\": $FIELDS}]}" > discord_payload.json
+          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"✅ Upcoming Events\", \"color\": 65280, \"fields\": $FIELDS}]}" > discord_payload.json
           cat discord_payload.json
 
       - name: Send schedule to Discord
         run: |
-          curl -v -H "Content-Type: application/json" \
+          curl -H "Content-Type: application/json" \
                -X POST \
                -d @discord_payload.json \
                "${{ secrets.DISCORD_WEBHOOK }}"

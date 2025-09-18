@@ -2,31 +2,37 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 mins
+    - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
 
 permissions:
-  contents: write   # allow pushing back to repo
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: main    # ensure we’re on the right branch
+          ref: main
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.x'
+          node-version: '18'
 
-      - name: Update playlist
+      - name: Install dependencies
         run: |
-          set -e
-          python3 scripts/update_playlist.py   # replace with your real script
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Generate playlist
+        run: |
+          node generate-playlist.js
 
       - name: Commit & Push changes
         run: |

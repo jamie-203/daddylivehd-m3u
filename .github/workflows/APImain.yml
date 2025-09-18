@@ -22,13 +22,13 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Fetch DaddyLive schedule with retries
+      - name: Fetch schedule from GitHub with retries
         run: |
           MAX_RETRIES=25
           COUNT=0
           STATUS=0
           while [ $COUNT -lt $MAX_RETRIES ]; do
-            STATUS=$(curl -s -o schedule.json -w "%{http_code}" "https://daddylivestream.com/schedule/schedule-generated.php")
+            STATUS=$(curl -s -o schedule.json -w "%{http_code}" "https://raw.githubusercontent.com/DisabledAbel/daddylivehd-m3u/main/schedule.json")
             if [ "$STATUS" -eq 200 ] && [ -s schedule.json ]; then
               echo "✅ schedule.json fetched successfully on attempt $((COUNT+1))"
               break
@@ -49,7 +49,7 @@ jobs:
                        \"embeds\": [
                          {
                            \"title\": \"⚠️ ERROR: Schedule Fetch Failed\",
-                           \"description\": \"Failed to fetch DaddyLive schedule after $MAX_RETRIES attempts. Last HTTP status $STATUS.\",
+                           \"description\": \"Failed to fetch schedule.json from GitHub after $MAX_RETRIES attempts. Last HTTP status $STATUS.\",
                            \"color\": 16711680
                          }
                        ]
@@ -67,7 +67,6 @@ jobs:
 
       - name: Build Discord embed payload
         run: |
-          # Get current timestamp in ISO 8601 format for Discord
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
           FIELDS=$(jq -c '
@@ -83,8 +82,7 @@ jobs:
             })
           ' schedule.json)
 
-          # Add timestamp to embed
-          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"✅ Upcoming Events\", \"color\": 65280, \"fields\": $FIELDS, \"timestamp\": \"$TIMESTAMP\"}]}" > discord_payload.json
+          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"✅ Upcoming Events\", \"color\": 65280, \"fields\": $FIELDS, \"timestamp\": \"$TIMESTAMP\", \"footer\": {\"text\": \"Updated by GitHub Actions\"}}]}" > discord_payload.json
           cat discord_payload.json
 
       - name: Send schedule to Discord
@@ -99,4 +97,3 @@ jobs:
           else
             echo "❌ Failed to send schedule to Discord. HTTP status $SEND_STATUS"
             exit 1
-          fi

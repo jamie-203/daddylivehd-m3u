@@ -42,7 +42,7 @@ jobs:
             echo "❌ Failed to fetch schedule after $MAX_RETRIES attempts."
 
             # Send red error embed to Discord
-            curl -H "Content-Type: application/json" \
+            SEND_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "Content-Type: application/json" \
                  -X POST \
                  -d "{
                        \"username\": \"DaddyLive Schedule\",
@@ -54,13 +54,22 @@ jobs:
                          }
                        ]
                      }" \
-                 "${{ secrets.DISCORD_WEBHOOK }}"
+                 "${{ secrets.DISCORD_WEBHOOK }}")
+
+            if [ "$SEND_STATUS" -eq 204 ]; then
+              echo "✅ Error embed successfully sent to Discord."
+            else
+              echo "❌ Failed to send error embed to Discord. HTTP status $SEND_STATUS"
+            fi
 
             exit 1
           fi
 
       - name: Build Discord embed payload
         run: |
+          # Get current timestamp in ISO 8601 format for Discord
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
           FIELDS=$(jq -c '
             to_entries |
             map({
@@ -74,12 +83,20 @@ jobs:
             })
           ' schedule.json)
 
-          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"✅ Upcoming Events\", \"color\": 65280, \"fields\": $FIELDS}]}" > discord_payload.json
+          # Add timestamp to embed
+          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"✅ Upcoming Events\", \"color\": 65280, \"fields\": $FIELDS, \"timestamp\": \"$TIMESTAMP\"}]}" > discord_payload.json
           cat discord_payload.json
 
       - name: Send schedule to Discord
         run: |
-          curl -H "Content-Type: application/json" \
+          SEND_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "Content-Type: application/json" \
                -X POST \
                -d @discord_payload.json \
-               "${{ secrets.DISCORD_WEBHOOK }}"
+               "${{ secrets.DISCORD_WEBHOOK }}")
+
+          if [ "$SEND_STATUS" -eq 204 ]; then
+            echo "✅ Schedule successfully sent to Discord."
+          else
+            echo "❌ Failed to send schedule to Discord. HTTP status $SEND_STATUS"
+            exit 1
+          fi

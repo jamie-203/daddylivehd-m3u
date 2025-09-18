@@ -1,1 +1,1732 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'world-proxifier.xyz',cType: 'managed',cRay: '9804b22f3ef82b4e',cH: 'shftUxC0CS4hP.U6KrPL.JYZA_eXKvGs8fBWMih62RY-1758071134-1.2.1.1-R3rQQ5bxDzghcV3L0HMCkG_w4pOz_8nrdZDIGAcasEk5HV9G9VyZupKRAFq9WUaB',cUPMDTk:"\/m3u8\/daddylive-events-epg.xml?__cf_chl_tk=FpCE3gEPugfm3chizfqOc16UfxFjoPZoDqFpiE9g4bM-1758071134-1.0.1.1-CptW19l9CVJPv0sdvXUm0rkudQOuEdOCkJ58oKFUYPE",cFPWv: 'g',cITimeS: '1758071134',cTplC:0,cTplV:5,cTplB: 'cf',fa:"\/m3u8\/daddylive-events-epg.xml?__cf_chl_f_tk=FpCE3gEPugfm3chizfqOc16UfxFjoPZoDqFpiE9g4bM-1758071134-1.0.1.1-CptW19l9CVJPv0sdvXUm0rkudQOuEdOCkJ58oKFUYPE",md: 'XfBL5bjau.yLIvdZjfiDnKFwmnmKZ5j32D2n7sCGa2E-1758071134-1.2.1.1-ByN7wJ9eII3zq35C8fIdur1YWnejsz2ChSxY0UtBeBU450bVk36xFIPj15qNKYTHAAGgOfvvT1ngCMrODACJGF.gEFDr3P7_03SbOvcElCVWtxg09a5bZ3VtP0BSqxykzJcAy5CSPkTG9V5I_S0.ef6OplAqDlgZfW97OvNQGGr0tsbuKpMjEXcTsi4OUUL4WRFuA2YSQt_KntMBsWO_05HeVb3OC88jdnc9mp5U5CRj8dg8ESccJH9.6P8AqIhjBHr1KfW1skbnqqwqzFEws6tfH7LpS4oOjArCD.x_hoJcb8uBTTSyYolez06dZc9FHbQIIvBn9EJYRG_VAGjhBOy.O5UcX4iXQ7Hslkzthby9wK_AdtKP2v2ej6GX5FTByzmMiU0dh7zyvasCC6kS4vnZPx8PeiyEPq2noIGh23e4V67BvvuKubFCOpCD74.e5vQbTb7GNBt7FpQ6hYNL3ycGIluBzkPrlfjy.6NVPjukC_A1y7qRWgBfUfURCNyMUz6cL7jm6EbpS_pPrtPnkrlk_f4_NiGEjZkVQiVqaIr9U1SpgZBgdTWmbZU8H6hTzYEbRKhz_b5o174niUWmsF0Vz0Fv_VUAsv5FmMJ8dObI1L9ZK_N6mvBb3Zzb8ky0T1uzbySusFtQ_yK6NbV.6Tm8.BS8uBJnKm00LUd9rVPXoC04rhEmkfEM4TThyfwSy.slNIQP__LCyk9HeTtsipzVx_Qnuk6b4rK38JQLQIi0kbET6l.cj0Rsbg1oYDHtOyFLxMCmWYMpTkjRDFSRuPfIULt.FoKwEFHQvftgT3vuKbET4bOMavOYP8JOJiyHdm6UbjZEUpxaoRt8nRMGIXHeNS4ThgsFAHi1ywbh5flOJVbwvIs_2JaPmsISgAmhQiZ39XERGk_tiY3RjL7ZEJUocUNjc5Buh1X70W8bFCckDNuPI09dltOzZhGm9YRvcE_gYMM0TcRLpctiTn_y_g',mdrd: 'Cxn1XyuDmTznx3twd_X05.qB2nGC8PgfKcFPBJZxnDA-1758071134-1.2.1.1-FV1lvhJiksNSmeEp84HQ1.rZpBUSJUgjPAnqzpBu82WYcgsUU0T.zdj7jmvVgrYlO2moo9lMxon56Wd680zO6ky0ri_w2uCUIjEXCnGr4RnA_uZBqI1VHN.DxOwbeZ3INp36SaPudmygeaal9fSDIZxQwStIObvg9tZ6u7EGfuTNzeS6Fgb5CRCDlTE6EkK5zGDb2ltTUdXFvxsV9SILwpWlGeiKjTb4U.I6MO3lncFlYURQlAkiuKNPgqz331Ea7GjIC.5A.DcP6jvhOshzLXH1__Jrbg6rP4B3UTpcgryF5Yuyi_OBytx5MeLY20OdKZStce2vfF5jyo1O1y3SxWjJXj2O.IKrs7VOoYarFSrrGTJRrbEufwxQQWO3sNYT0yp.FpYVGaKEtgrLMKJVHYbhdmgUbYFAwj.Z75T9Dz4J57Ckt6XRXSwMaNDyavKvt5BHng30OZQ3.9IEq0_13Cl_Ej6LILsUCNzTvVG6rebeYkx8OVu2VEg3dSenb888khYU4nlvejWMwauxwwLBDRtCJsIeuaz_4jJv4w_jqMOqVDvXQfjFcAtTdsNOg0r.j1jvr.EEkq2KBrJaJFK9S3FXGG4r3bvzSAJ5omSsFD4zIJXmeL9eE4DajexQoRJG6WcD9SHs4HTcEIERvLcMTqJ2Dlq8sgSLKGISxkdzrVxG3nEXpW2EfUp6Y7I_tGjANtkZJQMtABmBMpQ82kt4CM4uRsuLflt..3vV5L1VKn305m2YZo2LdkyeaXbVIYzbWlTHvvQWbeKGjdi72HfO7v7.9jRC4NsMH2wPqbP6vT7ZMcCC4f3Nt_d7bzmrlxWSWwC2XP1Dx9RF6prL9g8DEdeRE6WfOmoQlKIgKlR5IA9uL4gBuHZJzPH.GOYx_2K7tkIbf6P6FKLlGu8vUVjKcAYSTu9ZYqNs4jSpzATedl_S2YRiLtGjyrr0dRAwwPsTTfBk3B3h2irBRgaUGYUub7KNNwnQRiYKoc2JEj.SVG2gWYGxMS3Arc_MiH8VNMM_l2F.RENR9xkoxQQ7zKcNd5MnL6Gw4ztRkz3JthsMtWXi1LSWtv24zVCcL94klohNPUBHi6luleiOpln9VHMPsCRryatPDSwjCS5M0Rd6JTJMtTcR4IAKB1KjR7qiKasWLCMHp5ThzHRSogvSwAAofZcTujjxwvaZCOB_eC0ta0kt4512Rc0wph4eVLSgSYmbQoCunM2y9gukUC6.O_2olAlC1KYTDXr4MphK6bnOLCLs7HNHc7ZTxfoycFjoGaMtRvpyNo34M5n2gguJW3UgmQfP7OnBXUFRp7jMXU6yZvmq6g7aSZdij9k4hmTFDmYugyLTpdzx0Wob5ti9hQHxmshjH3Z3CVI4N4UEjJz4dlxKH5eywEngJsWEceGOort3qWIjz3TSrq3jC5w8Ps3ycBv5rlpHqdugo6bt6tLLnSmFPXLnpGxipUMzzXorAbKLrUzW_zLCrYtD4eyOA0Kk6Sb56RfTmGl50BXh5ckDUdSTMT429RIIuULl8kX01gcpHDl6NuMbCEeWA3aICefTCyywyWLdFecCkomJFY_Xpsr4yDee1TA5yMGSYc1gLzXEwnALdrbEFnvC7xp7pLN5pdXgQckgflrusZhfD.biMu6fUXaRW.Cbd8WTfa5LEj1RKpuVqg0KH_jQHzZyK9mIhCNae2p1sdyP2vtwlzPfxO..YElYYZCzNVlKGfD_peMBZFjELKOfSUpi9GvpjImXKEQ6ZpM0pQjrpzQiZ7W0qJJSD.fqDo5pgEjF0K95gimhx7p9sF6.ULyieR786i28n2TgchgOU6YEq2iL8aeKGEFw6jFuY2cWjj1AmJpvgHbEFgDmMu4yIgN4VIvpM_FHlepiJmfFcEP8G92tLqYBPReC9_DTyG5.dR2Nu.0Vg1tGHbD6sGtYd6wIpBDin393qqoFYtVVj4eb0oB_U.qkQUSY8jcbZnw_xYgjkK1OChLtSIqxSUkA7Y9XPvD4Yp_nzRCDN06uX9Yq6PSKkIRHlrk1.5gVJzm9L7fuXzXkTwpTzdWnvVvviWzDH_Xm_0Ft.QvCemWJ9lhM1qetOZvfBU7nqgn6Tn1PNjkyCN0_MIKtVUWJ8H5RiEU8ZDIBRlTULDyPF2H70ED_qQDmwkYYd6XgZbE5JKMMDEptxZFselYx62NkXj51zC5r8sQEfJE_8xt29xvtv3YFcsbiJ9AyO.zi1B8B3vbaIeexbMFTs1Dsl0qdQcF6nzpJvSqvM1l83JPe7dSlDmKvw0wooAeoV888b2Z1oto5kU5E.3QbdJTunPVIfY9GWCVNJyMNW9Kk4P0t0hgmg7ltjfDghRlzbKLJTyMInOO2_z6ygdCZdkVxEF73LRm6lZeLU0ZQ814CgPRk_UiaZwCknOqn3GS4FiuZfZ5W2Q5Q9OAOgLCeV_lMhcb02cRHvyRvzrcpvsej0YOX2dNlusfDchq3ntzMhYa3fjW.FTZbGnqJ.HRJs0Lix7rlqczEOP.dmLDom.EYGw',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=9804b22f3ef82b4e';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"\/m3u8\/daddylive-events-epg.xml?__cf_chl_rt_tk=FpCE3gEPugfm3chizfqOc16UfxFjoPZoDqFpiE9g4bM-1758071134-1.0.1.1-CptW19l9CVJPv0sdvXUm0rkudQOuEdOCkJ58oKFUYPE"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+<?xml version="1.0" ?>
+<tv>
+  <channel id="b91040c6621e33d762808fa4cdd3423e">
+    <display-name>Beyond the Gates Season 1, Episode 129</display-name>
+  </channel>
+  <channel id="3b89be0229d2fe2d7b3dab86f7bdffff">
+    <display-name>Access Daily With Mario &amp; Kit Season 16, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="d695655bb06940ad9bac23543090725d">
+    <display-name>The Flush Season 14, Episode 11</display-name>
+  </channel>
+  <channel id="91d048ccfb90fd3c97e3e21a2a64889b">
+    <display-name>General Hospital Season 63, Episode 6</display-name>
+  </channel>
+  <channel id="018bd3a0ec5b6f18924d3d66ef632628">
+    <display-name>The Jennifer Hudson Show Season 4, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="9814020ae7441f35097e4be1029fd60c">
+    <display-name>Live PD Presents Season 1, Episode 11 • Premiere</display-name>
+  </channel>
+  <channel id="75a0d04fb7d6c84cc5bcf65c4933500e">
+    <display-name>Hot Bench Season 12, Episode 6</display-name>
+  </channel>
+  <channel id="9e510c5c3b6e3509489b88b9eab211d5">
+    <display-name>Rubble &amp; Crew Season 3, Episode 8</display-name>
+  </channel>
+  <channel id="9a3696a4393377201352687c5a5f12ad">
+    <display-name>Monday Night Countdown Live</display-name>
+  </channel>
+  <channel id="6356cb9ba3dcf902731b23ca66f819fe">
+    <display-name>Addicted to the Outdoors Season 18, Episode 12</display-name>
+  </channel>
+  <channel id="5f67d1a306730cd22217f0c06fab68fe">
+    <display-name>Top Chef VIP Season 4, Episode 48</display-name>
+  </channel>
+  <channel id="da063eb394864da10de7082c5911f94a">
+    <display-name>Access Hollywood Season 30, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="59374a5c5b4b649124a31343736ed8e3">
+    <display-name>A.mar Season 1, Episode 83</display-name>
+  </channel>
+  <channel id="5a536f63be495e29bfbe182c85b7c6cd">
+    <display-name>Name That Tune Season 5, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="92ce15374b36162913db9b3d3e7b4a0c">
+    <display-name>Dance Moms: A New Era Season 1, Episode 6</display-name>
+  </channel>
+  <channel id="2f5c4c8b410f90299415bcb465b34b1c">
+    <display-name>Futurama Season 13, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="f7a28e662da627e3f8d1d33422136290">
+    <display-name>Ancient Aliens: Declassified Season 1</display-name>
+  </channel>
+  <channel id="492a0e0cb63999d175eb64f3075ee6ff">
+    <display-name>Mysteries of the Unknown Death</display-name>
+  </channel>
+  <channel id="a9f44b273cb40fab30601e8a88156a3b">
+    <display-name>90 Day Fiancé: The Other Way Season 7, Episode 2</display-name>
+  </channel>
+  <channel id="64ac1f50601bdfdc4da53a00f3e7101e">
+    <display-name>Celebrations With Lacey Chabert Season 2, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="524e048bcdf96c5ef9c2ccc537b37686">
+    <display-name>World Chase Tag New</display-name>
+  </channel>
+  <channel id="50044e477ace3467786e97d2eb20e78d">
+    <display-name>Signs of a Psychopath Season 10, Episode 13</display-name>
+  </channel>
+  <channel id="3b5f740946f513dc478d847a6a5bd546">
+    <display-name>Halloween Baking Championship Season 11, Episode 1</display-name>
+  </channel>
+  <channel id="c6d9d943a6732fbebb5c604321f0faea">
+    <display-name>PGA TOUR - The Drop Live</display-name>
+  </channel>
+  <channel id="0e70628e52d2c5f84f4049d91beebc09">
+    <display-name>The Weakest Link Season 1, Episode 1 • Premiere</display-name>
+  </channel>
+  <channel id="29d230dc1201cc6c0e65446eacf264db">
+    <display-name>Below Deck Season 12, Episode 16 • Finale</display-name>
+  </channel>
+  <channel id="751ec37392aaf30566618e4f6e4fc093">
+    <display-name>Secrets of the Celebrity Sex Tapes Season 1, Episode 3</display-name>
+  </channel>
+  <channel id="d4bf37c08c4c1c88dea496716911a0c0">
+    <display-name>Fatal Attraction Season 16, Episode 6</display-name>
+  </channel>
+  <channel id="c2548d10428fde4e5883e22b7e426c47">
+    <display-name>Nick Cannon Presents: Wild 'n Out Season 21</display-name>
+  </channel>
+  <channel id="91b5098b6eedb5f1395996cf2817ee91">
+    <display-name>Poker Night in America New</display-name>
+  </channel>
+  <channel id="1829f9fd8bbe2bf57347669375d8da0a">
+    <display-name>High Stakes Poker New</display-name>
+  </channel>
+  <channel id="1f54575ba6011d2237ec3543293b72d4">
+    <display-name>Japan - J3 League : FC Osaka vs Tochigi City</display-name>
+  </channel>
+  <channel id="3c3473a71aa5bc52a1c842dcccbf9da5">
+    <display-name>Japan - J3 League : Ryukyu vs Zwiegen Kanazawa</display-name>
+  </channel>
+  <channel id="8ee1bb4dbc2002c13693f53ed5bad425">
+    <display-name>Japan - J1 League : FC Tokyo vs Tokyo Verdy</display-name>
+  </channel>
+  <channel id="cea5421c7e1a89fdbd193f0749d4cc86">
+    <display-name>Japan - J2 League : Roasso Kumamoto vs Tokushima Vortis</display-name>
+  </channel>
+  <channel id="815dadc1696756cad7b6a9790d7c8f67">
+    <display-name>Portugal - Liga Revelação : Farense U23 vs Torreense U23</display-name>
+  </channel>
+  <channel id="6a633571a8390d82428489e65c8a1d1c">
+    <display-name>Malaysia - Malaysia FA Cup : Penang FC vs Melaka</display-name>
+  </channel>
+  <channel id="4158810ab67eaa52da7eec305846b71d">
+    <display-name>Asia - AFC Champions League Elite : Al Sharjah vs Al Gharafa</display-name>
+  </channel>
+  <channel id="321afacd5365499a544e8426350544b6">
+    <display-name>Russia - FNL : Ufa vs Ural</display-name>
+  </channel>
+  <channel id="5f1b4384b603fbbc88ba675fc2f00f6d">
+    <display-name>Latvia - Virsliga : BFC Daugavpils vs Grobiņa</display-name>
+  </channel>
+  <channel id="102385d38991261c69ec3b2ff03255aa">
+    <display-name>Romania - Liga I : Hermannstadt vs Unirea Slobozia</display-name>
+  </channel>
+  <channel id="83aa9c924a5831cbefd6753f77f49715">
+    <display-name>Bulgaria - Parva Liga : CSKA 1948 vs Slavia Sofia</display-name>
+  </channel>
+  <channel id="090f54a660ac57d079920428cf6621d3">
+    <display-name>Czech Republic - 2. liga : Opava vs Baník Ostrava II</display-name>
+  </channel>
+  <channel id="7dbe9a8c344e7538d9a696b0591a956e">
+    <display-name>Finland - Kakkonen - Gr.Championship - Gr.C : SJK Akatemia 2 vs JBK</display-name>
+  </channel>
+  <channel id="6707b14297ef4aea9c8b6b8651261ce0">
+    <display-name>Estonia - Esiliiga A : Levadia Tallinn U21 vs Nomme Kalju U21</display-name>
+  </channel>
+  <channel id="b7b84b5e3f0e35eedcbf7c853d5b1d52">
+    <display-name>Frauen-Bundesliga : Bayer Leverkusen vs Union Berlin</display-name>
+  </channel>
+  <channel id="6326ad21688b15dc82271b443dd6ff85">
+    <display-name>Asia - AFC Champions League Elite : Al Wahda vs Al Ittihad</display-name>
+  </channel>
+  <channel id="676f0a6e1271526e1f59ad26d040e79c">
+    <display-name>Cyprus - First Division : Aris vs Olympiakos</display-name>
+  </channel>
+  <channel id="b8bddec154e468120fb7130fbbbf71ab">
+    <display-name>Cyprus - First Division : Digenis Ypsonas vs Omonia Aradippou</display-name>
+  </channel>
+  <channel id="4d5941fa0750885d4f093242013bde71">
+    <display-name>Israel - Liga Leumit : Hapoel Ra'anana vs Hapoel Kfar Shalem</display-name>
+  </channel>
+  <channel id="bbcd9918104a28e5326d9961ca42334d">
+    <display-name>Israel - Liga Leumit : Kiryat Yam SC vs Maccabi Herzliya</display-name>
+  </channel>
+  <channel id="c03bc15259eb1c9137668c16500f8e13">
+    <display-name>Israel - Liga Leumit : Hapoel Nazareth Illit vs Hapoel Rishon LeZion</display-name>
+  </channel>
+  <channel id="7727c5727c606c91e37d550cccd98880">
+    <display-name>Argentina - Primera Nacional : Agropecuario vs Gimnasia Mendoza</display-name>
+  </channel>
+  <channel id="6db21846d7a3bcf9734d74be66b00a34">
+    <display-name>Russia - FNL : Rodina Moskva vs Fakel</display-name>
+  </channel>
+  <channel id="026d902f321e870edf44af985279eaf4">
+    <display-name>Italy - Serie A : Hellas Verona vs Cremonese</display-name>
+  </channel>
+  <channel id="ed9ce066111fe69fd1a02ee24c2de71f">
+    <display-name>Iceland - Urvalsdeild : IA Akranes vs Afturelding</display-name>
+  </channel>
+  <channel id="21fe4073479ac578ca8c50ebdb54cbf7">
+    <display-name>Turkey - Super Lig : Rizespor vs Gençlerbirliği</display-name>
+  </channel>
+  <channel id="8a1198380c8c079bd5daa539075bda62">
+    <display-name>Turkey - 1. Lig : BB Erzurumspor vs Sakaryaspor</display-name>
+  </channel>
+  <channel id="9357e6b516a913ca02372bdad6381a47">
+    <display-name>Sweden - Damallsvenskan : Norrköping Damer vs Djurgården Damer</display-name>
+  </channel>
+  <channel id="56ad16c7dc84d3f424afd264cdbd8b10">
+    <display-name>Denmark - Super Liga : Fredericia vs Vejle</display-name>
+  </channel>
+  <channel id="522867b141a1a89dd7de8d33a63757c3">
+    <display-name>Poland - Ekstraklasa : Raków Częstochowa vs Górnik Zabrze</display-name>
+  </channel>
+  <channel id="29706b8f2b09b45a1cca99dfcc629e16">
+    <display-name>Israel - Ligat Ha'Al : Maccabi Haifa vs Ashdod</display-name>
+  </channel>
+  <channel id="e10e4ce9612decc377777eda0b4bf3b2">
+    <display-name>Poland - I Liga : Wieczysta Kraków vs Stal Mielec</display-name>
+  </channel>
+  <channel id="227ea695dca59454084921e347ac7761">
+    <display-name>Sweden - Superettan : Örgryte vs Umeå</display-name>
+  </channel>
+  <channel id="d86cc0e43379db7bf60df8c0a383f31c">
+    <display-name>Sweden - Allsvenskan : AIK vs Brommapojkarna</display-name>
+  </channel>
+  <channel id="9169d0059ccba2d3e25df25313bee71a">
+    <display-name>Sweden - Allsvenskan : Häcken vs IFK Göteborg</display-name>
+  </channel>
+  <channel id="aa37578f1c2aabeb630724701a22487c">
+    <display-name>Israel - Ligat Ha'Al : Hapoel Tel Aviv vs Beitar Jerusalem</display-name>
+  </channel>
+  <channel id="fc5509e0f073756447744c1a4ac31174">
+    <display-name>Bulgaria - Parva Liga : Cherno More vs Dobrudzha 1919</display-name>
+  </channel>
+  <channel id="b1cef4b5107aa27d90126a79acdf59f2">
+    <display-name>Romania - Liga I : Petrolul 52 vs Dinamo Bucureşti</display-name>
+  </channel>
+  <channel id="5d40f56cd9306bdd8c66ec5f7c0132ed">
+    <display-name>Netherlands - Eerste Divisie : Almere City vs Eindhoven</display-name>
+  </channel>
+  <channel id="16a4068de66bd0fd1ad44aa923dc30cb">
+    <display-name>Netherlands - Eerste Divisie : Ajax II vs ADO Den Haag</display-name>
+  </channel>
+  <channel id="9a5767b115be852344bd7b3042849aba">
+    <display-name>Netherlands - Eerste Divisie : Dordrecht vs AZ II</display-name>
+  </channel>
+  <channel id="50a4032226126f0df790a3b418be51b2">
+    <display-name>Netherlands - Eerste Divisie : PSV II vs Roda JC</display-name>
+  </channel>
+  <channel id="3b3c89c95c5e994000d2a76ae638a560">
+    <display-name>Iceland - Urvalsdeild : Breidablik vs Vestmannaeyjar</display-name>
+  </channel>
+  <channel id="349ca4de2fba5150ee3960aef480713d">
+    <display-name>Asia - AFC Champions League Elite : Al Shorta vs Al Sadd</display-name>
+  </channel>
+  <channel id="5020e69c569c0818aea16daa90ab1d8c">
+    <display-name>Asia - AFC Champions League Elite : Al-Ahli vs Nasaf</display-name>
+  </channel>
+  <channel id="c2e37874d68eb77b02259d769261cce0">
+    <display-name>Spain - Segunda Division : Real Zaragoza vs Albacete</display-name>
+  </channel>
+  <channel id="e8df739bd0203073ad774259a6643b44">
+    <display-name>Italy - Serie C : Cittadella vs Vicenza</display-name>
+  </channel>
+  <channel id="1f35e1c2a1c1a106a02f93a5e554989a">
+    <display-name>Italy - Serie C : Cavese vs Giugliano</display-name>
+  </channel>
+  <channel id="b1368beda8e41848149ead59bea10e31">
+    <display-name>Argentina - Primera Nacional : Agropecuario Argentino vs Gimnasia Esgrima Mendoza</display-name>
+  </channel>
+  <channel id="20ae9ba7ff55e12a1c1cebee197a6c89">
+    <display-name>Uruguay - Segunda Division : Fenix vs Colon FC</display-name>
+  </channel>
+  <channel id="470f2a1220a47d1c902b9890a16f749e">
+    <display-name>Italy - Serie A : Como vs Genoa</display-name>
+  </channel>
+  <channel id="39aea37b238fd6ca41952694efcee2e9">
+    <display-name>France - Ligue 2 : Guingamp vs Montpellier</display-name>
+  </channel>
+  <channel id="dd89a7059e70244367091b75d080a565">
+    <display-name>Spain - La Liga : Espanyol vs Mallorca</display-name>
+  </channel>
+  <channel id="8fdbd1f88c0c3f6773bbad6ad4e4a771">
+    <display-name>Friendly International : Portugal Legends vs World Legends</display-name>
+  </channel>
+  <channel id="28fb8d71181d83b2a726f4830b7549da">
+    <display-name>Bosnia-Herzegovina Premier Liga : Zeljeznicar vs Borac Banja Luka</display-name>
+  </channel>
+  <channel id="094f2b95a426a593998ee926f3fcbf62">
+    <display-name>Portugal - Segunda liga : UD Oliveirense vs Academico Viseu</display-name>
+  </channel>
+  <channel id="f74f6cb35c3a7e8f8d3f315dc4c6be41">
+    <display-name>Colombia - Primera B - Clausura : Deportes Quindio vs Leones</display-name>
+  </channel>
+  <channel id="e35957bd2935b4e5626f92644c2d2bc1">
+    <display-name>Honduras - Liga Nacional : Policía Nacional vs Real España</display-name>
+  </channel>
+  <channel id="c65a67b76b9df2c37e5bae73bfce1521">
+    <display-name>Brazil - Serie B : Ferroviária vs Novorizontino</display-name>
+  </channel>
+  <channel id="a7b4be22d48243aae5313e356f6e96dd">
+    <display-name>Brazil| - Brasileirão : Bahia vs Cruzeiro</display-name>
+  </channel>
+  <channel id="999aeaba1006085815d10d699c8d51c3">
+    <display-name>Mexico - Liga MX Femenil : Atlético San Luis vs León</display-name>
+  </channel>
+  <channel id="330f19611c85bb0e158221e21dec1c2f">
+    <display-name>Argentina Primera B : Deportivo Merlo vs Ferrocarril Midland</display-name>
+  </channel>
+  <channel id="292718564235a639c7ee6b72d243473e">
+    <display-name>Asia Cup : United Arab Emirates vs Oman</display-name>
+  </channel>
+  <channel id="a4ed3e3ba54ca727c1c97292e43a3a20">
+    <display-name>ODI Series U19 : India de West U19 vs Sri Lanka U19</display-name>
+  </channel>
+  <channel id="e5fd667bef7e7e57e7a02752505cd563">
+    <display-name>Asia Cup : Hong Kong vs Sri Lanka</display-name>
+  </channel>
+  <channel id="15180f547b2a140ae6a517d1b4701eae">
+    <display-name>Marsh One-Day Cup : New South Wales vs Tasmanian Tigers</display-name>
+  </channel>
+  <channel id="d13764c6ea619bb1d742fae6b78f513b">
+    <display-name>WTA - SEOUL : Krueger A. vs Lys E.</display-name>
+  </channel>
+  <channel id="639608be12d81fbe689987fbe63156c1">
+    <display-name>WTA - SEOUL : Joint M. vs Fruhvirtova L.</display-name>
+  </channel>
+  <channel id="d8efc19052816a875bcae647703cdb2c">
+    <display-name>WTA - SEOUL : Ponchet J. vs Seidel E.</display-name>
+  </channel>
+  <channel id="7bb739516769315f8b5083dcb9ec353c">
+    <display-name>WTA - SEOUL : Siniakova K. vs Park S.</display-name>
+  </channel>
+  <channel id="4659ecf8f1261503ea500a72e9b6b0fa">
+    <display-name>WTA - SEOUL : Siegemund L. vs Kenin S.</display-name>
+  </channel>
+  <channel id="85812f7139215d7f1c02e41c4fe5b42a">
+    <display-name>WTA - SEOUL : Boisson L. vs Ku Y.</display-name>
+  </channel>
+  <channel id="dc2c7e560e4a6543b8ac54eb17c18aba">
+    <display-name>Seoul-WTA Early Rounds</display-name>
+  </channel>
+  <channel id="1de7326cbadd835ee7034ae7e9f5da79">
+    <display-name>WTA - Seoul (KOR) : Ashlyn Krueger vs Eva Lys</display-name>
+  </channel>
+  <channel id="683db4ee6a9f8753b01b01095046fb05">
+    <display-name>WTA - Seoul (KOR) : Maya Joint vs Linda Fruhvirtova</display-name>
+  </channel>
+  <channel id="a05e467a5e21a0f30a16480af2c6d145">
+    <display-name>UTR (M) - Kalamaria (GRE) : Maxwell Castle vs Roman Postolka</display-name>
+  </channel>
+  <channel id="8f3ed9d39f086b4e39f4df4dc8c19675">
+    <display-name>UTR (M) - Kalamaria (GRE) : Vladimir Holban vs Gabriel Matuszewski</display-name>
+  </channel>
+  <channel id="bb872d5bdab1a0e884cdc8960b8a77b4">
+    <display-name>ITF (F) - Pazardzhik (BGR) - Qualifiers : Adriana Reami vs Ralitsa Alexandrova</display-name>
+  </channel>
+  <channel id="724a2d62d3693299c9312f33f5dfad9b">
+    <display-name>ITF (F) - Pazardzhik (BGR) - Qualifiers : Claudia Hoste Ferrer vs Anna Lena Ebster</display-name>
+  </channel>
+  <channel id="a8dc45ecb7dd052067862e621a80461c">
+    <display-name>WTA - Seoul (KOR) : Jessika Ponchet vs Ella Seidel</display-name>
+  </channel>
+  <channel id="904deb72a3e730432c278d67afdd6c64">
+    <display-name>WTA - Seoul (KOR) : Katerina Siniakova vs Sohyun Park</display-name>
+  </channel>
+  <channel id="dd9bd8c13de2fb8c40821f80fc57e1df">
+    <display-name>ITF (F) - Kursumlijska Banja (SRB) - Qualifiers : Ksenia Zaytseva vs Krystyna Pochtovyk</display-name>
+  </channel>
+  <channel id="04b773770c2991b62b32ed167a684714">
+    <display-name>ITF (F) - Kursumlijska Banja (SRB) - Qualifiers : Mariia Masiianskaia vs Darja Suvirdjonkova</display-name>
+  </channel>
+  <channel id="573b884a8f08025c00e35e3e601b90a7">
+    <display-name>ITF (F) - Pazardzhik (BGR) - Qualifiers : Mayuka Aikawa vs Alexandra Irina Anghel</display-name>
+  </channel>
+  <channel id="26f82c3520fa7fc6b6f8ad66413add41">
+    <display-name>UTR (M) - Essen (GER) : Stijn Paardekooper vs Twan van Zijl</display-name>
+  </channel>
+  <channel id="7e5a1ee213ecb13c9ebbf102029f65f1">
+    <display-name>UTR (M) - Kalamaria (GRE) : Michalis Sakellaridis vs Gergely Madarasz</display-name>
+  </channel>
+  <channel id="b3672c1dbcad0da5bc8f5cb6e303d74f">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Alex Huszar vs Neil Oberleitner</display-name>
+  </channel>
+  <channel id="a9f466e2bc744a53984b89edc4791ca0">
+    <display-name>UTR (F) - Essen (GER) : Chanel Janssen vs Annemarie Lazar</display-name>
+  </channel>
+  <channel id="9b70587a7d1bb7ccb19f9f4c1603f583">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Gerard Campana Lee vs Matei Varbanciu</display-name>
+  </channel>
+  <channel id="c3d282397fbeac93c9609baa1326b426">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Hynek Barton vs Stijn Slump</display-name>
+  </channel>
+  <channel id="c7ea9cbc80e3ea7e8f70eaf551471664">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : John Sperle vs Emilien Demanet</display-name>
+  </channel>
+  <channel id="5de0d727c2d65fd4e0ced725f5c11299">
+    <display-name>ITF (F) - Pazardzhik (BGR) - Qualifiers : Lucie Petruzelova vs Andreya Glushkova</display-name>
+  </channel>
+  <channel id="3aec443ac50758d033237aa46999f6c0">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Matthew William Donald vs Lukas Pokorny</display-name>
+  </channel>
+  <channel id="8ac50189fbf6808b92ba46a13055ce3c">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Zdenek Kolar vs Nikita Mashtakov</display-name>
+  </channel>
+  <channel id="9d89cf024f4b7cca1ee3ff893d9fac91">
+    <display-name>WTA 125 - Tolentino (ITA) - Qualifiers : Aurora Zantedeschi vs Tatiana Pieri</display-name>
+  </channel>
+  <channel id="06af2371d438cba82e44168eee8a63f7">
+    <display-name>WTA 125 - Tolentino (ITA) - Qualifiers : Francesca Curmi vs Verena Meliss</display-name>
+  </channel>
+  <channel id="1fa8fb6f42fd49e196e869c512b1e7be">
+    <display-name>WTA 125 - Tolentino (ITA) - Qualifiers : Tina Nadine Smith vs Noma Akugue Noha</display-name>
+  </channel>
+  <channel id="412329b972dd8f113d3204dd9251e31d">
+    <display-name>UTR (F) - Essen (GER) : Olga Golas vs Polina Bakhmutkina</display-name>
+  </channel>
+  <channel id="6605debc1d3edc223d610bdaf4c1ecf2">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Dan Martin vs Radu Mihai Papoe</display-name>
+  </channel>
+  <channel id="696af7a2c861b6603ae9678ff46d57f5">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Jack Loge vs Darius Florin Pop</display-name>
+  </channel>
+  <channel id="3424583b5b28cb528c50025e411e146b">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Michael Geerts vs Luca Potenza</display-name>
+  </channel>
+  <channel id="14ec42d821bec7f50b6c47a99ea8ca3a">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Tom Paris vs Maxime Janvier</display-name>
+  </channel>
+  <channel id="33afeb2552ddbf7979badfca6155de72">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Daniel Uta vs Peter Fajta</display-name>
+  </channel>
+  <channel id="b13114a68e931e505e7761519b5b919e">
+    <display-name>ITF (F) - Pazardzhik (BGR) - Qualifiers : Dia Evtimova vs Felitsata Dorofeeva-Rybas</display-name>
+  </channel>
+  <channel id="72349be812b7bcbe310b5aab768cae41">
+    <display-name>WTA - Seoul (KOR) - Double : E.Perez/F.Stollar vs J.Cristian/S.W.Hsieh</display-name>
+  </channel>
+  <channel id="6ba4d0807939eb2bd9f86b128941eba1">
+    <display-name>UTR (F) - Essen (GER) : Fanny Pire vs Noa Krznaric</display-name>
+  </channel>
+  <channel id="c7366e585e9250c097a271fcffdff8a9">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Gianluca Cadenasso vs A.Mateo Berge Nourescu</display-name>
+  </channel>
+  <channel id="30a03f91e06fe3539855a00dc11800b9">
+    <display-name>WTA - Seoul (KOR) : Laura Siegemund vs Sofia Kenin</display-name>
+  </channel>
+  <channel id="27140c129dddbe95b7a7e00c1e391f0d">
+    <display-name>WTA 125 - Caldas Da Rainha (POR) - Qualifiers : Anastasia Tikhonova vs Tayisiya Morderger</display-name>
+  </channel>
+  <channel id="d1460b1743d67da9fcc4f48f2e25914b">
+    <display-name>WTA 125 - Caldas Da Rainha (POR) - Qualifiers : Ayla Aksu vs Ekaterina Ovcharenko</display-name>
+  </channel>
+  <channel id="6187bb33f7223b2f38d3479b52980144">
+    <display-name>WTA 125 - Caldas Da Rainha (POR) - Qualifiers : Eva Guerrero Alvarez vs Ashley Lahey</display-name>
+  </channel>
+  <channel id="a8a719df1ecee3512c024fb3046edcba">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Gabriele Piraino vs Dennis Novak</display-name>
+  </channel>
+  <channel id="757012add9b6409faa4b474affd5e604">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Marko Topo vs Cedrik-Marcel Stebe</display-name>
+  </channel>
+  <channel id="6e3f35c9913c71d0fec4194b33b72166">
+    <display-name>Challenger - Bad Waltersdorf (AUT) - Qualifiers : Michael Vrbensky vs Tadeas Paroulek</display-name>
+  </channel>
+  <channel id="ee4007f4844a8e0861afcd19871794c6">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Iannis Miletich vs Dan Alexandru Tomescu</display-name>
+  </channel>
+  <channel id="604fdaed37ac28e09e6c23fdfbe299cc">
+    <display-name>Challenger - Targu Mures (ROM) - Qualifiers : Tomasso Compagnucci vs Stefan Palosi</display-name>
+  </channel>
+  <channel id="b21efbafe3a6fda8fe09c61464d4d076">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Florent Bax vs Etienne Donnet</display-name>
+  </channel>
+  <channel id="2f032bd5e676638d8e66007a4b48518f">
+    <display-name>UTR (M) - Kalamaria (GRE) : Daniel Salazar vs Ioannis Kountourakis</display-name>
+  </channel>
+  <channel id="5c3f1e22737676889e3b92556d7148ae">
+    <display-name>WTA 125 - Tolentino (ITA) - Qualifiers : Federica Urgesi vs Cristina Diaz Adrover</display-name>
+  </channel>
+  <channel id="8a28f8c10e947a9dcd2fcb20a4cd4b51">
+    <display-name>ITF (F) - Kursumlijska Banja (SRB) - Qualifiers : Rada Zolotareva vs Mirjana Jovanovic</display-name>
+  </channel>
+  <channel id="de286de7dcd592604c5363f79628ac27">
+    <display-name>WTA 125 - Tolentino (ITA) : Caroline Werner vs Lola Radivojevic</display-name>
+  </channel>
+  <channel id="3a5e70b696cbe612ef43ef60f1e476d9">
+    <display-name>WTA 125 - Tolentino (ITA) : Noemi Basiletti vs Alice Rame</display-name>
+  </channel>
+  <channel id="676526cfde9aa2ec4058276f23a22106">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Alexey Vatutin vs Louis Tessa</display-name>
+  </channel>
+  <channel id="0305d4ebfac214522001414f5a4c9c07">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Trey Hilderbrand vs Aryan Shah</display-name>
+  </channel>
+  <channel id="b12efecfcc3ffa6e97bd605fe2fa2b94">
+    <display-name>Challenger - Saint-Tropez (FRA) : Dan Added vs Kyrian Jacquet</display-name>
+  </channel>
+  <channel id="cb3b942b16532f09e6d297decdebadd2">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Ana Filipa Santos vs Tamara Korpatsch</display-name>
+  </channel>
+  <channel id="5e3b130fdbd94a5593ba70886c082a6a">
+    <display-name>ITF (F) - Kursumlijska Banja (SRB) - Qualifiers : Andjela Lazarevic vs Karine Sarkisova</display-name>
+  </channel>
+  <channel id="e10a96e667123469ceab3e11280b3eb2">
+    <display-name>ITF (F) - Kursumlijska Banja (SRB) - Qualifiers : Ellie Schoppe vs Iva Ivanovic</display-name>
+  </channel>
+  <channel id="964df0eb9b0a506717c09a26cbae1a53">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Julie Belgraver vs Daria Snigur</display-name>
+  </channel>
+  <channel id="015193fe9829ae0058cca9acf92fc19f">
+    <display-name>WTA - Seoul (KOR) - Double : M.Kato/F.H.Wu vs Y.Xu/Z.Yang</display-name>
+  </channel>
+  <channel id="4ff73b4a15ab8e81e73728c974533d19">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Vitalia Diatchenko vs Carol Young Suh Lee</display-name>
+  </channel>
+  <channel id="973d268daffbe76249ef7ac896d69cda">
+    <display-name>Challenger - Bad Waltersdorf (AUT) : Elias Ymer vs Sandro Kopp</display-name>
+  </channel>
+  <channel id="599855dbb69a151b227b1082d4b39466">
+    <display-name>Challenger - Saint-Tropez (FRA) - Qualifiers : Rodrigo Pacheco Mendez vs Nikolay Vylegzhanin</display-name>
+  </channel>
+  <channel id="c17aadd669ddd7ca6681b906804e60b9">
+    <display-name>WTA 125 - Tolentino (ITA) - Double : F.Christie/A.Wagner vs N.Noha Akugue/I.Oz</display-name>
+  </channel>
+  <channel id="75e1f03187b7240ad6a62588138e70da">
+    <display-name>WTA 125 - Tolentino (ITA) : Sofia Rocchetti vs Barbora Palicova</display-name>
+  </channel>
+  <channel id="2f2d05d961e3a845a576b43c236cfc81">
+    <display-name>WTA 125 - Tolentino (ITA) : Tamara Zidansek vs Jennifer Ruggeri</display-name>
+  </channel>
+  <channel id="f5752c21800684b894a784bd9de06c64">
+    <display-name>WTA 125 - Tolentino (ITA) - Double : A.Moratelli/A.Zantedeschi vs N.Basiletti/F.Urgesi</display-name>
+  </channel>
+  <channel id="ec2f8eee72c7474a4f34d0b2960223d2">
+    <display-name>Challenger - Bad Waltersdorf (AUT) : Francesco Passaro vs Dusan Lajovic</display-name>
+  </channel>
+  <channel id="644436ee0f4597686779205fbe1901b0">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Eva Vedder vs Katherine Sebov</display-name>
+  </channel>
+  <channel id="0909a8f7815255663fe8b288b94e7620">
+    <display-name>Challenger - Villa Maria (ARG) - Qualifiers : Facundo Juarez vs A.H.Del Pino Cordova</display-name>
+  </channel>
+  <channel id="c6671ff2f3de0236b1dafd5aca0ccfaf">
+    <display-name>Challenger - Villa Maria (ARG) - Qualifiers : Franco Ribero vs Lautaro Agustin Falabella</display-name>
+  </channel>
+  <channel id="efe41f181e940327708a8520794f5b22">
+    <display-name>WTA 125 - Caldas Da Rainha (POR) - Double : H.Dart/M.Lumsden vs T.Morderger/Y.Morderger</display-name>
+  </channel>
+  <channel id="de722268eb0a21b9fd498c7d1e537685">
+    <display-name>Challenger - Bad Waltersdorf (AUT) : Jan Choinski vs Vitaliy Sachko</display-name>
+  </channel>
+  <channel id="4555363fcc93d98738a9359ed7e890ed">
+    <display-name>Challenger - Bad Waltersdorf (AUT) : Thiago Moura Monteiro vs Daniel Merida Aguilar</display-name>
+  </channel>
+  <channel id="a0c882f7dee9a9ead7b38872319aaf74">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Polina Iatcenko vs Matilde Jorge</display-name>
+  </channel>
+  <channel id="b6edb9c9f1783050fadb16124b39944b">
+    <display-name>Challenger - Columbus (USA) - Qualifiers : Antoine Ghibaudo vs Erik Arutiunian</display-name>
+  </channel>
+  <channel id="47483574edbc772a08a08def9963b55a">
+    <display-name>Challenger - Columbus (USA) - Qualifiers : Tristan Mccormick vs Daniel Masur</display-name>
+  </channel>
+  <channel id="e06af9439fa1769fb01d3a9616b19b32">
+    <display-name>Challenger - Villa Maria (ARG) - Qualifiers : Facundo Bagnis vs Leonardo Aboian</display-name>
+  </channel>
+  <channel id="378f94e91fd7eeb28ab26fd336041c2a">
+    <display-name>Challenger - Villa Maria (ARG) - Qualifiers : Ignacio Monzon vs Carlos Maria Zarate</display-name>
+  </channel>
+  <channel id="0891e0c3f32e2ed53df54589b4fe55b7">
+    <display-name>Challenger - Villa Maria (ARG) - Qualifiers : Santiago De La Fuente vs Julian Cundom</display-name>
+  </channel>
+  <channel id="904299a9910789bb0705bc3736f24db1">
+    <display-name>UTR (M) - Lincoln (USA) : Colson Wells vs Liam Spiers</display-name>
+  </channel>
+  <channel id="95b504fb4ca03c7d261693747a7f9604">
+    <display-name>UTR (M) - Lincoln (USA) : Jose Murariu vs Jeri Lassila</display-name>
+  </channel>
+  <channel id="2b2195b020a2d29567d50adb62dc8528">
+    <display-name>UTR (M) - Lincoln (USA) : Karan Raghavendra vs Nikolay Sysoev</display-name>
+  </channel>
+  <channel id="5af884da6a87c4baeb642369442dcdef">
+    <display-name>WTA 125 - Caldas Da Rainha (PRT) : Karolina Pliskova vs Tessah Andrianjafitrimo</display-name>
+  </channel>
+  <channel id="d977713f96f904c536bca4a83eff71d3">
+    <display-name>UTR (M) - Lincoln (USA) : Tim Hammes vs Niels van der Sijs</display-name>
+  </channel>
+  <channel id="9ba82a34059660ad5ad1490b861958e4">
+    <display-name>Challenger - Columbus (USA) - Qualifiers : Bryce Nakashima vs Justin Boulais</display-name>
+  </channel>
+  <channel id="a10d2138d0e03f1dc1a619500464575a">
+    <display-name>Challenger - Columbus (USA) - Qualifiers : Samir Banerjee vs Nikita Samuel Filin</display-name>
+  </channel>
+  <channel id="b61af40cca699b5e53cdab824c4758dc">
+    <display-name>WTA 125 - Tolentino (ITA) : Dominika Salkova vs Silvia Ambrosio</display-name>
+  </channel>
+  <channel id="4dab805bf82f9c4246f90e84b9e2ae51">
+    <display-name>Challenger - Villa Maria (ARG) : Francesco Maestrelli vs Lorenzo Joaquin Rodriguez</display-name>
+  </channel>
+  <channel id="01a387b93433b6dd5d8b755abdfc2808">
+    <display-name>Challenger - Saint-Tropez (FRA) : Mae Malige vs Michael Mmoh</display-name>
+  </channel>
+  <channel id="aa11591e8a17269c1a6cd678cbc08ea0">
+    <display-name>Challenger - Villa Maria (ARG) : Maximus Jones vs Joao Lucas Reis Silva</display-name>
+  </channel>
+  <channel id="130f8e3cacd6a94dbab6f07c13fc373c">
+    <display-name>Challenger - Villa Maria (ARG) : Emilio Nava vs Daniel Dutra da Silva</display-name>
+  </channel>
+  <channel id="d6546925edb1b58b5f4296edf105c1c4">
+    <display-name>Challenger - Villa Maria (ARG) - Double : V.Basel/F.Ribero vs L.Aboian/V.Aboian</display-name>
+  </channel>
+  <channel id="a86ace7364bfa43c0c142ccbc4e04469">
+    <display-name>Challenger - Columbus (USA) : Michael Zheng vs Garrett Johns</display-name>
+  </channel>
+  <channel id="f10200111d99aead8cc3d530dc380d9d">
+    <display-name>Challenger - Columbus (USA) : Philip Sekulic vs James Kent Trotter</display-name>
+  </channel>
+  <channel id="61d4ade28e4b5b876f20454a4345da5b">
+    <display-name>WTA 125 - Tolentino (ITA) : Sara Bejlek vs Nuria Brancaccio</display-name>
+  </channel>
+  <channel id="0f97d7728604c47c5a061302dd13c7e7">
+    <display-name>UTR (M) - Lincoln (USA) : Reece Falck vs Henry Lamchinniah</display-name>
+  </channel>
+  <channel id="3c91e3d009fa06f232c89e91d3adde48">
+    <display-name>Challenger - Columbus (USA) : Juan Pablo Ficovich vs Alfredo Perez</display-name>
+  </channel>
+  <channel id="bca1bb77cb07ba6ebc0606aacafed150">
+    <display-name>Challenger - Columbus (USA) : Petr Brunclik vs Patrick Maloney</display-name>
+  </channel>
+  <channel id="2c55f538958e82b24a594a228f7444b8">
+    <display-name>Challenger - Columbus (USA) - Double : A.Kim/B.Nakashima vs M.Bouzige/A.Ilagan</display-name>
+  </channel>
+  <channel id="8997db14a20e545c9d193cbacaea706c">
+    <display-name>UTR (M) - Lincoln (USA) : Colson Wells vs Nikolay Sysoev</display-name>
+  </channel>
+  <channel id="1332684ac830220b92af04ca9175151e">
+    <display-name>UTR (M) - Lincoln (USA) : Liam Spiers vs Karan Raghavendra</display-name>
+  </channel>
+  <channel id="a849ecc566f77cc65deb603d340afbd0">
+    <display-name>Challenger - Villa Maria (ARG) : Murkel Dellien vs Genaro Alberto Olivieri</display-name>
+  </channel>
+  <channel id="b5423cbd0fd63184594506eca8de00a9">
+    <display-name>UTR (M) - Lincoln (USA) : Joan Torres Espinosa vs L.Lopez Linquet</display-name>
+  </channel>
+  <channel id="7095b4907f5880d0929f9835c122044b">
+    <display-name>Premiership Speedway - Leicester Lions vs Sheffield Tigers</display-name>
+  </channel>
+  <channel id="98ca7e1b711db0534fe65b1e46ca9628">
+    <display-name>WWE Monday Night RAW</display-name>
+  </channel>
+  <channel id="4848a3cf953d44583b8089eb4f4b30de">
+    <display-name>College Golf 2025 Jackson T. Stephens Cup, First Round</display-name>
+  </channel>
+  <channel id="3e958b3c48d868265fdd92047a6f23e1">
+    <display-name>World Snooker - Snooker English Open</display-name>
+  </channel>
+  <channel id="3e958b3c48d868265fdd92047a6f23e1">
+    <display-name>World Snooker - Snooker English Open</display-name>
+  </channel>
+  <channel id="1849481a06790ff97eea3557605d3557">
+    <display-name>Ultimate Pool: Pairs Cup Group 15</display-name>
+  </channel>
+  <channel id="9487e75886b863ab55ef8c170d199145">
+    <display-name>NFL : Houston Texans vs Tampa Bay Buccaneers</display-name>
+  </channel>
+  <channel id="ccd6dc98e714b094c963a9ec6af246a5">
+    <display-name>NFL : Las Vegas Raiders vs Los Angeles Chargers</display-name>
+  </channel>
+  <channel id="3e4fd6fa81527e3564a9b9022a5897c7">
+    <display-name>World Championships Tokyo | Day 3 | Session 2</display-name>
+  </channel>
+  <channel id="320cab77e4e8eac9cfcd17279862fbb4">
+    <display-name>World Championships Tokyo | Day 4 | Session 1</display-name>
+  </channel>
+  <channel id="ecbe15485b08864e7c1609c90d759642">
+    <display-name>MLB : Pittsburgh Pirates vs Chicago Cubs</display-name>
+  </channel>
+  <channel id="4721af9a1d987750198c49a3c601e66e">
+    <display-name>MLB : Washington Nationals vs Atlanta Braves</display-name>
+  </channel>
+  <channel id="36a2496b40d6c1b4a5a6f6f5e044ff6d">
+    <display-name>MLB : Tampa Bay Rays vs Toronto Blue Jays</display-name>
+  </channel>
+  <channel id="b577ffe830f6a95d0b6b782907ec1a8c">
+    <display-name>MLB : Chicago White Sox vs Baltimore Orioles</display-name>
+  </channel>
+  <channel id="51b62794d1b1bddb554b3e97297878d4">
+    <display-name>MLB : Minnesota Twins vs New York Yankees</display-name>
+  </channel>
+  <channel id="52d280d1c705782a6c094ddc902c4a64">
+    <display-name>MLB : St. Louis Cardinals vs Cincinnati Reds</display-name>
+  </channel>
+  <channel id="b47e94e77d655e782b2b5125b14457d7">
+    <display-name>MLB : Houston Astros vs Texas Rangers</display-name>
+  </channel>
+  <channel id="0582f05d06a16b2f8a74e86dc3c2dc65">
+    <display-name>MLB : Arizona Diamondbacks vs San Francisco Giants</display-name>
+  </channel>
+  <channel id="87c1a3d2a3919c757fc508f5cf3c0a78">
+    <display-name>MLB : Los Angeles Dodgers vs Philadelphia Phillies</display-name>
+  </channel>
+  <channel id="6fb37af1435c4387ccd1224dcaab2054">
+    <display-name>Verification match : CSM CSU Oradea vs CS Ramnicu Valcea</display-name>
+  </channel>
+  <channel id="cb5b038fbd4c56851be2264cd83cd09a">
+    <display-name>Israel League Cup : Bnei Herzeliya vs Galil Gilboa</display-name>
+  </channel>
+  <channel id="67945ca6fd00e3dda752114fbb88060b">
+    <display-name>Israeli Basketball - Winner Cup : Herzliya vs Haemek</display-name>
+  </channel>
+  <channel id="b7620b135bcf548d33173b8e5ed2c047">
+    <display-name>National Futsal League : Joaçaba vs Blumenau</display-name>
+  </channel>
+  <channel id="831f90bdd92ff034c4a333196af56a3d">
+    <display-name>Poland - Superliga : Stal Mielec vs Chrobry Glogow</display-name>
+  </channel>
+  <channel id="7f1a5c57270024966fc41d2c1c6fa451">
+    <display-name>Germany, Bundesliga : SG Flensburg-Handewitt vs. TSV Hannover-Burgdorf</display-name>
+  </channel>
+  <channel id="6b605f13af2778bda9c7f452b5c4356e">
+    <display-name>Serbia Super Liga : RK Metaloplastika Elixir vs RK Crvena zvezda</display-name>
+  </channel>
+  <channel id="134c85b32d92af2eebfaae1823078f5a">
+    <display-name>Germany - Bundesliga 2 : Nordhorn-Lingen vs Dormagen</display-name>
+  </channel>
+  <channel id="8aa300e51067ce12a9e734e9c4b89225">
+    <display-name>Superliga : Kalisz vs Legionowo</display-name>
+  </channel>
+  <channel id="5ebdedafb846c838c4878e9a760d4b95">
+    <display-name>Live racing from around the UK</display-name>
+  </channel>
+  <channel id="6140699a64f705999669a75300287408">
+    <display-name>KHL : Sibir Novosibirsk vs Admiral Vladivostok</display-name>
+  </channel>
+  <channel id="b80a3e8a344cc6fb1c50036762e89ce7">
+    <display-name>KHL : Salavat Yulaev Ufa vs Avtomobilist Yekaterinburg</display-name>
+  </channel>
+  <channel id="50b0131bdc938fb139304bfeea059a9b">
+    <display-name>Denmark - Metal Ligaen : Esbjerg Energy vs Odense Bulldogs</display-name>
+  </channel>
+  <channel id="06bab27b34f6621e60015e16b401a7bc">
+    <display-name>FIVB World Championship : Turkey vs Libya</display-name>
+  </channel>
+  <channel id="8ab0b6237801631cfe935300f00674a4">
+    <display-name>FIVB World Championship : Germany vs Chile</display-name>
+  </channel>
+  <channel id="b453248aa012fabcfff140371b063165">
+    <display-name>FIVB World Championship : Japan vs Canada</display-name>
+  </channel>
+  <channel id="7157ed246d2c3b548b66c5a5947d7512">
+    <display-name>FIVB World Championship : Slovenia vs Bulgaria</display-name>
+  </channel>
+  <channel id="04f3e8592c58cb5a6abe8a542add6c0f">
+    <display-name>FIVB World Championship : Netherlands vs Romania</display-name>
+  </channel>
+  <channel id="8087aa26e7e15c887b365bd08a14d8c0">
+    <display-name>FIVB World Championship : USA vs Portugal</display-name>
+  </channel>
+  <channel id="7b2593ca78a51267ce0a79e2618c06c3">
+    <display-name>FIVB World Championship : Poland vs Qatar</display-name>
+  </channel>
+  <channel id="6db22a007979a3bd3801f358bf901acc">
+    <display-name>FIVB World Championship : Brazil vs Czech Republic</display-name>
+  </channel>
+  <channel id="80c52648636f806af0f45a2e87bccab8">
+    <display-name>FIVB World Championship : Argentina vs South Korea</display-name>
+  </channel>
+  <channel id="2ca2b01fc6ab1f452ec9bea28c444a60">
+    <display-name>Brazil Paulista, Women : Flor de Ypê Paulistano Barueri vs Osasco São Cristóvão Saúde</display-name>
+  </channel>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b91040c6621e33d762808fa4cdd3423e">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3b89be0229d2fe2d7b3dab86f7bdffff">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d695655bb06940ad9bac23543090725d">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="91d048ccfb90fd3c97e3e21a2a64889b">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="018bd3a0ec5b6f18924d3d66ef632628">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9814020ae7441f35097e4be1029fd60c">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="75a0d04fb7d6c84cc5bcf65c4933500e">
+    <title>04:00 AM PHT 09/16/25 | 04:00 PM ET 09/15/25 | 01:00 PM PT 09/15/25 | 09:00 PM GMT 09/15/25 | 10:00 PM CET 09/15/25</title>
+    <desc>04:00 AM PHT 09/16/25 | 04:00 PM ET 09/15/25 | 01:00 PM PT 09/15/25 | 09:00 PM GMT 09/15/25 | 10:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9e510c5c3b6e3509489b88b9eab211d5">
+    <title>04:00 AM PHT 09/16/25 | 04:00 PM ET 09/15/25 | 01:00 PM PT 09/15/25 | 09:00 PM GMT 09/15/25 | 10:00 PM CET 09/15/25</title>
+    <desc>04:00 AM PHT 09/16/25 | 04:00 PM ET 09/15/25 | 01:00 PM PT 09/15/25 | 09:00 PM GMT 09/15/25 | 10:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9a3696a4393377201352687c5a5f12ad">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6356cb9ba3dcf902731b23ca66f819fe">
+    <title>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</title>
+    <desc>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5f67d1a306730cd22217f0c06fab68fe">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="da063eb394864da10de7082c5911f94a">
+    <title>07:30 AM PHT 09/16/25 | 07:30 PM ET 09/15/25 | 04:30 PM PT 09/15/25 | 12:30 AM GMT 09/16/25 | 01:30 AM CET 09/16/25</title>
+    <desc>07:30 AM PHT 09/16/25 | 07:30 PM ET 09/15/25 | 04:30 PM PT 09/15/25 | 12:30 AM GMT 09/16/25 | 01:30 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="59374a5c5b4b649124a31343736ed8e3">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5a536f63be495e29bfbe182c85b7c6cd">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="92ce15374b36162913db9b3d3e7b4a0c">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2f5c4c8b410f90299415bcb465b34b1c">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="f7a28e662da627e3f8d1d33422136290">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="492a0e0cb63999d175eb64f3075ee6ff">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a9f44b273cb40fab30601e8a88156a3b">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="64ac1f50601bdfdc4da53a00f3e7101e">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="524e048bcdf96c5ef9c2ccc537b37686">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="50044e477ace3467786e97d2eb20e78d">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3b5f740946f513dc478d847a6a5bd546">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c6d9d943a6732fbebb5c604321f0faea">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0e70628e52d2c5f84f4049d91beebc09">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="29d230dc1201cc6c0e65446eacf264db">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="751ec37392aaf30566618e4f6e4fc093">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d4bf37c08c4c1c88dea496716911a0c0">
+    <title>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</title>
+    <desc>09:00 AM PHT 09/15/25 | 09:00 PM ET 09/14/25 | 06:00 PM PT 09/14/25 | 02:00 AM GMT 09/15/25 | 03:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c2548d10428fde4e5883e22b7e426c47">
+    <title>08:30 AM PHT 09/15/25 | 08:30 PM ET 09/14/25 | 05:30 PM PT 09/14/25 | 01:30 AM GMT 09/15/25 | 02:30 AM CET 09/15/25</title>
+    <desc>08:30 AM PHT 09/15/25 | 08:30 PM ET 09/14/25 | 05:30 PM PT 09/14/25 | 01:30 AM GMT 09/15/25 | 02:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="91b5098b6eedb5f1395996cf2817ee91">
+    <title>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</title>
+    <desc>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1829f9fd8bbe2bf57347669375d8da0a">
+    <title>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</title>
+    <desc>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1f54575ba6011d2237ec3543293b72d4">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3c3473a71aa5bc52a1c842dcccbf9da5">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8ee1bb4dbc2002c13693f53ed5bad425">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="cea5421c7e1a89fdbd193f0749d4cc86">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="815dadc1696756cad7b6a9790d7c8f67">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6a633571a8390d82428489e65c8a1d1c">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4158810ab67eaa52da7eec305846b71d">
+    <title>09:45 PM PHT 09/15/25 | 09:45 AM ET 09/15/25 | 06:45 AM PT 09/15/25 | 02:45 PM GMT 09/15/25 | 03:45 PM CET 09/15/25</title>
+    <desc>09:45 PM PHT 09/15/25 | 09:45 AM ET 09/15/25 | 06:45 AM PT 09/15/25 | 02:45 PM GMT 09/15/25 | 03:45 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="321afacd5365499a544e8426350544b6">
+    <title>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</title>
+    <desc>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5f1b4384b603fbbc88ba675fc2f00f6d">
+    <title>10:30 PM PHT 09/15/25 | 10:30 AM ET 09/15/25 | 07:30 AM PT 09/15/25 | 03:30 PM GMT 09/15/25 | 04:30 PM CET 09/15/25</title>
+    <desc>10:30 PM PHT 09/15/25 | 10:30 AM ET 09/15/25 | 07:30 AM PT 09/15/25 | 03:30 PM GMT 09/15/25 | 04:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="102385d38991261c69ec3b2ff03255aa">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="83aa9c924a5831cbefd6753f77f49715">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="090f54a660ac57d079920428cf6621d3">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7dbe9a8c344e7538d9a696b0591a956e">
+    <title>11:30 PM PHT 09/15/25 | 11:30 AM ET 09/15/25 | 08:30 AM PT 09/15/25 | 04:30 PM GMT 09/15/25 | 05:30 PM CET 09/15/25</title>
+    <desc>11:30 PM PHT 09/15/25 | 11:30 AM ET 09/15/25 | 08:30 AM PT 09/15/25 | 04:30 PM GMT 09/15/25 | 05:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6707b14297ef4aea9c8b6b8651261ce0">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b7b84b5e3f0e35eedcbf7c853d5b1d52">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6326ad21688b15dc82271b443dd6ff85">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="676f0a6e1271526e1f59ad26d040e79c">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b8bddec154e468120fb7130fbbbf71ab">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4d5941fa0750885d4f093242013bde71">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="bbcd9918104a28e5326d9961ca42334d">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c03bc15259eb1c9137668c16500f8e13">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7727c5727c606c91e37d550cccd98880">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6db21846d7a3bcf9734d74be66b00a34">
+    <title>12:30 AM PHT 09/16/25 | 12:30 PM ET 09/15/25 | 09:30 AM PT 09/15/25 | 05:30 PM GMT 09/15/25 | 06:30 PM CET 09/15/25</title>
+    <desc>12:30 AM PHT 09/16/25 | 12:30 PM ET 09/15/25 | 09:30 AM PT 09/15/25 | 05:30 PM GMT 09/15/25 | 06:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="026d902f321e870edf44af985279eaf4">
+    <title>12:30 AM PHT 09/16/25 | 12:30 PM ET 09/15/25 | 09:30 AM PT 09/15/25 | 05:30 PM GMT 09/15/25 | 06:30 PM CET 09/15/25</title>
+    <desc>12:30 AM PHT 09/16/25 | 12:30 PM ET 09/15/25 | 09:30 AM PT 09/15/25 | 05:30 PM GMT 09/15/25 | 06:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="ed9ce066111fe69fd1a02ee24c2de71f">
+    <title>12:45 AM PHT 09/16/25 | 12:45 PM ET 09/15/25 | 09:45 AM PT 09/15/25 | 05:45 PM GMT 09/15/25 | 06:45 PM CET 09/15/25</title>
+    <desc>12:45 AM PHT 09/16/25 | 12:45 PM ET 09/15/25 | 09:45 AM PT 09/15/25 | 05:45 PM GMT 09/15/25 | 06:45 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="21fe4073479ac578ca8c50ebdb54cbf7">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8a1198380c8c079bd5daa539075bda62">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9357e6b516a913ca02372bdad6381a47">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="56ad16c7dc84d3f424afd264cdbd8b10">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="522867b141a1a89dd7de8d33a63757c3">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="29706b8f2b09b45a1cca99dfcc629e16">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e10e4ce9612decc377777eda0b4bf3b2">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="227ea695dca59454084921e347ac7761">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d86cc0e43379db7bf60df8c0a383f31c">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9169d0059ccba2d3e25df25313bee71a">
+    <title>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</title>
+    <desc>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="aa37578f1c2aabeb630724701a22487c">
+    <title>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</title>
+    <desc>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="fc5509e0f073756447744c1a4ac31174">
+    <title>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</title>
+    <desc>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b1cef4b5107aa27d90126a79acdf59f2">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5d40f56cd9306bdd8c66ec5f7c0132ed">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="16a4068de66bd0fd1ad44aa923dc30cb">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9a5767b115be852344bd7b3042849aba">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="50a4032226126f0df790a3b418be51b2">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3b3c89c95c5e994000d2a76ae638a560">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="349ca4de2fba5150ee3960aef480713d">
+    <title>02:15 AM PHT 09/16/25 | 02:15 PM ET 09/15/25 | 11:15 AM PT 09/15/25 | 07:15 PM GMT 09/15/25 | 08:15 PM CET 09/15/25</title>
+    <desc>02:15 AM PHT 09/16/25 | 02:15 PM ET 09/15/25 | 11:15 AM PT 09/15/25 | 07:15 PM GMT 09/15/25 | 08:15 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5020e69c569c0818aea16daa90ab1d8c">
+    <title>02:15 AM PHT 09/16/25 | 02:15 PM ET 09/15/25 | 11:15 AM PT 09/15/25 | 07:15 PM GMT 09/15/25 | 08:15 PM CET 09/15/25</title>
+    <desc>02:15 AM PHT 09/16/25 | 02:15 PM ET 09/15/25 | 11:15 AM PT 09/15/25 | 07:15 PM GMT 09/15/25 | 08:15 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c2e37874d68eb77b02259d769261cce0">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e8df739bd0203073ad774259a6643b44">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1f35e1c2a1c1a106a02f93a5e554989a">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b1368beda8e41848149ead59bea10e31">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="20ae9ba7ff55e12a1c1cebee197a6c89">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="470f2a1220a47d1c902b9890a16f749e">
+    <title>02:45 AM PHT 09/16/25 | 02:45 PM ET 09/15/25 | 11:45 AM PT 09/15/25 | 07:45 PM GMT 09/15/25 | 08:45 PM CET 09/15/25</title>
+    <desc>02:45 AM PHT 09/16/25 | 02:45 PM ET 09/15/25 | 11:45 AM PT 09/15/25 | 07:45 PM GMT 09/15/25 | 08:45 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="39aea37b238fd6ca41952694efcee2e9">
+    <title>02:45 AM PHT 09/16/25 | 02:45 PM ET 09/15/25 | 11:45 AM PT 09/15/25 | 07:45 PM GMT 09/15/25 | 08:45 PM CET 09/15/25</title>
+    <desc>02:45 AM PHT 09/16/25 | 02:45 PM ET 09/15/25 | 11:45 AM PT 09/15/25 | 07:45 PM GMT 09/15/25 | 08:45 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="dd89a7059e70244367091b75d080a565">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8fdbd1f88c0c3f6773bbad6ad4e4a771">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="28fb8d71181d83b2a726f4830b7549da">
+    <title>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</title>
+    <desc>03:00 AM PHT 09/16/25 | 03:00 PM ET 09/15/25 | 12:00 PM PT 09/15/25 | 08:00 PM GMT 09/15/25 | 09:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="094f2b95a426a593998ee926f3fcbf62">
+    <title>03:15 AM PHT 09/16/25 | 03:15 PM ET 09/15/25 | 12:15 PM PT 09/15/25 | 08:15 PM GMT 09/15/25 | 09:15 PM CET 09/15/25</title>
+    <desc>03:15 AM PHT 09/16/25 | 03:15 PM ET 09/15/25 | 12:15 PM PT 09/15/25 | 08:15 PM GMT 09/15/25 | 09:15 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="f74f6cb35c3a7e8f8d3f315dc4c6be41">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e35957bd2935b4e5626f92644c2d2bc1">
+    <title>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</title>
+    <desc>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c65a67b76b9df2c37e5bae73bfce1521">
+    <title>06:00 AM PHT 09/16/25 | 06:00 PM ET 09/15/25 | 03:00 PM PT 09/15/25 | 11:00 PM GMT 09/15/25 | 12:00 AM CET 09/16/25</title>
+    <desc>06:00 AM PHT 09/16/25 | 06:00 PM ET 09/15/25 | 03:00 PM PT 09/15/25 | 11:00 PM GMT 09/15/25 | 12:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a7b4be22d48243aae5313e356f6e96dd">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="999aeaba1006085815d10d699c8d51c3">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="330f19611c85bb0e158221e21dec1c2f">
+    <title>08:10 AM PHT 09/15/25 | 08:10 PM ET 09/14/25 | 05:10 PM PT 09/14/25 | 01:10 AM GMT 09/15/25 | 02:10 AM CET 09/15/25</title>
+    <desc>08:10 AM PHT 09/15/25 | 08:10 PM ET 09/14/25 | 05:10 PM PT 09/14/25 | 01:10 AM GMT 09/15/25 | 02:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="292718564235a639c7ee6b72d243473e">
+    <title>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</title>
+    <desc>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a4ed3e3ba54ca727c1c97292e43a3a20">
+    <title>09:30 PM PHT 09/15/25 | 09:30 AM ET 09/15/25 | 06:30 AM PT 09/15/25 | 02:30 PM GMT 09/15/25 | 03:30 PM CET 09/15/25</title>
+    <desc>09:30 PM PHT 09/15/25 | 09:30 AM ET 09/15/25 | 06:30 AM PT 09/15/25 | 02:30 PM GMT 09/15/25 | 03:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e5fd667bef7e7e57e7a02752505cd563">
+    <title>10:30 PM PHT 09/15/25 | 10:30 AM ET 09/15/25 | 07:30 AM PT 09/15/25 | 03:30 PM GMT 09/15/25 | 04:30 PM CET 09/15/25</title>
+    <desc>10:30 PM PHT 09/15/25 | 10:30 AM ET 09/15/25 | 07:30 AM PT 09/15/25 | 03:30 PM GMT 09/15/25 | 04:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="15180f547b2a140ae6a517d1b4701eae">
+    <title>07:25 AM PHT 09/16/25 | 07:25 PM ET 09/15/25 | 04:25 PM PT 09/15/25 | 12:25 AM GMT 09/16/25 | 01:25 AM CET 09/16/25</title>
+    <desc>07:25 AM PHT 09/16/25 | 07:25 PM ET 09/15/25 | 04:25 PM PT 09/15/25 | 12:25 AM GMT 09/16/25 | 01:25 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d13764c6ea619bb1d742fae6b78f513b">
+    <title>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</title>
+    <desc>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="639608be12d81fbe689987fbe63156c1">
+    <title>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</title>
+    <desc>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d8efc19052816a875bcae647703cdb2c">
+    <title>02:30 PM PHT 09/15/25 | 02:30 AM ET 09/15/25 | 11:30 PM PT 09/14/25 | 07:30 AM GMT 09/15/25 | 08:30 AM CET 09/15/25</title>
+    <desc>02:30 PM PHT 09/15/25 | 02:30 AM ET 09/15/25 | 11:30 PM PT 09/14/25 | 07:30 AM GMT 09/15/25 | 08:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7bb739516769315f8b5083dcb9ec353c">
+    <title>02:30 PM PHT 09/15/25 | 02:30 AM ET 09/15/25 | 11:30 PM PT 09/14/25 | 07:30 AM GMT 09/15/25 | 08:30 AM CET 09/15/25</title>
+    <desc>02:30 PM PHT 09/15/25 | 02:30 AM ET 09/15/25 | 11:30 PM PT 09/14/25 | 07:30 AM GMT 09/15/25 | 08:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4659ecf8f1261503ea500a72e9b6b0fa">
+    <title>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</title>
+    <desc>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="85812f7139215d7f1c02e41c4fe5b42a">
+    <title>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</title>
+    <desc>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="dc2c7e560e4a6543b8ac54eb17c18aba">
+    <title>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</title>
+    <desc>01:00 PM PHT 09/15/25 | 01:00 AM ET 09/15/25 | 10:00 PM PT 09/14/25 | 06:00 AM GMT 09/15/25 | 07:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1de7326cbadd835ee7034ae7e9f5da79">
+    <title>01:05 PM PHT 09/15/25 | 01:05 AM ET 09/15/25 | 10:05 PM PT 09/14/25 | 06:05 AM GMT 09/15/25 | 07:05 AM CET 09/15/25</title>
+    <desc>01:05 PM PHT 09/15/25 | 01:05 AM ET 09/15/25 | 10:05 PM PT 09/14/25 | 06:05 AM GMT 09/15/25 | 07:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="683db4ee6a9f8753b01b01095046fb05">
+    <title>01:05 PM PHT 09/15/25 | 01:05 AM ET 09/15/25 | 10:05 PM PT 09/14/25 | 06:05 AM GMT 09/15/25 | 07:05 AM CET 09/15/25</title>
+    <desc>01:05 PM PHT 09/15/25 | 01:05 AM ET 09/15/25 | 10:05 PM PT 09/14/25 | 06:05 AM GMT 09/15/25 | 07:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a05e467a5e21a0f30a16480af2c6d145">
+    <title>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</title>
+    <desc>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8f3ed9d39f086b4e39f4df4dc8c19675">
+    <title>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</title>
+    <desc>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="bb872d5bdab1a0e884cdc8960b8a77b4">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="724a2d62d3693299c9312f33f5dfad9b">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a8dc45ecb7dd052067862e621a80461c">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="904deb72a3e730432c278d67afdd6c64">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="dd9bd8c13de2fb8c40821f80fc57e1df">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="04b773770c2991b62b32ed167a684714">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="573b884a8f08025c00e35e3e601b90a7">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="26f82c3520fa7fc6b6f8ad66413add41">
+    <title>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</title>
+    <desc>03:00 PM PHT 09/15/25 | 03:00 AM ET 09/15/25 | 12:00 AM PT 09/15/25 | 08:00 AM GMT 09/15/25 | 09:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7e5a1ee213ecb13c9ebbf102029f65f1">
+    <title>03:30 PM PHT 09/15/25 | 03:30 AM ET 09/15/25 | 12:30 AM PT 09/15/25 | 08:30 AM GMT 09/15/25 | 09:30 AM CET 09/15/25</title>
+    <desc>03:30 PM PHT 09/15/25 | 03:30 AM ET 09/15/25 | 12:30 AM PT 09/15/25 | 08:30 AM GMT 09/15/25 | 09:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b3672c1dbcad0da5bc8f5cb6e303d74f">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a9f466e2bc744a53984b89edc4791ca0">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9b70587a7d1bb7ccb19f9f4c1603f583">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c3d282397fbeac93c9609baa1326b426">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c7ea9cbc80e3ea7e8f70eaf551471664">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5de0d727c2d65fd4e0ced725f5c11299">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3aec443ac50758d033237aa46999f6c0">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8ac50189fbf6808b92ba46a13055ce3c">
+    <title>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</title>
+    <desc>04:00 PM PHT 09/15/25 | 04:00 AM ET 09/15/25 | 01:00 AM PT 09/15/25 | 09:00 AM GMT 09/15/25 | 10:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9d89cf024f4b7cca1ee3ff893d9fac91">
+    <title>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</title>
+    <desc>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="06af2371d438cba82e44168eee8a63f7">
+    <title>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</title>
+    <desc>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1fa8fb6f42fd49e196e869c512b1e7be">
+    <title>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</title>
+    <desc>04:05 PM PHT 09/15/25 | 04:05 AM ET 09/15/25 | 01:05 AM PT 09/15/25 | 09:05 AM GMT 09/15/25 | 10:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="412329b972dd8f113d3204dd9251e31d">
+    <title>04:10 PM PHT 09/15/25 | 04:10 AM ET 09/15/25 | 01:10 AM PT 09/15/25 | 09:10 AM GMT 09/15/25 | 10:10 AM CET 09/15/25</title>
+    <desc>04:10 PM PHT 09/15/25 | 04:10 AM ET 09/15/25 | 01:10 AM PT 09/15/25 | 09:10 AM GMT 09/15/25 | 10:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6605debc1d3edc223d610bdaf4c1ecf2">
+    <title>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</title>
+    <desc>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="696af7a2c861b6603ae9678ff46d57f5">
+    <title>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</title>
+    <desc>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3424583b5b28cb528c50025e411e146b">
+    <title>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</title>
+    <desc>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="14ec42d821bec7f50b6c47a99ea8ca3a">
+    <title>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</title>
+    <desc>04:30 PM PHT 09/15/25 | 04:30 AM ET 09/15/25 | 01:30 AM PT 09/15/25 | 09:30 AM GMT 09/15/25 | 10:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="33afeb2552ddbf7979badfca6155de72">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b13114a68e931e505e7761519b5b919e">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="72349be812b7bcbe310b5aab768cae41">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6ba4d0807939eb2bd9f86b128941eba1">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c7366e585e9250c097a271fcffdff8a9">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="30a03f91e06fe3539855a00dc11800b9">
+    <title>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</title>
+    <desc>05:00 PM PHT 09/15/25 | 05:00 AM ET 09/15/25 | 02:00 AM PT 09/15/25 | 10:00 AM GMT 09/15/25 | 11:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="27140c129dddbe95b7a7e00c1e391f0d">
+    <title>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</title>
+    <desc>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d1460b1743d67da9fcc4f48f2e25914b">
+    <title>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</title>
+    <desc>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6187bb33f7223b2f38d3479b52980144">
+    <title>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</title>
+    <desc>05:05 PM PHT 09/15/25 | 05:05 AM ET 09/15/25 | 02:05 AM PT 09/15/25 | 10:05 AM GMT 09/15/25 | 11:05 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a8a719df1ecee3512c024fb3046edcba">
+    <title>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</title>
+    <desc>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="757012add9b6409faa4b474affd5e604">
+    <title>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</title>
+    <desc>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6e3f35c9913c71d0fec4194b33b72166">
+    <title>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</title>
+    <desc>05:10 PM PHT 09/15/25 | 05:10 AM ET 09/15/25 | 02:10 AM PT 09/15/25 | 10:10 AM GMT 09/15/25 | 11:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="ee4007f4844a8e0861afcd19871794c6">
+    <title>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</title>
+    <desc>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="604fdaed37ac28e09e6c23fdfbe299cc">
+    <title>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</title>
+    <desc>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b21efbafe3a6fda8fe09c61464d4d076">
+    <title>05:40 PM PHT 09/15/25 | 05:40 AM ET 09/15/25 | 02:40 AM PT 09/15/25 | 10:40 AM GMT 09/15/25 | 11:40 AM CET 09/15/25</title>
+    <desc>05:40 PM PHT 09/15/25 | 05:40 AM ET 09/15/25 | 02:40 AM PT 09/15/25 | 10:40 AM GMT 09/15/25 | 11:40 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2f032bd5e676638d8e66007a4b48518f">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5c3f1e22737676889e3b92556d7148ae">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8a28f8c10e947a9dcd2fcb20a4cd4b51">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="de286de7dcd592604c5363f79628ac27">
+    <title>06:05 PM PHT 09/15/25 | 06:05 AM ET 09/15/25 | 03:05 AM PT 09/15/25 | 11:05 AM GMT 09/15/25 | 12:05 PM CET 09/15/25</title>
+    <desc>06:05 PM PHT 09/15/25 | 06:05 AM ET 09/15/25 | 03:05 AM PT 09/15/25 | 11:05 AM GMT 09/15/25 | 12:05 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3a5e70b696cbe612ef43ef60f1e476d9">
+    <title>06:05 PM PHT 09/15/25 | 06:05 AM ET 09/15/25 | 03:05 AM PT 09/15/25 | 11:05 AM GMT 09/15/25 | 12:05 PM CET 09/15/25</title>
+    <desc>06:05 PM PHT 09/15/25 | 06:05 AM ET 09/15/25 | 03:05 AM PT 09/15/25 | 11:05 AM GMT 09/15/25 | 12:05 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="676526cfde9aa2ec4058276f23a22106">
+    <title>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</title>
+    <desc>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0305d4ebfac214522001414f5a4c9c07">
+    <title>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</title>
+    <desc>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b12efecfcc3ffa6e97bd605fe2fa2b94">
+    <title>06:50 PM PHT 09/15/25 | 06:50 AM ET 09/15/25 | 03:50 AM PT 09/15/25 | 11:50 AM GMT 09/15/25 | 12:50 PM CET 09/15/25</title>
+    <desc>06:50 PM PHT 09/15/25 | 06:50 AM ET 09/15/25 | 03:50 AM PT 09/15/25 | 11:50 AM GMT 09/15/25 | 12:50 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="cb3b942b16532f09e6d297decdebadd2">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5e3b130fdbd94a5593ba70886c082a6a">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e10a96e667123469ceab3e11280b3eb2">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="964df0eb9b0a506717c09a26cbae1a53">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="015193fe9829ae0058cca9acf92fc19f">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4ff73b4a15ab8e81e73728c974533d19">
+    <title>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</title>
+    <desc>07:00 PM PHT 09/15/25 | 07:00 AM ET 09/15/25 | 04:00 AM PT 09/15/25 | 12:00 PM GMT 09/15/25 | 01:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="973d268daffbe76249ef7ac896d69cda">
+    <title>07:30 PM PHT 09/15/25 | 07:30 AM ET 09/15/25 | 04:30 AM PT 09/15/25 | 12:30 PM GMT 09/15/25 | 01:30 PM CET 09/15/25</title>
+    <desc>07:30 PM PHT 09/15/25 | 07:30 AM ET 09/15/25 | 04:30 AM PT 09/15/25 | 12:30 PM GMT 09/15/25 | 01:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="599855dbb69a151b227b1082d4b39466">
+    <title>07:40 PM PHT 09/15/25 | 07:40 AM ET 09/15/25 | 04:40 AM PT 09/15/25 | 12:40 PM GMT 09/15/25 | 01:40 PM CET 09/15/25</title>
+    <desc>07:40 PM PHT 09/15/25 | 07:40 AM ET 09/15/25 | 04:40 AM PT 09/15/25 | 12:40 PM GMT 09/15/25 | 01:40 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c17aadd669ddd7ca6681b906804e60b9">
+    <title>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</title>
+    <desc>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="75e1f03187b7240ad6a62588138e70da">
+    <title>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</title>
+    <desc>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2f2d05d961e3a845a576b43c236cfc81">
+    <title>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</title>
+    <desc>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="f5752c21800684b894a784bd9de06c64">
+    <title>08:20 PM PHT 09/15/25 | 08:20 AM ET 09/15/25 | 05:20 AM PT 09/15/25 | 01:20 PM GMT 09/15/25 | 02:20 PM CET 09/15/25</title>
+    <desc>08:20 PM PHT 09/15/25 | 08:20 AM ET 09/15/25 | 05:20 AM PT 09/15/25 | 01:20 PM GMT 09/15/25 | 02:20 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="ec2f8eee72c7474a4f34d0b2960223d2">
+    <title>08:40 PM PHT 09/15/25 | 08:40 AM ET 09/15/25 | 05:40 AM PT 09/15/25 | 01:40 PM GMT 09/15/25 | 02:40 PM CET 09/15/25</title>
+    <desc>08:40 PM PHT 09/15/25 | 08:40 AM ET 09/15/25 | 05:40 AM PT 09/15/25 | 01:40 PM GMT 09/15/25 | 02:40 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="644436ee0f4597686779205fbe1901b0">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0909a8f7815255663fe8b288b94e7620">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="c6671ff2f3de0236b1dafd5aca0ccfaf">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="efe41f181e940327708a8520794f5b22">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="de722268eb0a21b9fd498c7d1e537685">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4555363fcc93d98738a9359ed7e890ed">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a0c882f7dee9a9ead7b38872319aaf74">
+    <title>09:05 PM PHT 09/15/25 | 09:05 AM ET 09/15/25 | 06:05 AM PT 09/15/25 | 02:05 PM GMT 09/15/25 | 03:05 PM CET 09/15/25</title>
+    <desc>09:05 PM PHT 09/15/25 | 09:05 AM ET 09/15/25 | 06:05 AM PT 09/15/25 | 02:05 PM GMT 09/15/25 | 03:05 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b6edb9c9f1783050fadb16124b39944b">
+    <title>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</title>
+    <desc>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="47483574edbc772a08a08def9963b55a">
+    <title>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</title>
+    <desc>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="e06af9439fa1769fb01d3a9616b19b32">
+    <title>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</title>
+    <desc>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="378f94e91fd7eeb28ab26fd336041c2a">
+    <title>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</title>
+    <desc>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0891e0c3f32e2ed53df54589b4fe55b7">
+    <title>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</title>
+    <desc>10:10 PM PHT 09/15/25 | 10:10 AM ET 09/15/25 | 07:10 AM PT 09/15/25 | 03:10 PM GMT 09/15/25 | 04:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="904299a9910789bb0705bc3736f24db1">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="95b504fb4ca03c7d261693747a7f9604">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2b2195b020a2d29567d50adb62dc8528">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5af884da6a87c4baeb642369442dcdef">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d977713f96f904c536bca4a83eff71d3">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9ba82a34059660ad5ad1490b861958e4">
+    <title>11:10 PM PHT 09/15/25 | 11:10 AM ET 09/15/25 | 08:10 AM PT 09/15/25 | 04:10 PM GMT 09/15/25 | 05:10 PM CET 09/15/25</title>
+    <desc>11:10 PM PHT 09/15/25 | 11:10 AM ET 09/15/25 | 08:10 AM PT 09/15/25 | 04:10 PM GMT 09/15/25 | 05:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a10d2138d0e03f1dc1a619500464575a">
+    <title>11:10 PM PHT 09/15/25 | 11:10 AM ET 09/15/25 | 08:10 AM PT 09/15/25 | 04:10 PM GMT 09/15/25 | 05:10 PM CET 09/15/25</title>
+    <desc>11:10 PM PHT 09/15/25 | 11:10 AM ET 09/15/25 | 08:10 AM PT 09/15/25 | 04:10 PM GMT 09/15/25 | 05:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b61af40cca699b5e53cdab824c4758dc">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4dab805bf82f9c4246f90e84b9e2ae51">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="01a387b93433b6dd5d8b755abdfc2808">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="aa11591e8a17269c1a6cd678cbc08ea0">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="130f8e3cacd6a94dbab6f07c13fc373c">
+    <title>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</title>
+    <desc>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="d6546925edb1b58b5f4296edf105c1c4">
+    <title>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</title>
+    <desc>01:10 AM PHT 09/16/25 | 01:10 PM ET 09/15/25 | 10:10 AM PT 09/15/25 | 06:10 PM GMT 09/15/25 | 07:10 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a86ace7364bfa43c0c142ccbc4e04469">
+    <title>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</title>
+    <desc>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="f10200111d99aead8cc3d530dc380d9d">
+    <title>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</title>
+    <desc>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="61d4ade28e4b5b876f20454a4345da5b">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0f97d7728604c47c5a061302dd13c7e7">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3c91e3d009fa06f232c89e91d3adde48">
+    <title>02:40 AM PHT 09/16/25 | 02:40 PM ET 09/15/25 | 11:40 AM PT 09/15/25 | 07:40 PM GMT 09/15/25 | 08:40 PM CET 09/15/25</title>
+    <desc>02:40 AM PHT 09/16/25 | 02:40 PM ET 09/15/25 | 11:40 AM PT 09/15/25 | 07:40 PM GMT 09/15/25 | 08:40 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="bca1bb77cb07ba6ebc0606aacafed150">
+    <title>02:40 AM PHT 09/16/25 | 02:40 PM ET 09/15/25 | 11:40 AM PT 09/15/25 | 07:40 PM GMT 09/15/25 | 08:40 PM CET 09/15/25</title>
+    <desc>02:40 AM PHT 09/16/25 | 02:40 PM ET 09/15/25 | 11:40 AM PT 09/15/25 | 07:40 PM GMT 09/15/25 | 08:40 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2c55f538958e82b24a594a228f7444b8">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8997db14a20e545c9d193cbacaea706c">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1332684ac830220b92af04ca9175151e">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="a849ecc566f77cc65deb603d340afbd0">
+    <title>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</title>
+    <desc>05:30 AM PHT 09/16/25 | 05:30 PM ET 09/15/25 | 02:30 PM PT 09/15/25 | 10:30 PM GMT 09/15/25 | 11:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b5423cbd0fd63184594506eca8de00a9">
+    <title>06:10 AM PHT 09/16/25 | 06:10 PM ET 09/15/25 | 03:10 PM PT 09/15/25 | 11:10 PM GMT 09/15/25 | 12:10 AM CET 09/16/25</title>
+    <desc>06:10 AM PHT 09/16/25 | 06:10 PM ET 09/15/25 | 03:10 PM PT 09/15/25 | 11:10 PM GMT 09/15/25 | 12:10 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7095b4907f5880d0929f9835c122044b">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="98ca7e1b711db0534fe65b1e46ca9628">
+    <title>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</title>
+    <desc>08:00 AM PHT 09/15/25 | 08:00 PM ET 09/14/25 | 05:00 PM PT 09/14/25 | 01:00 AM GMT 09/15/25 | 02:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4848a3cf953d44583b8089eb4f4b30de">
+    <title>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</title>
+    <desc>05:00 AM PHT 09/16/25 | 05:00 PM ET 09/15/25 | 02:00 PM PT 09/15/25 | 10:00 PM GMT 09/15/25 | 11:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3e958b3c48d868265fdd92047a6f23e1">
+    <title>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</title>
+    <desc>08:00 PM PHT 09/15/25 | 08:00 AM ET 09/15/25 | 05:00 AM PT 09/15/25 | 01:00 PM GMT 09/15/25 | 02:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3e958b3c48d868265fdd92047a6f23e1">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="1849481a06790ff97eea3557605d3557">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="9487e75886b863ab55ef8c170d199145">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="ccd6dc98e714b094c963a9ec6af246a5">
+    <title>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</title>
+    <desc>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="3e4fd6fa81527e3564a9b9022a5897c7">
+    <title>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</title>
+    <desc>06:30 PM PHT 09/15/25 | 06:30 AM ET 09/15/25 | 03:30 AM PT 09/15/25 | 11:30 AM GMT 09/15/25 | 12:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="320cab77e4e8eac9cfcd17279862fbb4">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="ecbe15485b08864e7c1609c90d759642">
+    <title>06:40 AM PHT 09/16/25 | 06:40 PM ET 09/15/25 | 03:40 PM PT 09/15/25 | 11:40 PM GMT 09/15/25 | 12:40 AM CET 09/16/25</title>
+    <desc>06:40 AM PHT 09/16/25 | 06:40 PM ET 09/15/25 | 03:40 PM PT 09/15/25 | 11:40 PM GMT 09/15/25 | 12:40 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="4721af9a1d987750198c49a3c601e66e">
+    <title>06:45 AM PHT 09/16/25 | 06:45 PM ET 09/15/25 | 03:45 PM PT 09/15/25 | 11:45 PM GMT 09/15/25 | 12:45 AM CET 09/16/25</title>
+    <desc>06:45 AM PHT 09/16/25 | 06:45 PM ET 09/15/25 | 03:45 PM PT 09/15/25 | 11:45 PM GMT 09/15/25 | 12:45 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="36a2496b40d6c1b4a5a6f6f5e044ff6d">
+    <title>07:35 AM PHT 09/16/25 | 07:35 PM ET 09/15/25 | 04:35 PM PT 09/15/25 | 12:35 AM GMT 09/16/25 | 01:35 AM CET 09/16/25</title>
+    <desc>07:35 AM PHT 09/16/25 | 07:35 PM ET 09/15/25 | 04:35 PM PT 09/15/25 | 12:35 AM GMT 09/16/25 | 01:35 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b577ffe830f6a95d0b6b782907ec1a8c">
+    <title>07:40 AM PHT 09/16/25 | 07:40 PM ET 09/15/25 | 04:40 PM PT 09/15/25 | 12:40 AM GMT 09/16/25 | 01:40 AM CET 09/16/25</title>
+    <desc>07:40 AM PHT 09/16/25 | 07:40 PM ET 09/15/25 | 04:40 PM PT 09/15/25 | 12:40 AM GMT 09/16/25 | 01:40 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="51b62794d1b1bddb554b3e97297878d4">
+    <title>07:40 AM PHT 09/16/25 | 07:40 PM ET 09/15/25 | 04:40 PM PT 09/15/25 | 12:40 AM GMT 09/16/25 | 01:40 AM CET 09/16/25</title>
+    <desc>07:40 AM PHT 09/16/25 | 07:40 PM ET 09/15/25 | 04:40 PM PT 09/15/25 | 12:40 AM GMT 09/16/25 | 01:40 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="52d280d1c705782a6c094ddc902c4a64">
+    <title>07:45 AM PHT 09/16/25 | 07:45 PM ET 09/15/25 | 04:45 PM PT 09/15/25 | 12:45 AM GMT 09/16/25 | 01:45 AM CET 09/16/25</title>
+    <desc>07:45 AM PHT 09/16/25 | 07:45 PM ET 09/15/25 | 04:45 PM PT 09/15/25 | 12:45 AM GMT 09/16/25 | 01:45 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b47e94e77d655e782b2b5125b14457d7">
+    <title>08:10 AM PHT 09/15/25 | 08:10 PM ET 09/14/25 | 05:10 PM PT 09/14/25 | 01:10 AM GMT 09/15/25 | 02:10 AM CET 09/15/25</title>
+    <desc>08:10 AM PHT 09/15/25 | 08:10 PM ET 09/14/25 | 05:10 PM PT 09/14/25 | 01:10 AM GMT 09/15/25 | 02:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="0582f05d06a16b2f8a74e86dc3c2dc65">
+    <title>09:40 AM PHT 09/15/25 | 09:40 PM ET 09/14/25 | 06:40 PM PT 09/14/25 | 02:40 AM GMT 09/15/25 | 03:40 AM CET 09/15/25</title>
+    <desc>09:40 AM PHT 09/15/25 | 09:40 PM ET 09/14/25 | 06:40 PM PT 09/14/25 | 02:40 AM GMT 09/15/25 | 03:40 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="87c1a3d2a3919c757fc508f5cf3c0a78">
+    <title>10:10 AM PHT 09/15/25 | 10:10 PM ET 09/14/25 | 07:10 PM PT 09/14/25 | 03:10 AM GMT 09/15/25 | 04:10 AM CET 09/15/25</title>
+    <desc>10:10 AM PHT 09/15/25 | 10:10 PM ET 09/14/25 | 07:10 PM PT 09/14/25 | 03:10 AM GMT 09/15/25 | 04:10 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6fb37af1435c4387ccd1224dcaab2054">
+    <title>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</title>
+    <desc>11:00 PM PHT 09/15/25 | 11:00 AM ET 09/15/25 | 08:00 AM PT 09/15/25 | 04:00 PM GMT 09/15/25 | 05:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="cb5b038fbd4c56851be2264cd83cd09a">
+    <title>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</title>
+    <desc>02:00 AM PHT 09/16/25 | 02:00 PM ET 09/15/25 | 11:00 AM PT 09/15/25 | 07:00 PM GMT 09/15/25 | 08:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="67945ca6fd00e3dda752114fbb88060b">
+    <title>02:05 AM PHT 09/16/25 | 02:05 PM ET 09/15/25 | 11:05 AM PT 09/15/25 | 07:05 PM GMT 09/15/25 | 08:05 PM CET 09/15/25</title>
+    <desc>02:05 AM PHT 09/16/25 | 02:05 PM ET 09/15/25 | 11:05 AM PT 09/15/25 | 07:05 PM GMT 09/15/25 | 08:05 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b7620b135bcf548d33173b8e5ed2c047">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="831f90bdd92ff034c4a333196af56a3d">
+    <title>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</title>
+    <desc>12:00 AM PHT 09/16/25 | 12:00 PM ET 09/15/25 | 09:00 AM PT 09/15/25 | 05:00 PM GMT 09/15/25 | 06:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7f1a5c57270024966fc41d2c1c6fa451">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6b605f13af2778bda9c7f452b5c4356e">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="134c85b32d92af2eebfaae1823078f5a">
+    <title>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</title>
+    <desc>01:30 AM PHT 09/16/25 | 01:30 PM ET 09/15/25 | 10:30 AM PT 09/15/25 | 06:30 PM GMT 09/15/25 | 07:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8aa300e51067ce12a9e734e9c4b89225">
+    <title>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</title>
+    <desc>02:30 AM PHT 09/16/25 | 02:30 PM ET 09/15/25 | 11:30 AM PT 09/15/25 | 07:30 PM GMT 09/15/25 | 08:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="5ebdedafb846c838c4878e9a760d4b95">
+    <title>08:30 PM PHT 09/15/25 | 08:30 AM ET 09/15/25 | 05:30 AM PT 09/15/25 | 01:30 PM GMT 09/15/25 | 02:30 PM CET 09/15/25</title>
+    <desc>08:30 PM PHT 09/15/25 | 08:30 AM ET 09/15/25 | 05:30 AM PT 09/15/25 | 01:30 PM GMT 09/15/25 | 02:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6140699a64f705999669a75300287408">
+    <title>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</title>
+    <desc>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b80a3e8a344cc6fb1c50036762e89ce7">
+    <title>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</title>
+    <desc>10:00 PM PHT 09/15/25 | 10:00 AM ET 09/15/25 | 07:00 AM PT 09/15/25 | 03:00 PM GMT 09/15/25 | 04:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="50b0131bdc938fb139304bfeea059a9b">
+    <title>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</title>
+    <desc>01:00 AM PHT 09/16/25 | 01:00 PM ET 09/15/25 | 10:00 AM PT 09/15/25 | 06:00 PM GMT 09/15/25 | 07:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="06bab27b34f6621e60015e16b401a7bc">
+    <title>10:30 AM PHT 09/15/25 | 10:30 PM ET 09/14/25 | 07:30 PM PT 09/14/25 | 03:30 AM GMT 09/15/25 | 04:30 AM CET 09/15/25</title>
+    <desc>10:30 AM PHT 09/15/25 | 10:30 PM ET 09/14/25 | 07:30 PM PT 09/14/25 | 03:30 AM GMT 09/15/25 | 04:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8ab0b6237801631cfe935300f00674a4">
+    <title>01:30 PM PHT 09/15/25 | 01:30 AM ET 09/15/25 | 10:30 PM PT 09/14/25 | 06:30 AM GMT 09/15/25 | 07:30 AM CET 09/15/25</title>
+    <desc>01:30 PM PHT 09/15/25 | 01:30 AM ET 09/15/25 | 10:30 PM PT 09/14/25 | 06:30 AM GMT 09/15/25 | 07:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="b453248aa012fabcfff140371b063165">
+    <title>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</title>
+    <desc>02:00 PM PHT 09/15/25 | 02:00 AM ET 09/15/25 | 11:00 PM PT 09/14/25 | 07:00 AM GMT 09/15/25 | 08:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7157ed246d2c3b548b66c5a5947d7512">
+    <title>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</title>
+    <desc>05:30 PM PHT 09/15/25 | 05:30 AM ET 09/15/25 | 02:30 AM PT 09/15/25 | 10:30 AM GMT 09/15/25 | 11:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="04f3e8592c58cb5a6abe8a542add6c0f">
+    <title>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</title>
+    <desc>06:00 PM PHT 09/15/25 | 06:00 AM ET 09/15/25 | 03:00 AM PT 09/15/25 | 11:00 AM GMT 09/15/25 | 12:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="8087aa26e7e15c887b365bd08a14d8c0">
+    <title>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</title>
+    <desc>09:00 PM PHT 09/15/25 | 09:00 AM ET 09/15/25 | 06:00 AM PT 09/15/25 | 02:00 PM GMT 09/15/25 | 03:00 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="7b2593ca78a51267ce0a79e2618c06c3">
+    <title>09:30 PM PHT 09/15/25 | 09:30 AM ET 09/15/25 | 06:30 AM PT 09/15/25 | 02:30 PM GMT 09/15/25 | 03:30 PM CET 09/15/25</title>
+    <desc>09:30 PM PHT 09/15/25 | 09:30 AM ET 09/15/25 | 06:30 AM PT 09/15/25 | 02:30 PM GMT 09/15/25 | 03:30 PM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="6db22a007979a3bd3801f358bf901acc">
+    <title>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</title>
+    <desc>10:00 AM PHT 09/15/25 | 10:00 PM ET 09/14/25 | 07:00 PM PT 09/14/25 | 03:00 AM GMT 09/15/25 | 04:00 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="80c52648636f806af0f45a2e87bccab8">
+    <title>10:30 AM PHT 09/15/25 | 10:30 PM ET 09/14/25 | 07:30 PM PT 09/14/25 | 03:30 AM GMT 09/15/25 | 04:30 AM CET 09/15/25</title>
+    <desc>10:30 AM PHT 09/15/25 | 10:30 PM ET 09/14/25 | 07:30 PM PT 09/14/25 | 03:30 AM GMT 09/15/25 | 04:30 AM CET 09/15/25</desc>
+  </programme>
+  <programme start="20250915210007 +0000" stop="20250916210007 +0000" channel="2ca2b01fc6ab1f452ec9bea28c444a60">
+    <title>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</title>
+    <desc>07:00 AM PHT 09/16/25 | 07:00 PM ET 09/15/25 | 04:00 PM PT 09/15/25 | 12:00 AM GMT 09/16/25 | 01:00 AM CET 09/16/25</desc>
+  </programme>
+</tv>

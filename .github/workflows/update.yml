@@ -1,42 +1,36 @@
-name: Sync & Update Playlists
+name: Auto-sync from pigzillaaa/daddylive
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 */3 * * *' # every 3 hours
+    - cron: "0 */2 * * *"     # every 2 hours
+  workflow_dispatch:          # manual trigger
 
 jobs:
-  update:
+  sync:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout fork
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Add upstream and merge
+      - name: Set Git identity
         run: |
-          git remote add upstream https://github.com/pigzillaaa/daddylive.git || true
-          git fetch upstream
-          git merge upstream/main --allow-unrelated-histories -m "Merge upstream playlists" || true
-
-      - name: Configure Git
-        run: |
+          git config --global user.email "actions@github.com"
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit updated playlists if they exist
+      - name: Add upstream remote
         run: |
-          # Check if any .m3u files exist
-          if ls *.m3u 1> /dev/null 2>&1; then
-            git add '*.m3u'
+          git remote remove upstream || true
+          git remote add upstream https://github.com/pigzillaaa/daddylive.git
 
-            # Commit only if there are changes
-            if ! git diff --cached --quiet; then
-              git commit -m "Update playlists"
-              git push
-            else
-              echo "No changes to commit."
-            fi
-          else
-            echo "No .m3u files found, skipping commit."
-          fi
+      - name: Fetch upstream
+        run: git fetch upstream
+
+      - name: Merge upstream/main into main
+        run: |
+          git checkout main
+          git merge upstream/main --no-edit || echo "No upstream changes to merge"
+
+      - name: Push changes
+        run: git push origin main

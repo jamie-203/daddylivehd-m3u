@@ -3,7 +3,7 @@ name: Send DaddyLive Schedule to Discord
 on:
   schedule:
     - cron: "0 */2 * * *"   # every 2 hours
-  workflow_dispatch:        # allow manual run
+  workflow_dispatch:
 
 jobs:
   send-schedule:
@@ -17,25 +17,42 @@ jobs:
           if [ -z "${{ secrets.DISCORD_WEBHOOK }}" ]; then
             echo "❌ ERROR: Discord webhook secret (DISCORD_WEBHOOK) is missing."
             exit 1
-          else
-            echo "✅ Discord webhook secret found."
           fi
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Fetch DaddyLive schedule
         run: |
-          echo "📥 Downloading schedule JSON..."
           curl -sL "https://daddylivestream.com/schedule/schedule-generated.php" -o schedule.json
           if [ ! -s schedule.json ]; then
-            echo "❌ ERROR: Failed to download schedule.json (file is empty or missing)."
+            echo "❌ ERROR: Failed to download schedule.json (file is empty)."
             exit 1
-          else
-            echo "✅ schedule.json downloaded successfully."
           fi
+
+      - name: Build Discord embed payload
+        run: |
+          # Build fields for each day
+          FIELDS=$(jq -c '
+            to_entries |
+            map({
+              name: .key,
+              value: (
+                .value["TV Shows"] |
+                map("\(.time) - \(.event) | Channels: \(.channels | join(", "))") |
+                join("\n")
+              ),
+              inline: false
+            })
+          ' schedule.json)
+
+          # Wrap fields in embeds JSON
+          echo "{\"username\": \"DaddyLive Schedule\", \"embeds\": [{\"title\": \"Upcoming Events\", \"color\": 5814783, \"fields\": $FIELDS}]}" > discord_payload.json
+          cat discord_payload.json
 
       - name: Send schedule to Discord
         run: |
-          echo "📤 Sending schedule.json to Discord..."
-          curl -H "Content-Type: application/json" \
+          curl -v -H "Content-Type: application/json" \
                -X POST \
-               -d @"schedule.json" \
+               -d @discord_payload.json \
                "${{ secrets.DISCORD_WEBHOOK }}"

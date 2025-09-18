@@ -2,50 +2,40 @@ name: Send DaddyLive Schedule to Discord
 
 on:
   schedule:
-    - cron: "0 * * * *" # runs every hour, adjust as needed
-  workflow_dispatch:
+    - cron: "0 */2 * * *"   # every 2 hours
+  workflow_dispatch:        # allow manual run
 
 jobs:
   send-schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch schedule from Vercel proxy
+      - name: Check Discord webhook secret
         run: |
-          echo "🔎 Fetching schedule from Vercel proxy..."
-          curl -v --fail https://daddylivehd-m3u-11x3.vercel.app/ -o schedule.json || {
-            echo "❌ Failed to fetch schedule from Vercel"
-            # Optional: post a warning to Discord
-            curl -H "Content-Type: application/json" \
-                 -d '{"content":"⚠️ Failed to fetch schedule from Vercel"}' \
-                 "${{ secrets.DISCORD_WEBHOOK }}" || echo "⚠️ Could not send error to Discord"
-            exit 6
-          }
-          echo "✅ Schedule fetched successfully"
-          echo "📄 First 20 lines of schedule.json:"
-          head -n 20 schedule.json || echo "⚠️ Could not preview schedule.json"
+          if [ -z "${{ secrets.DISCORD_WEBHOOK }}" ]; then
+            echo "❌ ERROR: Discord webhook secret (DISCORD_WEBHOOK) is missing."
+            exit 1
+          else
+            echo "✅ Discord webhook secret found."
+          fi
 
-      - name: Validate JSON
+      - name: Fetch DaddyLive schedule
         run: |
-          echo "🔎 Validating JSON..."
-          cat schedule.json | python3 -m json.tool > /dev/null || {
-            echo "❌ Invalid JSON received"
-            curl -H "Content-Type: application/json" \
-                 -d '{"content":"⚠️ Invalid JSON received from schedule"}' \
-                 "${{ secrets.DISCORD_WEBHOOK }}" || echo "⚠️ Could not send error to Discord"
-            exit 7
-          }
-          echo "✅ JSON is valid"
+          echo "📥 Downloading schedule JSON..."
+          curl -sL "https://daddylivestream.com/schedule/schedule-generated.php" -o schedule.json
+          if [ ! -s schedule.json ]; then
+            echo "❌ ERROR: Failed to download schedule.json (file is empty or missing)."
+            exit 1
+          else
+            echo "✅ schedule.json downloaded successfully."
+          fi
 
-      - name: Send to Discord
+      - name: Send schedule to Discord
         run: |
-          echo "🔎 Sending schedule to Discord..."
-          curl -v -H "Content-Type: application/json" \
-               -d @schedule.json \
-               "${{ secrets.DISCORD_WEBHOOK }}" || {
-            echo "❌ Failed to send message to Discord (webhook issue)"
-            exit 8
-          }
-          echo "✅ Message sent to Discord"
+          echo "📤 Sending schedule.json to Discord..."
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d @"schedule.json" \
+               "${{ secrets.DISCORD_WEBHOOK }}"

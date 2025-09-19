@@ -1,4 +1,4 @@
-name: Merge Playlists
+name: Master Playlist Updater
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -20,22 +20,24 @@ jobs:
       - name: Install dependencies
         run: npm install node-fetch
 
-      - name: Merge playlists (English only)
-        run: |
-          node merge-playlists.js
+      - name: Generate English-only playlist
+        run: node generate-playlist.js
 
-      - name: Commit & Push merged playlist safely
+      - name: Merge English-only playlists
+        run: node merge-playlists.js
+
+      - name: Commit & Push playlists safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add merged-playlist.m3u
+          git add playlist.m3u merged-playlist.m3u
           
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
           else
-            git commit -m "Update merged English-only playlist"
+            git commit -m "Update English-only playlists"
             
-            # Ensure we're on the branch that triggered the workflow
+            # Ensure we’re on the branch that triggered the workflow
             git checkout -B ${{ github.ref_name }}
             
             # Push using GitHub token

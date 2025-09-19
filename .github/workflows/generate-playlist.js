@@ -1,81 +1,39 @@
 import fs from "fs";
 import fetch from "node-fetch";
 
-const API_URL = "https://daddylivestream.com/schedule/schedule-generated.php";
-
-// leagues we care about
-const LEAGUES = [
-  "NBA",
-  "WNBA",
-  "NFL",
-  "MLB",
-  "NHL",
-  "CFL",
-  "College Sports",
-  "UFC",
-  "Boxing",
-  "Wrestling",
-  "TV Shows",
-  "Other",
-];
-
-function detectLeague(eventName) {
-  const name = eventName.toLowerCase();
-
-  if (name.includes("nba")) return "NBA";
-  if (name.includes("wnba")) return "WNBA";
-  if (name.includes("nfl")) return "NFL";
-  if (name.includes("mlb")) return "MLB";
-  if (name.includes("nhl")) return "NHL";
-  if (name.includes("cfl")) return "CFL";
-  if (name.includes("college")) return "College Sports";
-  if (name.includes("ufc") || name.includes("mma")) return "UFC";
-  if (name.includes("boxing")) return "Boxing";
-  if (name.includes("wwe") || name.includes("aew")) return "Wrestling";
-  if (name.includes("tv") || name.includes("show")) return "TV Shows";
-
-  return "Other";
+function isEnglish(text) {
+  // allow ASCII only (English letters, numbers, punctuation)
+  return /^[\x00-\x7F]+$/.test(text);
 }
 
-function buildM3U(events, filterLeague = null) {
-  let playlist = "#EXTM3U\n";
+function filterEnglishEvents(events) {
+  return events.filter(event => {
+    // Grab channel name at the end in (CHANNEL NAME)
+    const match = event.event.match(/\(([^)]+)\)$/);
+    if (!match) return true; // keep if no channel info
+    const channelName = match[1].trim();
+    return isEnglish(channelName);
+  });
+}
 
-  for (const event of events) {
-    const league = detectLeague(event.event);
+async function generatePlaylist() {
+  const res = await fetch("https://your-api-or-source-here");
+  const allEvents = await res.json();
 
-    if (filterLeague && league !== filterLeague) continue;
+  // Filter only English channels
+  const englishEvents = filterEnglishEvents(allEvents);
 
-    for (const channel of event.channels) {
-      const streamUrl = `https://daddylivestream.com/channels/${channel.channel_id}.m3u8`;
-
-      playlist += `#EXTINF:-1 group-title="${league}" tvg-id="${channel.channel_id}" tvg-name="${channel.channel_name}", ${event.event} (${channel.channel_name})\n`;
-      playlist += `${streamUrl}\n`;
-    }
+  // Build M3U
+  let m3u = "#EXTM3U\n";
+  for (const e of englishEvents) {
+    m3u += `#EXTINF:-1,${e.event}\n${e.url}\n`;
   }
 
-  return playlist;
+  fs.writeFileSync("playlist.m3u", m3u, "utf8");
+  console.log("playlist.m3u generated with English-only channels ✅");
 }
 
-async function generatePlaylists() {
-  try {
-    const res = await fetch(API_URL);
-    if (!res.ok) throw new Error(`Failed to fetch API: ${res.status}`);
-    const data = await res.json();
-    const events = data.events || data.Events || [];
-
-    // merged playlist
-    fs.writeFileSync("daddylive.m3u", buildM3U(events), "utf8");
-    console.log("✅ Wrote daddylive.m3u");
-
-    // per-league playlists
-    for (const league of LEAGUES) {
-      const filename = `${league.toLowerCase().replace(/\s+/g, "")}.m3u`;
-      fs.writeFileSync(filename, buildM3U(events, league), "utf8");
-      console.log(`✅ Wrote ${filename}`);
-    }
-  } catch (err) {
-    console.error("❌ Error generating playlists:", err);
-  }
-}
-
-generatePlaylists();
+generatePlaylist().catch(err => {
+  console.error("Error generating playlist:", err);
+  process.exit(1);
+});

@@ -2,7 +2,7 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # Runs every 30 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 env:
@@ -34,13 +34,13 @@ jobs:
           success=false
           for i in $(seq 1 ${{ env.RETRY_NPM }}); do
             printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if npm install 2>error.log; then
+            if npm install 2>error-npm.log; then
               printf '\033[32m  ✅ npm install succeeded on attempt %s\033[0m\n' "$i"
               success=true
               break
             else
               printf '\033[31m  ❌ npm install failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error.log
+              sed -n '1,200p' error-npm.log
               printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_NPM_DELAY }}"
               sleep ${{ env.RETRY_NPM_DELAY }}
             fi
@@ -56,19 +56,19 @@ jobs:
           success=false
           for i in $(seq 1 ${{ env.RETRY_CHANNELS }}); do
             printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node generate-playlist.js 2>error.log; then
+            if node generate-playlist.js 2>error-channels.log; then
               printf '\033[32m  ✅ generate-playlist.js succeeded on attempt %s\033[0m\n' "$i"
               success=true
               break
             else
               printf '\033[31m  ❌ generate-playlist.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error.log
+              sed -n '1,200p' error-channels.log
               printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_CHANNELS_DELAY }}"
               sleep ${{ env.RETRY_CHANNELS_DELAY }}
             fi
           done
           if [ "$success" = false ]; then
-            printf '\033[31m❌ All %s attempts to fetch channels failed. See logs above.\033[0m\n' "${{ env.RETRY_CHANNELS }}"
+            printf '\033[31m❌ All %s attempts to fetch channels failed. See error-channels.log for details.\033[0m\n' "${{ env.RETRY_CHANNELS }}"
             exit 1
           fi
 
@@ -78,13 +78,13 @@ jobs:
           success=false
           for i in $(seq 1 ${{ env.RETRY_MERGE }}); do
             printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node merge.js 2>error.log; then
+            if node merge.js 2>error-merge.log; then
               printf '\033[32m  ✅ merge.js succeeded on attempt %s\033[0m\n' "$i"
               success=true
               break
             else
               printf '\033[31m  ❌ merge.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error.log
+              sed -n '1,200p' error-merge.log
               printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_MERGE_DELAY }}"
               sleep ${{ env.RETRY_MERGE_DELAY }}
             fi
@@ -100,13 +100,13 @@ jobs:
           success=false
           for i in $(seq 1 ${{ env.RETRY_README }}); do
             printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node update-readme.js 2>error.log; then
+            if node update-readme.js 2>error-readme.log; then
               printf '\033[32m  ✅ update-readme.js succeeded on attempt %s\033[0m\n' "$i"
               success=true
               break
             else
               printf '\033[31m  ❌ update-readme.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error.log
+              sed -n '1,200p' error-readme.log
               printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_README_DELAY }}"
               sleep ${{ env.RETRY_README_DELAY }}
             fi
@@ -130,6 +130,29 @@ jobs:
             printf '\033[32m✅ Changes pushed\033[0m\n'
           fi
 
+      # Collect last bits of any error logs & print them (so you can see top-level cause quickly)
+      - name: Collect failure tail (print last 200 lines of each error log)
+        if: failure()
+        run: |
+          printf '\033[36m➡️  Collecting last lines from error logs\033[0m\n'
+          rm -f failure-tail.log || true
+          for f in error-*.log; do
+            printf '\n==== %s ====\n' "$f" >> failure-tail.log
+            tail -n 200 "$f" >> failure-tail.log || true
+          done
+          echo "---- failure-tail.log (first 500 lines) ----"
+          sed -n '1,500p' failure-tail.log || true
+
+      - name: Upload logs on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playlist-logs-${{ github.run_id }}
+          path: |
+            error-*.log
+            failure-tail.log
+            *.log
+
       - name: Notify Discord on Success
         if: success()
         run: |
@@ -143,5 +166,5 @@ jobs:
         run: |
           printf '\033[36m➡️  Notify Discord (failure)\033[0m\n'
           curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"❌ Playlist update FAILED on $(date).\n🔗 Logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}" \
+               -d "{\"content\": \"❌ Playlist update FAILED on $(date).\n🔗 Logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n📦 Artifact: playlist-logs-${{ github.run_id }} (download from the run's Artifacts).\"}" \
                ${{ secrets.DISCORD_WEBHOOK }}

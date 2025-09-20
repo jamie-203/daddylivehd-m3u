@@ -20,15 +20,15 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
-      - name: Merge playlists (English only)
+      - name: Find merge.js and run
         run: |
-          echo "➡️  Running merge.js..."
-          node merge.js
+          echo "➡️ Searching for merge.js..."
+          MERGE_FILE=$(find . -name "merge.js" -type f | head -n 1)
+          if [ -z "$MERGE_FILE" ]; then
+            echo "❌ merge.js not found!"
+            exit 1
+          fi
+          echo "➡️ Found merge.js at $MERGE_FILE"
+          echo "➡️ Running merge.js..."
+          node "$MERGE_FILE"
           echo "✅ Merged playlist generated (English only)"
-
-
-      - name: Final summary
-        run: |
-          echo ""
-          echo "🎉 Workflow completed successfully!"
-          echo "📂 Generated file: daddylive-merged.m3u"

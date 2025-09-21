@@ -1,8 +1,8 @@
-name: Auto-Generate & Merge Playlists
+name: Auto-Merge Playlists
 
 on:
   schedule:
-    - cron: "*/30 * * * *" 
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -17,26 +17,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install || echo "ℹ️ No dependencies to install"
-
-      - name: Generate league playlists
+      - name: Generate playlists (placeholder)
         run: |
-          for league in nba nhl mlb nfl mls wnba ufc boxing; do
-            if [ -f generate-playlist.js ]; then
-              echo "➡️ Generating $league playlist..."
-              node generate-playlist.js $league || echo "⚠️ Skipped $league due to error"
-            else
-              echo "⚠️ generate-playlist.js not found, skipping $league"
-            fi
-          done
-
-      - name: Merge all playlists
-        run: |
-          if [ -f merge.js ]; then
-            node merge.js
+          if [ -f generate-playlist.cjs ]; then
+            node generate-playlist.cjs || echo "⚠️ Skipped playlist generation"
           else
-            echo "⚠️ merge.js not found, skipping merge"
+            echo "⚠️ No generate-playlist.cjs found, skipping"
+          fi
+
+      - name: Merge playlists
+        run: |
+          if [ -f merge.cjs ]; then
+            node merge.cjs
+          else
+            echo "⚠️ No merge.cjs found, skipping"
           fi
 
       - name: Commit and push merged playlist

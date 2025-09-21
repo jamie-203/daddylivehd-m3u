@@ -2,169 +2,56 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *" # every 30 minutes
   workflow_dispatch:
 
-env:
-  RETRY_NPM: 3
-  RETRY_NPM_DELAY: 10
-  RETRY_CHANNELS: 10
-  RETRY_CHANNELS_DELAY: 15
-  RETRY_MERGE: 5
-  RETRY_MERGE_DELAY: 10
-  RETRY_README: 3
-  RETRY_README_DELAY: 10
-
 jobs:
-  fetch_m3u8_job:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          printf '\033[36m➡️  Install dependencies (npm install) — attempts: %s\033[0m\n' "${{ env.RETRY_NPM }}"
-          success=false
-          for i in $(seq 1 ${{ env.RETRY_NPM }}); do
-            printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if npm install 2>error-npm.log; then
-              printf '\033[32m  ✅ npm install succeeded on attempt %s\033[0m\n' "$i"
-              success=true
-              break
-            else
-              printf '\033[31m  ❌ npm install failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error-npm.log
-              printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_NPM_DELAY }}"
-              sleep ${{ env.RETRY_NPM_DELAY }}
-            fi
-          done
-          if [ "$success" = false ]; then
-            printf '\033[31m❌ npm install failed after %s attempts. Exiting.\033[0m\n' "${{ env.RETRY_NPM }}"
-            exit 1
-          fi
+        run: npm install
 
-      - name: Get channels
-        run: |
-          printf '\033[36m➡️  Get channels (generate-playlist.js) — attempts: %s\033[0m\n' "${{ env.RETRY_CHANNELS }}"
-          success=false
-          for i in $(seq 1 ${{ env.RETRY_CHANNELS }}); do
-            printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node generate-playlist.js 2>error-channels.log; then
-              printf '\033[32m  ✅ generate-playlist.js succeeded on attempt %s\033[0m\n' "$i"
-              success=true
-              break
-            else
-              printf '\033[31m  ❌ generate-playlist.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error-channels.log
-              printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_CHANNELS_DELAY }}"
-              sleep ${{ env.RETRY_CHANNELS_DELAY }}
-            fi
-          done
-          if [ "$success" = false ]; then
-            printf '\033[31m❌ All %s attempts to fetch channels failed. See error-channels.log for details.\033[0m\n' "${{ env.RETRY_CHANNELS }}"
-            exit 1
-          fi
+      - name: Generate NBA playlist
+        run: node generate-playlist.js nba
 
-      - name: Merge playlists
-        run: |
-          printf '\033[36m➡️  Merge playlists (merge.js) — attempts: %s\033[0m\n' "${{ env.RETRY_MERGE }}"
-          success=false
-          for i in $(seq 1 ${{ env.RETRY_MERGE }}); do
-            printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node merge.js 2>error-merge.log; then
-              printf '\033[32m  ✅ merge.js succeeded on attempt %s\033[0m\n' "$i"
-              success=true
-              break
-            else
-              printf '\033[31m  ❌ merge.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error-merge.log
-              printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_MERGE_DELAY }}"
-              sleep ${{ env.RETRY_MERGE_DELAY }}
-            fi
-          done
-          if [ "$success" = false ]; then
-            printf '\033[31m❌ merge.js failed after %s attempts. Exiting.\033[0m\n' "${{ env.RETRY_MERGE }}"
-            exit 1
-          fi
+      - name: Generate NHL playlist
+        run: node generate-playlist.js nhl
 
-      - name: Update README
-        run: |
-          printf '\033[36m➡️  Update README (update-readme.js) — attempts: %s\033[0m\n' "${{ env.RETRY_README }}"
-          success=false
-          for i in $(seq 1 ${{ env.RETRY_README }}); do
-            printf '\033[36m  Attempt %s...\033[0m\n' "$i"
-            if node update-readme.js 2>error-readme.log; then
-              printf '\033[32m  ✅ update-readme.js succeeded on attempt %s\033[0m\n' "$i"
-              success=true
-              break
-            else
-              printf '\033[31m  ❌ update-readme.js failed (attempt %s). Error output:\033[0m\n' "$i"
-              sed -n '1,200p' error-readme.log
-              printf '\033[33m  ⏱ Retrying in %s seconds...\033[0m\n' "${{ env.RETRY_README_DELAY }}"
-              sleep ${{ env.RETRY_README_DELAY }}
-            fi
-          done
-          if [ "$success" = false ]; then
-            printf '\033[31m❌ update-readme.js failed after %s attempts. Exiting.\033[0m\n' "${{ env.RETRY_README }}"
-            exit 1
-          fi
+      - name: Generate MLB playlist
+        run: node generate-playlist.js mlb
 
-      - name: Commit & Push changes
+      - name: Generate NFL playlist
+        run: node generate-playlist.js nfl
+
+      - name: Generate MLS playlist
+        run: node generate-playlist.js mls
+
+      - name: Generate WNBA playlist
+        run: node generate-playlist.js wnba
+
+      - name: Generate UFC playlist
+        run: node generate-playlist.js ufc
+
+      - name: Generate BOXING playlist
+        run: node generate-playlist.js boxing
+
+      - name: Merge all playlists
+        run: node merge.js
+
+      - name: Commit and push merged playlist
         run: |
-          printf '\033[36m➡️  Commit & Push changes\033[0m\n'
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          if git diff-index --quiet HEAD; then
-            printf '\033[32m✅ No changes to commit\033[0m\n'
-          else
-            git commit -m "🔄 Auto-update playlist" || true
-            git push
-            printf '\033[32m✅ Changes pushed\033[0m\n'
-          fi
-
-      # Collect last bits of any error logs & print them (so you can see top-level cause quickly)
-      - name: Collect failure tail (print last 200 lines of each error log)
-        if: failure()
-        run: |
-          printf '\033[36m➡️  Collecting last lines from error logs\033[0m\n'
-          rm -f failure-tail.log || true
-          for f in error-*.log; do
-            printf '\n==== %s ====\n' "$f" >> failure-tail.log
-            tail -n 200 "$f" >> failure-tail.log || true
-          done
-          echo "---- failure-tail.log (first 500 lines) ----"
-          sed -n '1,500p' failure-tail.log || true
-
-      - name: Upload logs on Failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playlist-logs-${{ github.run_id }}
-          path: |
-            error-*.log
-            failure-tail.log
-            *.log
-
-      - name: Notify Discord on Success
-        if: success()
-        run: |
-          printf '\033[36m➡️  Notify Discord (success)\033[0m\n'
-          curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"✅ Playlist update succeeded on $(date).\n🔗 Logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}" \
-               ${{ secrets.DISCORD_WEBHOOK }}
-
-      - name: Notify Discord on Failure
-        if: failure()
-        run: |
-          printf '\033[36m➡️  Notify Discord (failure)\033[0m\n'
-          curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"❌ Playlist update FAILED on $(date).\n🔗 Logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n📦 Artifact: playlist-logs-${{ github.run_id }} (download from the run's Artifacts).\"}" \
-               ${{ secrets.DISCORD_WEBHOOK }}
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add merged.m3u
+          git commit -m "🔄 Auto-update merged.m3u" || echo "No changes to commit"
+          git push

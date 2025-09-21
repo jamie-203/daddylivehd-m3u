@@ -2,40 +2,43 @@ name: Auto-Generate & Merge Playlists
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # every 30 minutes
+    - cron: "*/30 * * * *" 
   workflow_dispatch:
 
 jobs:
   build-and-merge:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Checkout the repo
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
       - name: Install dependencies
-        run: npm install || echo "No dependencies to install"
+        run: npm install || echo "ℹ️ No dependencies to install"
 
-      # 4️⃣ Generate all league playlists (skip if generate-playlist.js missing)
       - name: Generate league playlists
         run: |
           for league in nba nhl mlb nfl mls wnba ufc boxing; do
-            echo "➡️ Generating $league playlist..."
-            node generate-playlist.js $league || echo "⚠️ Skipped $league"
+            if [ -f generate-playlist.js ]; then
+              echo "➡️ Generating $league playlist..."
+              node generate-playlist.js $league || echo "⚠️ Skipped $league due to error"
+            else
+              echo "⚠️ generate-playlist.js not found, skipping $league"
+            fi
           done
 
-      # 5️⃣ Merge all playlists using safe merge.js
       - name: Merge all playlists
-        run: node merge.js
+        run: |
+          if [ -f merge.js ]; then
+            node merge.js
+          else
+            echo "⚠️ merge.js not found, skipping merge"
+          fi
 
-      # 6️⃣ Commit and push merged playlist
       - name: Commit and push merged playlist
         run: |
           git config --global user.name "github-actions[bot]"

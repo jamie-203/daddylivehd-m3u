@@ -1,34 +1,39 @@
-name: Merge English-Only M3U
+// merge.js
+const fs = require("fs");
+const path = require("path");
 
-on:
-  schedule:
-    - cron: "*/30 * * * *" # every 30 minutes
-  workflow_dispatch:
+// List of league playlists to merge
+const playlists = [
+  "nba.m3u",
+  "nhl.m3u",
+  "mlb.m3u",
+  "nfl.m3u",
+  "mls.m3u",
+  "wnba.m3u",
+  "ufc.m3u",
+  "boxing.m3u"
+];
 
-jobs:
-  merge:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+let merged = "#EXTM3U\n";
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
+playlists.forEach(file => {
+  const filePath = path.join(__dirname, file);
 
-      - name: Install dependencies
-        run: npm ci || npm install
+  if (fs.existsSync(filePath)) {
+    console.log(`➡️ Adding ${file}`);
+    const content = fs.readFileSync(filePath, "utf8");
 
-      - name: Find merge.js and run
-        run: |
-          echo "➡️ Searching for merge.js..."
-          MERGE_FILE=$(find . -name "merge.js" -type f | head -n 1)
-          if [ -z "$MERGE_FILE" ]; then
-            echo "❌ merge.js not found!"
-            exit 1
-          fi
-          echo "➡️ Found merge.js at $MERGE_FILE"
-          echo "➡️ Running merge.js..."
-          node "$MERGE_FILE"
-          echo "✅ Merged playlist generated (English only)"
+    // Remove any extra #EXTM3U headers
+    merged += content.replace(/^#EXTM3U\s*/i, "") + "\n";
+  } else {
+    console.warn(`⚠️  Missing file: ${file} (skipping)`);
+  }
+});
+
+// Trim extra blank lines
+merged = merged.trim();
+
+// Write merged playlist
+const outputFile = path.join(__dirname, "merged.m3u");
+fs.writeFileSync(outputFile, merged, "utf8");
+console.log(`✅ Merged playlist saved as ${outputFile}`);

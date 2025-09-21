@@ -1,51 +1,45 @@
-// merge.js
-const fs = require("fs");
-const path = require("path");
+name: Auto-Generate & Merge Playlists
 
-console.log("🟢 merge.js starting…");
+on:
+  schedule:
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch:
 
-// List of league playlists to merge
-const playlists = [
-  "nba.m3u",
-  "nhl.m3u",
-  "mlb.m3u",
-  "nfl.m3u",
-  "mls.m3u",
-  "wnba.m3u",
-  "ufc.m3u",
-  "boxing.m3u"
-];
+jobs:
+  build-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-let merged = "#EXTM3U\n";
-let addedCount = 0;
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-playlists.forEach(file => {
-  const filePath = path.join(__dirname, file);
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm install || echo "No dependencies to install"
 
-  if (fs.existsSync(filePath)) {
-    console.log(`➡️ Adding ${file}`);
-    const content = fs.readFileSync(filePath, "utf8");
+      # 4️⃣ Generate all league playlists (skip if generate-playlist.js missing)
+      - name: Generate league playlists
+        run: |
+          for league in nba nhl mlb nfl mls wnba ufc boxing; do
+            echo "➡️ Generating $league playlist..."
+            node generate-playlist.js $league || echo "⚠️ Skipped $league"
+          done
 
-    // Remove any extra #EXTM3U headers
-    merged += content.replace(/^#EXTM3U\s*/i, "") + "\n";
-    addedCount++;
-  } else {
-    console.warn(`⚠️  Missing file: ${file} (skipping)`);
-  }
-});
+      # 5️⃣ Merge all playlists using safe merge.js
+      - name: Merge all playlists
+        run: node merge.js
 
-// Trim extra blank lines
-merged = merged.trim();
-
-// Write merged playlist
-const outputFile = path.join(__dirname, "merged.m3u");
-try {
-  fs.writeFileSync(outputFile, merged, "utf8");
-  console.log(`✅ Merged playlist saved as ${outputFile}`);
-  console.log(`ℹ️ Total playlists merged: ${addedCount} / ${playlists.length}`);
-} catch (err) {
-  console.error(`❌ Failed to write merged playlist: ${err}`);
-}
-
-// Always exit with code 0 to avoid workflow failure
-process.exit(0);
+      # 6️⃣ Commit and push merged playlist
+      - name: Commit and push merged playlist
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add merged.m3u
+          git commit -m "🔄 Auto-update merged.m3u" || echo "ℹ️ No changes to commit"
+          git push
